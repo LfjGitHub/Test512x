@@ -1146,7 +1146,7 @@ static void handleUEMessage  ( Task task, MessageId id, Message message )
             /* Reject incoming call - only valid for instances of HFP */
             sinkAnswerOrRejectCall( FALSE );
 			#ifdef TEST_CALLER_NUMBER_PROMT
-			CallerNumberTimes=0; /*add by lfj*/
+			CallerNumberTimes=FALSE; /*add by lfj*/
 			#endif
         break ;
         case (EventUsrCancelEnd):
@@ -1154,7 +1154,7 @@ static void handleUEMessage  ( Task task, MessageId id, Message message )
             /* Terminate the current ongoing call process */
             sinkHangUpCall();
 			#ifdef TEST_CALLER_NUMBER_PROMT
-			CallerNumberTimes=0;  /*add by lfj*/
+			CallerNumberTimes=FALSE;  /*add by lfj*/
 			#endif
         break ;
         case (EventUsrTransferToggle):
@@ -1892,7 +1892,7 @@ static void handleUEMessage  ( Task task, MessageId id, Message message )
 	     	MessageCancelAll(&theSink.task,EventUsrVoiceAssistantStart); /*add following content by lfj,20191021 */
 			MessageSendLater(&theSink.task, EventUsrVoiceAssistantStart, 0, D_SEC(1)); //add by lfj
 			#ifdef TEST_CALLER_NUMBER_PROMT
-			CallerNumberTimes=0;
+			CallerNumberTimes=FALSE;
 			#endif
         break;
         case EventSysResetComplete:
@@ -3834,7 +3834,7 @@ static void handleHFPMessage  ( Task task, MessageId id, Message message )
                 /* Caller name not present or not supported, try to play number */
 				if(!CallerNumberTimes)
                 AudioPromptPlayCallerNumber(ind->size_number, ind->caller_number) ;
-				CallerNumberTimes=1;
+				CallerNumberTimes=TRUE;
 				#else
 				AudioPromptPlayCallerNumber(ind->size_number, ind->caller_number) ;
 				#endif
