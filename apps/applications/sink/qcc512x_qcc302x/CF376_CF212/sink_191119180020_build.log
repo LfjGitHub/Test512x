@@ -1,0 +1,39 @@
+
+>>> [C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe SDK=C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools DEVKIT_ROOT=C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154 -s -f makefile CONFIG=stre_rom_v02_release BUNDLE_NAME=download_cvc_send BUILD_NAME=kymera_stre_audio KYMERA_SRC_PATH=../.. BUILD_PATH=$(DEVKIT_ROOT)/audio/kalimba_ROM_4786/kymera/output/stre_rom_v02_release/build BUILD_ROOT=$(DEVKIT_ROOT)/audio/kalimba/kymera/build OSTYPE=Windows_NT MAKE_JOBS=True clean]
+
+
+
+Build using a makefile
+Added DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 to the environment
+Running C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe -s -f Makefile -R DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 -j4 -Otarget clean CHIP_TYPE=qcc512x_qcc302x BUILD_TYPE=MAKEFILE MAKEFILE_RULES_DIR=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools in D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\apps\fw\src
+
+>>> [C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe -s -f Makefile -R DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 -j4 -Otarget clean CHIP_TYPE=qcc512x_qcc302x BUILD_TYPE=MAKEFILE MAKEFILE_RULES_DIR=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools]
+
+
+
+Build using a makefile
+Added DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 to the environment
+Running C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe -s -f Makefile -R DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 -j4 -Otarget CONFIGS=qcc512x_qcc302x clean CHIP_TYPE=qcc512x_qcc302x BUILD_TYPE=DEBUG PRIVATE_LIBS= PRIVATE_LIBS_SEED=26084 MAKEFILE_RULES_DIR=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools in D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\apps\libs
+
+>>> [C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe -s -f Makefile -R DEVKIT_ROOT=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154 -j4 -Otarget CONFIGS=qcc512x_qcc302x clean CHIP_TYPE=qcc512x_qcc302x BUILD_TYPE=DEBUG PRIVATE_LIBS= PRIVATE_LIBS_SEED=26084 MAKEFILE_RULES_DIR=C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools]
+SDK is C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools
+BUILDING FOR qcc512x qcc302x
+
+
+
+
+>>> [C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin/make.exe SDK=C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools DEVKIT_ROOT=C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154 -s -f D:/LfjWorksapce/QCC/workspace/qcc5120/adk630154-1019/apps/applications/sink/qcc512x_qcc302x/common/sink.speaker.mak clean -j4]
+
+
+
+
+
+
+C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools/bin
+SDK is C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154/tools
+BUILDING FOR qcc512x qcc302x
+------ Deleting intermediate files and output files for sink [Speaker] ------
+----------------------------------- Clean finished -----------------------------------------
+
+
+
