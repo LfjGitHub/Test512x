@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="apps0_firmware" path="">
+    <configurations defaultKit="kitres://{54bf1f98-0f7c-4619-aa3a-efc0d07fa8bb}">
+        <configuration name="prebuilt_image" kit="kitres://{54bf1f98-0f7c-4619-aa3a-efc0d07fa8bb}" options="deploy|default">
+            <deployProject>deploy</deployProject>
+            <devkitConfiguration>prebuilt_image</devkitConfiguration>
+            <devkitGroup>kitres://{bbac163c-41be-4ce7-b236-236f15ff18ca}</devkitGroup>
+            <devkitPath>C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154</devkitPath>
+            <devkitRevision>1535980931</devkitRevision>
+            <property name="BUILD_TYPE">DO_NOT_BUILD</property>
+            <property name="OUTPUT_TYPE">NONE</property>
+            <property name="SUBSYSTEM_NAME">apps0</property>
+        </configuration>
+    </configurations>
+    <file path="1213/apps_p0_firmware.xuv"/>
+</project>
