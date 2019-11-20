@@ -1,0 +1,1050 @@
+Archive member included because of file (symbol)
+
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o ($_cvc_send_1mic_nb_hs_cap_data)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o) ($_CVC_SEND_CAP_Config_headset_1mic)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o) ($M.CVC_SEND_CAP.headset_data_1mic.DynTable_Main)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o) ($M.CVC_SEND_CAP.headset_data_2mic.DynTable_Main)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o) ($M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Main)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o) ($M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Main)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o) ($cvc.init.root)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+                              D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o) ($M.CVC_SEND.Set_PassThroughGains_1MIC)
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+                              (--whole-archive)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_SUB_SYS_CHIP_VERSION
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_SchedInterruptActive
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_ipc_lookup_table_ptr
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_profiler_list
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_sleep_time
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_profiler_timer_id
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_debugLogLevel
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_DMEM_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_DMEM_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_END_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_START_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_TBUS_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_TBUS_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_TRIGGER_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_DMEM_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_DMEM_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_END_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_START_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_TBUS_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_TBUS_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_TRIGGER_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_ACCESS_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_DEBUG_SEL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_MUTEX_LOCK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_0_TRIGGER_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_1_TRIGGER_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_DMEM_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TRACE_TBUS_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DOLOOP_CACHE_CONFIG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DOLOOP_CACHE_FILL_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DOLOOP_CACHE_HIT_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TIMER1_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TIMER1_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TIMER2_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TIMER2_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TIMER_TIME
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_CONFIG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_FLUSH
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_DEBUG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_DEBUG_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_PREFETCH_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_REQUEST_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PREFETCH_WAIT_OUT_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_ACCESS_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_MUTEX_LOCK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_WRITE_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_READ_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_INTER_PROC_KEYHOLE_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_ARITHMETIC_MODE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_BITREVERSE_VAL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DBG_COUNTERS_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_FRAME_POINTER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_MM_DOLOOP_END
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_MM_DOLOOP_START
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_MM_QUOTIENT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_MM_REM  0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_MM_RINTLINK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_STACK_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_STACK_POINTER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_STACK_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TEST_REG_0
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TEST_REG_1
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TEST_REG_2
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_TEST_REG_3
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_BITREVERSE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_BITREVERSE_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_BITREVERSE_DATA16
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_NUM_CORE_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_NUM_INSTRS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_NUM_INSTR_EXPAND_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_NUM_MEM_ACCESS_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_NUM_RUN_CLKS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PC_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_STACK_OVERFLOW_PC
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DM1_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DM1_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DM2_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DM2_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_EXCEPTION_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PM_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PM_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PROG_EXCEPTION_REGION_ENABLE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_EXCEPTION_PC
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_EXCEPTION_TYPE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_ALLOW_GOTO_SHALLOW_SLEEP
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_CLOCK_CONT_SHALLOW_SLEEP_RATE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_CLOCK_DIVIDE_RATE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_CLOCK_STOP_WIND_DOWN_SEQUENCE_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_DISABLE_MUTEX_AND_ACCESS_IMMUNITY
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_GOTO_SHALLOW_SLEEP
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PMWIN_ENABLE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PROC_DEEP_SLEEP_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_PROCESSOR_ID
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_SHALLOW_SLEEP_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ dmzi?$_aux_proc_kip_ipc_state
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ PM?$M.CVC_SEND_CAP.config.auto_1mic__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ PM?$M.CVC_SEND_CAP.config.auto_2mic__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ PM?$M.CVC_SEND_CAP.config.speaker_3mic__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ PM?$M.CVC_SEND_CAP.config.speaker_4mic__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ PM?$M.CVC_SEND.module_init.stream_purge__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ PM?$M.CVC_SEND.module_init.filter_bank.stream_connect__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ PM?$M.CVC_SEND.module_control.nc__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .text          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ .data          0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ .bss           0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_DMEM_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_DMEM_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_END_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_START_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_TBUS_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_TBUS_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_TRIGGER_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_DMEM_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_DMEM_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_END_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_START_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_TBUS_BASE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_TBUS_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_TRIGGER_CFG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_ACCESS_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_DEBUG_SEL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_MUTEX_LOCK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_0_TRIGGER_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_1_TRIGGER_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_DMEM_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TRACE_TBUS_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DOLOOP_CACHE_CONFIG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DOLOOP_CACHE_FILL_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DOLOOP_CACHE_HIT_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TIMER1_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TIMER1_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TIMER2_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TIMER2_TRIGGER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TIMER_TIME
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_CONFIG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_FLUSH
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_DEBUG
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_DEBUG_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_PREFETCH_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_REQUEST_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PREFETCH_WAIT_OUT_COUNT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_ACCESS_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_CTRL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_MUTEX_LOCK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_WRITE_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_READ_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_INTER_PROC_KEYHOLE_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_ARITHMETIC_MODE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_BITREVERSE_VAL
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DBG_COUNTERS_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_FRAME_POINTER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_MM_DOLOOP_END
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_MM_DOLOOP_START
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_MM_QUOTIENT
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_MM_REM  0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_MM_RINTLINK
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_STACK_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_STACK_POINTER
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_STACK_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TEST_REG_0
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TEST_REG_1
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TEST_REG_2
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_TEST_REG_3
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_BITREVERSE_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_BITREVERSE_DATA
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_BITREVERSE_DATA16
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_NUM_CORE_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_NUM_INSTRS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_NUM_INSTR_EXPAND_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_NUM_MEM_ACCESS_STALLS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_NUM_RUN_CLKS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PC_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_STACK_OVERFLOW_PC
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DM1_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DM1_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DM2_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DM2_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_EXCEPTION_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PM_PROG_EXCEPTION_REGION_END_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PM_PROG_EXCEPTION_REGION_START_ADDR
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PROG_EXCEPTION_REGION_ENABLE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_EXCEPTION_PC
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_EXCEPTION_TYPE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_ALLOW_GOTO_SHALLOW_SLEEP
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_CLOCK_CONT_SHALLOW_SLEEP_RATE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_CLOCK_DIVIDE_RATE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_CLOCK_STOP_WIND_DOWN_SEQUENCE_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_DISABLE_MUTEX_AND_ACCESS_IMMUNITY
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_GOTO_SHALLOW_SLEEP
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PMWIN_ENABLE
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PROC_DEEP_SLEEP_EN
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_PROCESSOR_ID
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_SHALLOW_SLEEP_STATUS
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_ipc_lookup_table_ptr
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_aux_proc_kip_ipc_state
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_debugLogLevel
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_SUB_SYS_CHIP_VERSION
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ dmzi?$_SchedInterruptActive
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ DEBUG_TRACE_STRINGS?L_log_fmt
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ pm?$_stream_delegate_rate_adjust_set_target_rate__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ pm?$_stream_delegate_rate_adjust_set_passthrough_mode__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ pm?$_stream_delegate_rate_adjust_set_current_rate__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+ pm?_stream_delegate_rate_adjust_message_callback__minim
+                0x00000000        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x04002000                PM_RAM_CODE_START_ADDRESS = 0x4002000
+                0x00000001                DUAL_CORE_ENABLED = 0x1
+                0x00000100                PATCH_RESERVED_RAM = 0x100
+                0x00040000                $DATA_RAM_SIZE_BYTES = 0x40000
+                0x00000c00                $STACK_SIZE_BYTES = 0xc00
+                0x04200000                $PM_RAM_START_ADDRESS = 0x4200000
+                0x00100000                $DATA_PM_RAM_WINDOW = 0x100000
+                0x00700000                $DATA_RAM_START_ADDRESS = 0x700000
+                0x00740000                $DATA_RAM_END_ADDRESS = ($DATA_RAM_START_ADDRESS + $DATA_RAM_SIZE_BYTES)
+                0xff800004                $DM2_RAM_BASE_ADDRESS = 0xff800004
+                0x00000060                $PRESERVE_BLOCK_SIZE_BYTES = 0x60
+                0x84200000                $CODE_MAGIC$ = 0x84200000
+                0x04200000                __CODE_ram_address = $PM_RAM_START_ADDRESS
+                0x84200000                . = ($CODE_MAGIC$ ALIGN 0x4)
+
+.text_reset     0x84200000        0x0 load address 0x04200000
+                0x84200000                $MEM_MAP_CODE_START = <code 343> (.)
+ *(RESET_PM*)
+
+.text_maxim
+ *.o(PM_MAXIM\?*__maxim)
+ *.o(*PM_FLASH\?*__maxim)
+ *.o(*PM*\?*__maxim)
+
+.text_maxim_private
+ *.po(PM_MAXIM\?*__maxim)
+ *.po(*PM_FLASH\?*__maxim)
+ *.po(*PM*\?*__maxim)
+
+.text_minim     0x84200000      0xef0
+ *.o(PM_KEEP\?*)
+ *.o(*pm*\?*__minim)
+ pm?$_cvc_send_create__minim
+                0x84200000       0xbc D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x84200000                $_cvc_send_create
+ pm?$_cvc_send_destroy__minim
+                0x842000bc       0x6a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842000bc                $_cvc_send_destroy
+ pm?$_cvc_send_connect__minim
+                0x84200126       0x9a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x84200126                $_cvc_send_connect
+ pm?$_cvc_send_disconnect__minim
+                0x842001c0       0x80 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842001c0                $_cvc_send_disconnect
+ pm?$_cvc_send_buffer_details__minim
+                0x84200240       0x3e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x84200240                $_cvc_send_buffer_details
+ pm?$_cvc_send_get_sched_info__minim
+                0x8420027e       0x3e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420027e                $_cvc_send_get_sched_info
+ pm?$_cvc_send_process_data__minim
+                0x842002bc       0xae D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842002bc                $_cvc_send_process_data
+ pm?$_cvc_send_opmsg_obpm_set_control__minim
+                0x8420036a      0x11e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420036a                $_cvc_send_opmsg_obpm_set_control
+ pm?$_cvc_send_opmsg_obpm_get_params__minim
+                0x84200488       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x84200488                $_cvc_send_opmsg_obpm_get_params
+ pm?$_cvc_send_opmsg_obpm_get_defaults__minim
+                0x8420049a       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420049a                $_cvc_send_opmsg_obpm_get_defaults
+ pm?$_cvc_send_opmsg_obpm_set_params__minim
+                0x842004ac       0x16 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842004ac                $_cvc_send_opmsg_obpm_set_params
+ pm?$_cvc_send_opmsg_obpm_get_status__minim
+                0x842004c2       0xe4 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842004c2                $_cvc_send_opmsg_obpm_get_status
+ pm?$_cvc_send_opmsg_set_ucid__minim
+                0x842005a6       0x3a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842005a6                $_cvc_send_opmsg_set_ucid
+ pm?$_cvc_send_opmsg_get_ps_id__minim
+                0x842005e0       0x1e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842005e0                $_cvc_send_opmsg_get_ps_id
+ pm?$_MakeStandardResponse_SND__minim
+                0x842005fe       0x24 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842005fe                $_MakeStandardResponse_SND
+ pm?$_cvc_send_ups_set_state__minim
+                0x84200622        0x8 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x84200622                $_cvc_send_ups_set_state
+ pm?$_ups_state_snd__minim
+                0x8420062a       0x24 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420062a                $_ups_state_snd
+ pm?$_cvc_send_check_all_connected__minim
+                0x8420064e       0x3e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420064e                $_cvc_send_check_all_connected
+ pm?$_ups_params_snd__minim
+                0x8420068c       0x1e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x8420068c                $_ups_params_snd
+ pm?$_cvc_send_release_constants__minim
+                0x842006aa        0x2 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x842006aa                $_cvc_send_release_constants
+ pm?_cvc_send_config__minim
+                0x842006ac       0xba D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ *.o(PM_FLASH\?*__minim)
+ *.o(*PM*\?*__minim)
+ PM?$M.kdc_start__minim
+                0x84200766       0x40 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+                0x84200766                $kdc_start
+ PM?$M.CVC_SEND_CAP.config.headset_1mic__minim
+                0x842007a6       0x14 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842007a6                $_CVC_SEND_CAP_Config_headset_1mic
+ PM?$M.CVC_SEND_CAP.config.headset_2mic__minim
+                0x842007ba       0x18 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842007ba                $_CVC_SEND_CAP_Config_headset_2mic_binaural
+                0x842007c0                $M.CVC_SEND_CAP.config.headset_2mic.Config_headset_2mic
+                0x842007be                $_CVC_SEND_CAP_Config_headset_2mic_mono
+ PM?$M.CVC_SEND_CAP.config.speaker_1mic__minim
+                0x842007d2       0x14 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842007d2                $_CVC_SEND_CAP_Config_speaker_1mic
+ PM?$M.CVC_SEND_CAP.config.speaker_2mic__minim
+                0x842007e6       0x14 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842007e6                $_CVC_SEND_CAP_Config_speaker_2mic
+ PM?$M.CVC_SEND_CAP.dyn_config__minim
+                0x842007fa       0x1e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842007fa                $cvc_send.dyn_config
+ PM?$M.CVC_SEND_CAP.Create__minim
+                0x84200818      0x112 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x8420091c                $M.CVC_SEND_CAP.Create.create_done
+                0x84200926                $M.CVC_SEND_CAP.Create.create_failed
+                0x84200818                $_CVC_SEND_CAP_Create
+                0x842008ca                $M.CVC_SEND_CAP.Create.jp_no_asf_share
+ PM?$M.CVC_SEND_CAP.Destroy__minim
+                0x8420092a       0xa6 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x8420092a                $_CVC_SEND_CAP_Destroy
+ PM?$M.CVC_SEND_CAP.Initialize__minim
+                0x842009d0        0xc D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842009d0                $_CVC_SEND_CAP_Initialize
+ PM?$M.CVC_SEND_CAP.Process__minim
+                0x842009dc       0x5c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x842009dc                $_CVC_SEND_CAP_Process
+ PM?$M.cvc_send_opmsg_get_voice_quality__minim
+                0x84200a38        0x4 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+                0x84200a38                $_cvc_send_opmsg_get_voice_quality
+ PM?$M.CVC_SEND.module_init.root__minim
+                0x84200a3c       0x60 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200a3c                $cvc.init.root
+                0x84200a80                $M.CVC_SEND.module_init.root.end_CE_fixed_param
+ PM?$M.CVC_SEND.module_init.harmonicity__minim
+                0x84200a9c        0x8 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200a9c                $cvc.init.harm
+ PM?$M.CVC_SEND.module_init.harmonicity_export__minim
+                0x84200aa4        0xe D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200aa4                $cvc.init.harm_export
+ PM?$M.CVC_SEND.module_init.oms_in__minim
+                0x84200ab2        0xe D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200ab2                $cvc.init.oms_in
+ PM?$M.CVC_SEND.module_control.oms_in__minim
+                0x84200ac0       0x1a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200ac0                $cvc.mc.oms_in
+ PM?$M.CVC_SEND.module_control.dmss.residule_noise_reduction__minim
+                0x84200ada       0x64 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200b2e                $M.CVC_SEND.module_control.dmss.residule_noise_reduction.rnr_auto
+                0x84200ada                $cvc.mc.dmss_rnr
+ PM?$M.CVC_SEND.module_control.dmss.target_protection__minim
+                0x84200b3e       0x40 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200b3e                $cvc.mc.dmss_tp
+ PM?$M.CVC_SEND.module_init.aec510__minim
+                0x84200b7e       0x4c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200b7e                $cvc.init.aec510
+                0x84200bae                $cvc.init.aec510.lrm
+                0x84200ba2                $cvc.init.vsm_fdnlp
+ PM?$M.CVC_SEND.module_control.aec510__minim
+                0x84200bca       0x30 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200bf4                $cvc.mc.aec510_cng
+                0x84200bca                $cvc.mc.aec510
+                0x84200bf4                $cvc.mc.aec510_nlp
+ PM?$M.CVC_SEND.module_control.aec510_lrm__minim
+                0x84200bfa        0xe D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200bfa                $cvc.aec510_lrm.gain_mapping
+ PM?$M.CVC_SEND.module_control.aec_ref_delay__minim
+                0x84200c08       0x10 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c08                $cvc.mc.ref_delay
+ PM?$M.CVC_SEND.module_control.aec_ref.filter_bank.analysis__minim
+                0x84200c18       0x18 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c18                $cvc.aec_ref.filter_bank.analysis
+ PM?$M.CVC_SEND.event.echo_flag__minim
+                0x84200c30       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c30                $cvc.event.echo_flag
+ PM?$M.CVC_SEND.module_init.aed100__minim
+                0x84200c42       0x1a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c42                $cvc.init.aed100
+ PM?$M.CVC_SEND.module_control.aed100__minim
+                0x84200c5c       0x34 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c5c                $cvc.mc.aed100
+ PM?$M.CVC_SEND.module_init.agc400__minim
+                0x84200c90        0xc D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c90                $cvc.init.agc400
+ PM?$M.CVC_SEND.module_control.agc400__minim
+                0x84200c9c       0x42 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200c9c                $cvc.mc.agc400
+ PM?$M.CVC_SEND.module_init.mgdc_persist__minim
+                0x84200cde       0x14 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200cde                $cvc.mgdc_persist.init
+ PM?$M.CVC_SEND.event.mgdc_persist__minim
+                0x84200cf2        0xa D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200cf2                $cvc.mgdc_persist.state_upload
+ PM?$M.CVC_SEND.module_control.mgdc100__minim
+                0x84200cfc       0x3c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200cfc                $cvc.mc.mgdc100
+ PM?$M.CVC_SEND.event.mgdc_harm_dynamic__minim
+                0x84200d38       0x20 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200d38                $cvc.mgdc.harm_dynamic
+ PM?$M.CVC_SEND.module_init.ndvc100__minim
+                0x84200d58        0xc D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200d58                $cvc.init.ndvc100
+ PM?$M.CVC_SEND.module_init.asf100__minim
+                0x84200d64       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200d64                $cvc.init.asf100
+ PM?$M.CVC_SEND.module_control.asf100__minim
+                0x84200d8c       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200da4                $M.CVC_SEND.module_control.asf100.end_beam0_switch
+                0x84200d8c                $cvc.mc.asf100
+ PM?$M.CVC_SEND.user.wnr_oms.init__minim
+                0x84200db4       0x10 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200db4                $cvc.user.dms100.wnr.initialize
+ PM?$M.CVC_SEND.module_init.dms100__minim
+                0x84200dc4       0x4a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200dc4                $cvc.init.dms100
+ PM?$M.CVC_SEND.module_control.dms100__minim
+                0x84200e0e       0x2a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200e0e                $cvc.mc.dms100
+ PM?$M.CVC_SEND.module_control.dms_out__minim
+                0x84200e38        0x8 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200e38                $cvc.mc.dms_out
+ CVCLIB_PM?$M.hpf.process__minim
+                0x84200e40       0x38 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+                0x84200e76                $M.hpf.process.hpf_loop
+                0x84200e40                $hpf.process
+ PM?$M.CVC_SEND.PASS_THROUGH__minim
+                0x84200e78       0x78 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+                0x84200ebc                $M.CVC_SEND.PASS_THROUGH.passthroughgains
+                0x84200e86                $M.CVC_SEND.PASS_THROUGH.passthroughgains_1mic
+                0x84200e78                $M.CVC_SEND.Set_PassThroughGains_1MIC
+                0x84200ebe                $M.CVC_SEND.PASS_THROUGH.setgains
+                0x84200e98                $M.CVC_SEND.Set_PassThroughGains_2MIC
+                0x84200e8e                $M.CVC_SEND.PASS_THROUGH.setgains_1mic
+                0x84200ecc                $M.CVC_SEND.stream_map_select
+                0x84200ee6                $M.CVC_SEND.PASS_THROUGH.set_input_ptr
+
+.text_minim_private
+                0x84200ef0        0x0
+ *.po(PM_KEEP\?*)
+ *.po(*pm*\?*__minim)
+ *.po(*PM*\?*__minim)
+                0x84200ef0                $MEM_MAP_CODE_END = <code 343> (.)
+                0x00000ef0                __CODE_RAM_SIZE = ($MEM_MAP_CODE_END - $MEM_MAP_CODE_START)
+                0x04200ef0                __DM2_ram_address = ((__CODE_ram_address + __CODE_RAM_SIZE) ALIGN 0x4)
+                0xff800004                . = $DM2_RAM_BASE_ADDRESS
+                0xff800004                $DM2_START_ADDRESS = .
+
+.initc_dm2_private
+                0xff800004        0x0 load address 0x04200ef0
+                0xff800004                $MEM_MAP_DM2_INITC_START = <code 343> (.)
+ *(*DM_SPI_COMMS*)
+ *.po(*DM2\?*)
+ *.po(*dm2\?*)
+
+.initc_dm2      0xff800004        0x0
+ *.o(*DM2\?*)
+ *.o(*dm2\?*)
+                0xff800004                $MEM_MAP_DM2_INITC_END = <code 343> (.)
+                0x00000000                $DM2_INIT_SIZE_BYTES = ($MEM_MAP_DM2_INITC_END - $MEM_MAP_DM2_INITC_START)
+                0xff800004                $DM2_END_ADDRESS = .
+                0x04200ef0                __const_data_api_address = ((__DM2_ram_address + $DM2_INIT_SIZE_BYTES) ALIGN 0x4)
+                0xff800004                . = (. ALIGN 0x4)
+
+.const_data_api_16
+                0xff800004     0x2da0 load address 0x04200ef0
+                0xff800004                $CONST16_START = <code 343> (.)
+ *.o(const16\?*)
+ *.o(CONST16\?*)
+ CONST16?$M.CVC_SEND_CAP.headset_data_1mic.DynTable_Main
+                0xff800004      0x874 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+                0xff800004                $_CVC_SEND_CAP_headset_data_1micDynTable_Main
+                0xff800004                $M.CVC_SEND_CAP.headset_data_1mic.DynTable_Main
+ CONST16?$M.CVC_SEND_CAP.headset_data_2mic.DynTable_Main
+                0xff800878      0xdb0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+                0xff800878                $M.CVC_SEND_CAP.headset_data_2mic.DynTable_Main
+                0xff800878                $_CVC_SEND_CAP_headset_data_2micDynTable_Main
+ CONST16?$M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Main
+                0xff801628      0x95e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+                0xff801628                $_CVC_SEND_CAP_speaker_data_1micDynTable_Main
+                0xff801628                $M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Main
+ CONST16?$M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Main
+                0xff801f86      0xe1e D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+                0xff801f86                $_CVC_SEND_CAP_speaker_data_2micDynTable_Main
+                0xff801f86                $M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Main
+
+.const_data_api_16_private
+                0xff802da4        0x0
+ *.po(const16\?*)
+ *.po(CONST16\?*)
+                0xff802da4                $CONST16_END = <code 343> (.)
+
+.const_data_api
+                0xff802da4      0xb50 load address 0x04203c90
+                0xff802da4                $CONST32_START = <code 343> (.)
+ *.o(const\?*)
+ *.o(CONST\?*)
+ CONST?$M.CVC_SEND_CAP.headset_data_1mic.DynTable_Linker
+                0xff802da4      0x240 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+                0xff802da4                $M.CVC_SEND_CAP.headset_data_1mic.DynTable_Linker
+ CONST?$M.CVC_SEND_CAP.headset_data_2mic.DynTable_Linker
+                0xff802fe4      0x350 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+                0xff802fe4                $M.CVC_SEND_CAP.headset_data_2mic.DynTable_Linker
+ CONST?$M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Linker
+                0xff803334      0x270 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+                0xff803334                $M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Linker
+ CONST?$M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Linker
+                0xff8035a4      0x350 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+                0xff8035a4                $M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Linker
+
+.const_data_api_private
+                0xff8038f4        0x0
+ *.po(const\?*)
+ *.po(CONST\?*)
+                0xff8038f4                $CONST32_END = <code 343> (.)
+                0x000038f0                $CONST_DATA_API_SIZE_BYTES = ($CONST32_END - $CONST16_START)
+                0x042047e0                __CONST_ram_address = ((__const_data_api_address + $CONST_DATA_API_SIZE_BYTES) ALIGN 0x4)
+                0x00700000                . = ($DATA_RAM_START_ADDRESS ALIGN 0x4)
+                0x00700000                $DM1_START_ADDRESS = .
+
+.dmconst        0x00700000      0x208 load address 0x042047e0
+                0x00700000                $MEM_MAP_CONST_START = <code 343> (.)
+ *.o(DMCONST*)
+ *.o(dmconst*)
+ dmconst?$_cvc_send_1mic_nb_hs_cap_data
+                0x00700000       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700000                $_cvc_send_1mic_nb_hs_cap_data
+ dmconst?$_cvc_send_1mic_wb_hs_cap_data
+                0x00700028       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700028                $_cvc_send_1mic_wb_hs_cap_data
+ dmconst?$_cvc_send_2mic_hs_mono_nb_cap_data
+                0x00700050       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700050                $_cvc_send_2mic_hs_mono_nb_cap_data
+ dmconst?$_cvc_send_2mic_hs_mono_wb_cap_data
+                0x00700078       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700078                $_cvc_send_2mic_hs_mono_wb_cap_data
+ dmconst?$_cvc_send_2mic_hs_binaural_nb_cap_data
+                0x007000a0       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x007000a0                $_cvc_send_2mic_hs_binaural_nb_cap_data
+ dmconst?$_cvc_send_2mic_hs_binaural_wb_cap_data
+                0x007000c8       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x007000c8                $_cvc_send_2mic_hs_binaural_wb_cap_data
+ dmconst?$_cvc_send_1mic_speaker_nb_cap_data
+                0x007000f0       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x007000f0                $_cvc_send_1mic_speaker_nb_cap_data
+ dmconst?$_cvc_send_1mic_speaker_wb_cap_data
+                0x00700118       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700118                $_cvc_send_1mic_speaker_wb_cap_data
+ dmconst?$_cvc_send_2mic_speaker_nb_cap_data
+                0x00700140       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700140                $_cvc_send_2mic_speaker_nb_cap_data
+ dmconst?$_cvc_send_2mic_speaker_wb_cap_data
+                0x00700168       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700168                $_cvc_send_2mic_speaker_wb_cap_data
+ dmconst?$_cvc_send_handler_table
+                0x00700190       0x28 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700190                $_cvc_send_handler_table
+ dmconst?$_cvc_send_opmsg_handler_table
+                0x007001b8       0x50 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x007001b8                $_cvc_send_opmsg_handler_table
+
+.dmconst_private
+                0x00700208        0x0
+ *.po(DMCONST*)
+ *.po(dmconst*)
+                0x00700208                $MEM_MAP_CONST_END = <code 343> (.)
+                0x00000208                $CONST_SIZE_BYTES = ($MEM_MAP_CONST_END - $MEM_MAP_CONST_START)
+                0x042049e8                __DM1_ram_address = ((__CONST_ram_address + $CONST_SIZE_BYTES) ALIGN 0x4)
+                0x00700208                . = (. ALIGN 0x4)
+
+.initc_dm1      0x00700208       0x94 load address 0x042049e8
+                0x00700208                $MEM_MAP_DM1_INITC_START = <code 343> (.)
+ *.o(*DM1\?*)
+ *.o(*dm1\?*)
+ *.o(dm\?*)
+ dm?$_cvc_send_caps
+                0x00700208       0x90 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+                0x00700208                $_cvc_send_caps
+ *.o(DM\?*)
+ .initc_dm1     0x00700298        0x4 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+                0x00700298                __devtools_image_checksum
+
+.initc_dm1_private
+                0x0070029c        0x0
+ *.po(*DM1\?*)
+ *.po(*dm1\?*)
+ *.po(dm\?*)
+ *.po(DM\?*)
+                0x0070029c                $MEM_MAP_DM1_INITC_END = <code 343> (.)
+                0x00000094                $INITC_DM1_SIZE = ($MEM_MAP_DM1_INITC_END - $MEM_MAP_DM1_INITC_START)
+                0x04204a7c                __DATA_zero_init_address = ((__DM1_ram_address + $INITC_DM1_SIZE) ALIGN 0x4)
+
+.zeroinit       0x0070029c        0x0 load address 0x04204a7c
+                0x0070029c                $MEM_MAP_BSS_START = <code 343> (.)
+ *.o(dmzi*)
+ *.o(DMZI*)
+ *.o(*DM1_ZI\?*)
+ *.o(*dm1_zi\?*)
+
+.zeroinit_private
+                0x0070029c        0x0
+ *.po(dmzi*)
+ *.po(DMZI*)
+ *.po(*DM1_ZI\?*)
+ *.po(*dm1_zi\?*)
+                0x0070029c                $MEM_MAP_BSS_END = <code 343> (.)
+                0x0073f3a0                . = (($DATA_RAM_END_ADDRESS - $PRESERVE_BLOCK_SIZE_BYTES) - $STACK_SIZE_BYTES)
+
+.stack          0x0073f3a0        0x0
+                0x0073f3a0                $MEM_MAP_STACK_START = <code 343> (.)
+ *(STACK_DM*)
+                0x0073f3a0                $MEM_MAP_STACK_END = <code 343> (.)
+                0x0073ffa0                . = ($DATA_RAM_END_ADDRESS - $PRESERVE_BLOCK_SIZE_BYTES)
+
+.preserve       0x0073ffa0        0x0
+                0x0073ffa0                $MEM_PRESERVE_START = <code 343> (.)
+ *(DM_PRESERVE_BLOCK*)
+                0x0073ffa0                $MEM_PRESERVE_END = <code 343> (.)
+                0x0073ffa0                $DM1_END_ADDRESS = .
+                0x15500000                . = 0x15500000
+
+debug_strings
+ *(DEBUG_TRACE_STRINGS*)
+                0x00000000                $MEM_MAP_BSS_LENGTH_DWORDS = ((SIZEOF (.zeroinit) + 0x3) / 0x4)
+                0x001049e8                $MEM_MAP_DM1_INITC_ROM_ADDR = ($DATA_PM_RAM_WINDOW + <code 343> ((__DM1_ram_address - __CODE_ram_address)))
+                0x00700000                $DM1_REGION.__Base = $DM1_START_ADDRESS
+                0x0073ffa0                $DM1_REGION.__Limit = $DM1_END_ADDRESS
+                0xff800004                $DM2_REGION.__Base = $DM2_START_ADDRESS
+                0xff800004                $DM2_REGION.__Limit = $DM2_END_ADDRESS
+                0x00000025                $DM1_INIT_SIZE_DWORDS = ((SIZEOF (.initc_dm1) + 0x3) / 0x4)
+                0x00100ef0                $MEM_MAP_DM2_INITC_ROM_ADDR = ($DATA_PM_RAM_WINDOW + <code 343> ((__DM2_ram_address - __CODE_ram_address)))
+                0x00000000                $DM2_INIT_SIZE_DWORDS = (($DM2_INIT_SIZE_BYTES + 0x3) / 0x4)
+                0xff800004                $DM_DNLD_CONST16_REGION.__Base = $CONST16_START
+                0xff802da3                $DM_DNLD_CONST16_REGION.__Limit = ($CONST16_END - 0x1)
+                0xff802da4                $DM_DNLD_CONST32_REGION.__Base = $CONST32_START
+                0xff8038f3                $DM_DNLD_CONST32_REGION.__Limit = ($CONST32_END - 0x1)
+                0x00700000                $DMCONST_DNLD_REGION.__Base = $MEM_MAP_CONST_START
+                0x00700207                $DMCONST_DNLD_REGION.__Limit = ($MEM_MAP_CONST_END - 0x1)
+                0x00700298                $__devtools_image_checksum = __devtools_image_checksum
+START GROUP
+LOAD D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+LOAD D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a
+LOAD D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\cbops\debugbin\libcbops.a
+LOAD D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\op_data_access\debugbin\libop_data_access.a
+LOAD D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a
+LOAD C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\audio\kalimba_ROM_4786\kymera\output\stre_rom_v02_release\build\debugbin\kymera_stre_audio.elf
+LOAD C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools\kcc\lib\QCC302x_audio\libc.a
+LOAD C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools\kcc\lib\QCC302x_audio\libfle.a
+LOAD C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\tools\kcc\lib\QCC302x_audio\libcrt.a
+END GROUP
+OUTPUT(D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugbin\download_cvc_send.elf elf32-littlekalimba)
+
+.debug_comment  0x00000000      0x48c
+ .debug_comment
+                0x00000000       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_comment
+                0x00000067       0xaa D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_comment
+                0x00000111       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_comment
+                0x00000178       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_comment
+                0x000001df       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_comment
+                0x00000246       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_comment
+                0x000002ad       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_comment
+                0x00000314       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_comment
+                0x0000037b       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_comment
+                0x000003e2       0xaa D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_line     0x00000000     0x6141
+ .debug_line    0x00000000       0xea D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_line    0x000000ea     0x306d D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_line    0x00003157      0x593 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_line    0x000036ea       0xcf D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_line    0x000037b9       0xcf D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_line    0x00003888       0xcf D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_line    0x00003957       0xcf D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_line    0x00003a26      0xa6a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_line    0x00004490      0x14f D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_line    0x000045df     0x1b62 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_info     0x00000000     0xb7dc
+ .debug_info    0x00000000      0x14f D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_info    0x0000014f     0x89ff D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_info    0x00008b4e      0x370 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_info    0x00008ebe      0x1ec D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_info    0x000090aa      0x1ec D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_info    0x00009296      0x1ec D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_info    0x00009482      0x1ec D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_info    0x0000966e      0x771 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_info    0x00009ddf       0xec D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_info    0x00009ecb     0x1911 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_abbrev   0x00000000      0x667
+ .debug_abbrev  0x00000000       0x69 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_abbrev  0x00000069      0x21f D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_abbrev  0x00000288       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_abbrev  0x000002ef       0x63 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_abbrev  0x00000352       0x63 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_abbrev  0x000003b5       0x63 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_abbrev  0x00000418       0x63 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_abbrev  0x0000047b       0x67 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_abbrev  0x000004e2       0x69 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_abbrev  0x0000054b      0x11c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_aranges  0x00000000      0x2d8
+ .debug_aranges
+                0x00000000       0x20 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_aranges
+                0x00000020       0xc0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_aranges
+                0x000000e0       0x88 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_aranges
+                0x00000168        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_aranges
+                0x00000168        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_aranges
+                0x00000168        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_aranges
+                0x00000168        0x0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_aranges
+                0x00000168      0x118 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_aranges
+                0x00000280       0x20 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_aranges
+                0x000002a0       0x38 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_pubnames
+                0x00000000      0x6ea
+ .debug_pubnames
+                0x00000000       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+ .debug_pubnames
+                0x00000012      0x40a D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_pubnames
+                0x0000041c       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_pubnames
+                0x0000042e       0x7c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_1mic.o)
+ .debug_pubnames
+                0x000004aa       0x7c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_headset_2mic.o)
+ .debug_pubnames
+                0x00000526       0x7c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_1mic.o)
+ .debug_pubnames
+                0x000005a2       0x7c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_speaker_2mic.o)
+ .debug_pubnames
+                0x0000061e       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)
+ .debug_pubnames
+                0x00000630       0x12 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(pass_through.o)
+ .debug_pubnames
+                0x00000642       0xa8 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_comment.1
+                0x00000000       0x2f
+ .debug_comment
+                0x00000000       0x2f D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+
+.note.ABI-tag   0x00000000       0x10
+ .note.ABI-tag  0x00000000       0x10 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugobj\kdc_start.o
+
+.debug_loc      0x00000000      0xd5e
+ .debug_loc     0x00000000      0xc06 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_loc     0x00000c06      0x158 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_frame    0x00000000      0x44c
+ .debug_frame   0x00000000      0x37c D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send.o)
+ .debug_frame   0x0000037c       0xd0 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\support_lib\stream\debugbin\libstream.a(stream_delegate_rate_adjust.o)
+
+.debug_ranges   0x00000000      0x190
+ .debug_ranges  0x00000000       0x80 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(cvc_send_proc.o)
+ .debug_ranges  0x00000080      0x110 D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\capabilities\cvc_send\debugbin\libcvc_send.a(config_functions.o)

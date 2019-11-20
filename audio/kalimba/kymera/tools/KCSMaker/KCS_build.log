@@ -1,0 +1,29 @@
+2019-11-18 16:11:31,023 Initialising KCSMaker...
+2019-11-18 16:11:31,180 Loading release build info...
+2019-11-18 16:11:31,224 DONE
+2019-11-18 16:11:32,203 Building KCS download_cvc_send
+2019-11-18 16:11:32,203 DOWNLOAD_CONFIG = stre_rom_v02_release
+2019-11-18 16:11:32,203 RELEASE_FLAG = False
+2019-11-18 16:11:32,203 CAPABILITIES_PATH = D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\capabilities
+2019-11-18 16:11:32,204 KYMERA_SRC_PATH = ../..
+2019-11-18 16:11:32,204 BUNDLE_NAME = download_cvc_send
+2019-11-18 16:11:32,204 BUILD_DIR = C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\audio\kalimba_ROM_4786\kymera\output\stre_rom_v02_release\build
+2019-11-18 16:11:32,204 BUILD_NAME = kymera_stre_audio
+2019-11-18 16:11:32,204 BUILD_ROOT = C:\qtil\ADK_QCC512x_QCC302x_WIN_6.3.0.154\audio\kalimba\kymera\build
+2019-11-18 16:11:32,204 BUILD_ID = 4786
+2019-11-18 16:11:32,204 KCS_OUTPUT_DIR = D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release
+2019-11-18 16:11:32,204 KCSMAKER_PATH = D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker
+2019-11-18 16:11:32,204 LINKSCRIPT_PATH = D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\templates\linkscript_stre
+2019-11-18 16:11:32,204 LABEL_NAME = 
+2019-11-18 16:11:32,204 Generating KCS file D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugbin\download_cvc_send.kcs ...
+2019-11-18 16:11:32,204 Generating KDC download_cvc_send
+2019-11-18 16:11:32,206 Building [('cvc_send_1mic_nb_hs', 16402, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_wb_hs', 16403, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_mono_nb', 16404, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_mono_wb', 16405, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_binaural_nb', 16406, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_binaural_wb', 16407, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_speaker_wb', 16387, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_speaker_nb', 16408, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_speaker_nb', 16409, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_speaker_wb', 16410, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND'])] capabilities ...
+2019-11-18 16:11:38,703 [('cvc_send_1mic_nb_hs', 16402, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_wb_hs', 16403, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_mono_nb', 16404, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_mono_wb', 16405, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_binaural_nb', 16406, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_hs_binaural_wb', 16407, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_speaker_wb', 16387, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_1mic_speaker_nb', 16408, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_speaker_nb', 16409, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND']), ('cvc_send_2mic_speaker_wb', 16410, 'cvc_send', ['config.MODIFY_CAP_DOWNLOAD_BUILD', 'config.MODIFY_DOWNLOAD_CVC_SEND'])] capabilities successfully built.
+2019-11-18 16:11:38,713 cap_names['cvc_send']
+2019-11-18 16:11:38,713 support_lib_names['cbops', 'op_data_access', 'stream']
+2019-11-18 16:11:38,713 comp_names[]
+2019-11-18 16:11:38,713 lib_names[]
+2019-11-18 16:11:38,713 lib_private_names[]
+2019-11-18 16:11:38,713 prebuilt_lib_names[]
+2019-11-18 16:11:38,713 oFiles['D:\\LfjWorksapce\\QCC\\workspace\\qcc5120\\adk630154-1019\\audio\\kalimba\\kymera\\tools\\KCSMaker\\out\\stre_rom_v02_release\\capabilities\\cvc_send\\debugbin\\libcvc_send.a', 'D:\\LfjWorksapce\\QCC\\workspace\\qcc5120\\adk630154-1019\\audio\\kalimba\\kymera\\tools\\KCSMaker\\out\\stre_rom_v02_release\\support_lib\\cbops\\debugbin\\libcbops.a', 'D:\\LfjWorksapce\\QCC\\workspace\\qcc5120\\adk630154-1019\\audio\\kalimba\\kymera\\tools\\KCSMaker\\out\\stre_rom_v02_release\\support_lib\\op_data_access\\debugbin\\libop_data_access.a', 'D:\\LfjWorksapce\\QCC\\workspace\\qcc5120\\adk630154-1019\\audio\\kalimba\\kymera\\tools\\KCSMaker\\out\\stre_rom_v02_release\\support_lib\\stream\\debugbin\\libstream.a', 'C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154\\tools\\kcc\\lib\\QCC302x_audio\\libc.a', 'C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154\\tools\\kcc\\lib\\QCC302x_audio\\libcrt.a', 'C:/qtil/ADK_QCC512x_QCC302x_WIN_6.3.0.154\\tools\\kcc\\lib\\QCC302x_audio\\libfle.a', 'D:\\LfjWorksapce\\QCC\\workspace\\qcc5120\\adk630154-1019\\audio\\kalimba\\kymera\\tools\\KCSMaker\\out\\stre_rom_v02_release\\download\\debugobj\\kdc_start.o']
+2019-11-18 16:11:38,713 Initialising make_kdc object...

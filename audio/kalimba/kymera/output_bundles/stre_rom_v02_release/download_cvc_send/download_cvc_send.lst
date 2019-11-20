@@ -1,0 +1,3696 @@
+
+D:\LfjWorksapce\QCC\workspace\qcc5120\adk630154-1019\audio\kalimba\kymera\tools\KCSMaker\out\stre_rom_v02_release\download\debugbin\download_cvc_send.elf:     file format elf32-littlekalimba
+
+Disassembly of section .text_minim:
+
+84200000 <$_cvc_send_create>:
+    external_constant_release(op_extra_data->dyn_main,op_data->id);
+#endif
+}
+
+bool cvc_send_create(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+84200000:	f3 1c       	pushm <FP(=SP), r4, r5, r6, rLink>;
+84200002:	17 00       	r5 = r0 + Null;
+84200004:	28 09       	r6 = r3 + Null;
+    CVC_SEND_OP_DATA *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+84200006:	3e 99       	r4 = M[r5 + 48];
+    PS_KEY_TYPE key;
+
+    patch_fn_shared(cvc_send_wrapper);
+    /* Setup Response to Creation Request.   Assume Failure*/
+    *response_id = OPCMD_CREATE;
+84200008:	20 ee       	M[r2 + Null] = Null;
+    if((*response_data = MakeStandardResponse_SND(op_data->id))==NULL)
+8420000a:	7a 88       	r0 = M[r5 + 4];
+8420000c:	02 f0 33 ef 	call (m) $_MakeStandardResponse_SND;
+84200010:	82 f0 00 ee 	M[r6 + Null] = r0;
+84200014:	81 f0 00 e8 	rMAC = M[r6 + Null];
+84200018:	06 62       	if NE jump (m) Lc_cvc_send_create_3;
+
+8420001a <Lc_cvc_send_create_2>:
+    {
+        /* We call cvc_send_release_constants as there is a slim chance we fail on
+         * the second pass through */
+        cvc_send_release_constants(op_data);
+8420001a:	3a 00       	r0 = r5 + Null;
+8420001c:	03 f0 2f e4 	call (m) $_cvc_send_release_constants;
+        return(FALSE);
+84200020:	02 00       	r0 = Null + Null;
+84200022:	4b 6e       	jump (m) Lc_cvc_send_create_12;
+
+84200024 <Lc_cvc_send_create_3>:
+    }
+
+    /* Initialize extended data for operator.  Assume intialized to zero*/
+    op_extra_data->cap_id = op_data->cap_data->id;
+84200024:	79 89       	rMAC = M[r5 + 20];
+84200026:	09 e8       	rMAC = M[rMAC + Null];
+84200028:	b1 be       	M[r4 + 104] = rMAC;
+
+    /* Capability Specific Configuration */
+    if (FALSE == cvc_send_config(op_extra_data)) {
+8420002a:	32 00       	r0 = r4 + Null;
+8420002c:	03 f0 21 e4 	call (m) Lc_cvc_send_config_1;
+84200030:	10 04       	Null = r0 - Null;
+84200032:	1a 60       	if EQ jump (m) Lc_cvc_send_create_8;
+
+84200034 <Lc_cvc_send_create_4>:
+        L4_DBG_MSG("cvc_send_create - requesting callback when constants available");
+        return (bool)HANDLER_INCOMPLETE;
+    }
+#endif
+
+    op_extra_data->isWideband = op_extra_data->data_variant; 
+84200034:	61 f0 21 88 	rMAC = M[r4 + 132];
+84200038:	f1 bf       	M[r4 + 124] = rMAC;
+
+    patch_fn_shared(cvc_send_wrapper);
+
+
+    /*allocate the volume control shared memory*/
+    op_extra_data->shared_volume_ptr = allocate_shared_volume_cntrl();
+8420003a:	ff fd 8b f0 	call (m) 0x1181c;
+8420003e:	23 ef 
+84200040:	b2 af       	M[r4 + 88] = r0;
+    if(!op_extra_data->shared_volume_ptr)
+84200042:	b1 a9       	rMAC = M[r4 + 88];
+84200044:	0e 60       	if EQ jump (m) Lc_cvc_send_create_7;
+
+84200046 <Lc_cvc_send_create_5>:
+        cvc_send_release_constants(op_data);
+        return(TRUE);
+    }
+
+    /* call the "create" assembly function */
+    if(CVC_SEND_CAP_Create(op_extra_data))
+84200046:	32 00       	r0 = r4 + Null;
+84200048:	03 f0 31 ee 	call (m) $_CVC_SEND_CAP_Create;
+8420004c:	10 04       	Null = r0 - Null;
+8420004e:	0e 60       	if EQ jump (m) Lc_cvc_send_create_9;
+
+84200050 <Lc_cvc_send_create_6>:
+    {
+        /* Free all the scratch memory we reserved */
+        CVC_SEND_CAP_Destroy(op_extra_data);
+84200050:	32 00       	r0 = r4 + Null;
+84200052:	04 f0 39 e6 	call (m) $_CVC_SEND_CAP_Destroy;
+        release_shared_volume_cntrl(op_extra_data->shared_volume_ptr);
+84200056:	b2 a9       	r0 = M[r4 + 88];
+84200058:	ff fd 8b f0 	call (m) 0x11840;
+8420005c:	29 ef 
+        op_extra_data->shared_volume_ptr = NULL;
+8420005e:	b0 af       	M[r4 + 88] = Null;
+
+84200060 <Lc_cvc_send_create_7>:
+
+    /*allocate the volume control shared memory*/
+    op_extra_data->shared_volume_ptr = allocate_shared_volume_cntrl();
+    if(!op_extra_data->shared_volume_ptr)
+    {
+        cvc_send_release_constants(op_data);
+84200060:	3a 00       	r0 = r5 + Null;
+84200062:	03 f0 29 e2 	call (m) $_cvc_send_release_constants;
+
+84200066 <Lc_cvc_send_create_8>:
+    /* Initialize extended data for operator.  Assume intialized to zero*/
+    op_extra_data->cap_id = op_data->cap_data->id;
+
+    /* Capability Specific Configuration */
+    if (FALSE == cvc_send_config(op_extra_data)) {
+        return(TRUE);
+84200066:	42 20       	r0 = Null + 1;
+84200068:	28 6e       	jump (m) Lc_cvc_send_create_12;
+
+8420006a <Lc_cvc_send_create_9>:
+        op_extra_data->shared_volume_ptr = NULL;
+        cvc_send_release_constants(op_data);
+        return(TRUE);
+    }
+
+    if(!cvc_send_register_component((void*)op_extra_data))
+8420006a:	32 00       	r0 = r4 + Null;
+8420006c:	ff fd b4 f3 	call 0x76894;
+84200070:	28 e1 
+84200072:	10 04       	Null = r0 - Null;
+84200074:	ee 61       	if EQ jump (m) Lc_cvc_send_create_6;
+
+84200076 <Lc_cvc_send_create_10>:
+        cvc_send_release_constants(op_data);
+        return(TRUE);
+    }
+
+
+    if(!cpsInitParameters(&op_extra_data->parms_def,(unsigned*)CVC_SEND_GetDefaults(op_extra_data->cap_id),(unsigned*)op_extra_data->params,sizeof(CVC_SEND_PARAMETERS)))
+84200076:	b2 b8       	r0 = M[r4 + 104];
+84200078:	ff fd 57 f1 	call (m) 0x2b000;
+8420007c:	29 ec 
+8420007e:	13 00       	r1 = r0 + Null;
+84200080:	05 f0 20 42 	r3 = Null + 544;
+84200084:	34 99       	r2 = M[r4 + 48];
+84200086:	62 f0 d4 20 	r0 = r4 + 212;
+8420008a:	ff fd 01 f0 	call (m) 0x424;
+8420008e:	3b ec 
+84200090:	10 04       	Null = r0 - Null;
+84200092:	df 61       	if EQ jump (m) Lc_cvc_send_create_6;
+
+84200094 <Lc_cvc_send_create_11>:
+        cvc_send_release_constants(op_data);
+        return(TRUE);
+    }
+
+	 /* Read state info from UCID 0 */
+    key = MAP_CAPID_UCID_SBID_TO_PSKEYID(op_extra_data->cap_id,0,OPMSG_P_STORE_STATE_VARIABLE_SUB_ID);
+84200094:	b1 b8       	rMAC = M[r4 + 104];
+84200096:	8a c6       	r0 = rMAC AND 0xffff;
+84200098:	92 55       	r0 = r0 LSHIFT 7;
+8420009a:	13 c8       	r1 = r0 OR 0x1;
+    ps_entry_read((void*)op_data,key,PERSIST_ANY,ups_state_snd);
+8420009c:	42 f0 05 f0 	r3 = Null + 69207595;
+842000a0:	2b 4a 
+842000a2:	04 00       	r2 = Null + Null;
+842000a4:	3a 00       	r0 = r5 + Null;
+842000a6:	ff fd 28 f1 	call (m) 0x25204;
+842000aa:	3f ea 
+
+    /* operator state variable set to not running state. based on base_op.c */
+    op_data->state = OP_NOT_RUNNING;
+842000ac:	41 20       	rMAC = Null + 1;
+842000ae:	39 ba       	MB[r5 + 24] = rMAC;
+ * \param  response_data Pointer to the pointer to message that is allocated in the function.
+ * \param  new_status  A status ID that is to be sent in the message.
+ */
+inline static void base_op_change_response_status(void **response_data, STATUS_KYMERA new_status)
+{
+    (((OP_STD_RSP *)(*response_data))->status = new_status);
+842000b0:	81 f0 00 e8 	rMAC = M[r6 + Null];
+842000b4:	48 8e       	M[rMAC + 4] = Null;
+842000b6:	d8 6f       	jump (m) Lc_cvc_send_create_8;
+
+842000b8 <Lc_cvc_send_create_12>:
+
+    base_op_change_response_status(response_data,STATUS_OK);
+    return TRUE;
+}
+842000b8:	f3 48       	popm <FP, r4, r5, r6, rLink>;
+842000ba:	d8 4c       	rts;
+
+842000bc <$_cvc_send_destroy>:
+{
+    return TRUE;
+}
+
+bool cvc_send_destroy(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+842000bc:	f3 1d       	pushm <FP(=SP), r4, r5, r6, rLink>, SP = SP + 0x10;
+842000be:	17 00       	r5 = r0 + Null;
+842000c0:	28 09       	r6 = r3 + Null;
+    CVC_SEND_OP_DATA *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842000c2:	3e 99       	r4 = M[r5 + 48];
+
+    /* Setup Response to Destroy Request.*/
+    if(!base_op_destroy(op_data, message_data, response_id, response_data))
+842000c4:	ef fd ff ff 	call (m) 0xac;
+842000c8:	29 ef 
+842000ca:	10 04       	Null = r0 - Null;
+842000cc:	06 62       	if NE jump (m) Lc_cvc_send_destroy_3;
+
+842000ce <Lc_cvc_send_destroy_2>:
+    {
+        cvc_send_release_constants(op_data);
+842000ce:	3a 00       	r0 = r5 + Null;
+842000d0:	02 f0 3b ee 	call (m) $_cvc_send_release_constants;
+        return(FALSE);
+842000d4:	02 00       	r0 = Null + Null;
+842000d6:	26 6e       	jump (m) Lc_cvc_send_destroy_4;
+
+842000d8 <Lc_cvc_send_destroy_3>:
+    }
+
+    /* calling the "destroy" assembly function - this frees up all the capability-internal memory */
+    CVC_SEND_CAP_Destroy(op_extra_data);
+842000d8:	32 00       	r0 = r4 + Null;
+842000da:	04 f0 31 e2 	call (m) $_CVC_SEND_CAP_Destroy;
+
+    /*free volume control shared memory*/
+    release_shared_volume_cntrl(op_extra_data->shared_volume_ptr);
+842000de:	b2 a9       	r0 = M[r4 + 88];
+842000e0:	ff fd 8b f0 	call (m) 0x11840;
+842000e4:	21 eb 
+    op_extra_data->shared_volume_ptr = NULL;
+842000e6:	b0 af       	M[r4 + 88] = Null;
+842000e8:	81 f0 00 e8 	rMAC = M[r6 + Null];
+842000ec:	48 8e       	M[rMAC + 4] = Null;
+
+    base_op_change_response_status(response_data,STATUS_OK);
+
+	/* Save state info to ucid 0 */
+      {
+          unsigned key = MAP_CAPID_UCID_SBID_TO_PSKEYID(op_extra_data->cap_id,0,OPMSG_P_STORE_STATE_VARIABLE_SUB_ID);
+842000ee:	b1 b8       	rMAC = M[r4 + 104];
+842000f0:	8a c6       	r0 = rMAC AND 0xffff;
+842000f2:	92 55       	r0 = r0 LSHIFT 7;
+842000f4:	13 c8       	r1 = r0 OR 0x1;
+          uint16 state_data[2];
+
+          state_data[0] = (op_extra_data->mdgc_gain>>16)&0xFFFF;
+842000f6:	f2 a9       	r0 = M[r4 + 92];
+842000f8:	92 52       	r0 = r0 LSHIFT -16;
+842000fa:	52 dc       	MH[FP + 20] = r0;
+		    state_data[1] = op_extra_data->mdgc_gain&0xFFFF;
+842000fc:	f1 a9       	rMAC = M[r4 + 92];
+842000fe:	89 c6       	rMAC = rMAC AND 0xffff;
+84200100:	59 dc       	MH[FP + 22] = rMAC;
+          ps_entry_write((void*)op_data,key,PERSIST_ANY,2,state_data,cvc_send_ups_set_state);
+84200102:	42 f0 06 f0 	push Null + 69207587;
+84200106:	53 e2 
+84200108:	41 11       	rMAC = FP + 20;
+8420010a:	09 1c       	pushm <rMAC>;
+8420010c:	85 20       	r3 = Null + 2;
+8420010e:	04 00       	r2 = Null + Null;
+84200110:	3a 00       	r0 = r5 + Null;
+84200112:	ff fd 28 f1 	call (m) 0x25256;
+84200116:	25 ea 
+84200118:	7e 4c       	SP = SP + -8;
+      }
+
+    cvc_send_release_constants(op_data);
+8420011a:	3a 00       	r0 = r5 + Null;
+8420011c:	02 f0 2f ec 	call (m) $_cvc_send_release_constants;
+
+    return(TRUE);
+84200120:	42 20       	r0 = Null + 1;
+
+84200122 <Lc_cvc_send_destroy_4>:
+}
+84200122:	f3 49       	SP = SP - 0x10, popm <FP, r4, r5, r6, rLink>;
+84200124:	d8 4c       	rts;
+
+84200126 <$_cvc_send_connect>:
+    }
+    return(TRUE);
+}
+
+bool cvc_send_connect(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+84200126:	f5 1c       	pushm <FP(=SP), r4, r5, r6, r7, r8, rLink>;
+84200128:	10 09       	r6 = r0 + Null;
+8420012a:	29 09       	r7 = r3 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+8420012c:	86 f0 0c 88 	r4 = M[r6 + 48];
+    unsigned terminal_id   = ((unsigned*)message_data)[0];    /* extract the terminal_id */
+84200130:	1f e8       	r5 = M[r1 + Null];
+    tCbuffer* pterminal_buf = (tCbuffer*)(uintptr_t)(((unsigned *)message_data)[1]);
+84200132:	3a f0 01 88 	r8 = M[r1 + 4];
+
+    patch_fn_shared(cvc_send_wrapper);
+
+    /* Setup Response to Connection Request.   Assume Failure*/
+    *response_id = OPCMD_CONNECT;
+84200136:	41 21       	rMAC = Null + 5;
+84200138:	21 ee       	M[r2 + Null] = rMAC;
+    if((*response_data = MakeStandardResponse_SND(op_data->id))==NULL)
+8420013a:	82 f0 01 88 	r0 = M[r6 + 4];
+8420013e:	02 f0 21 e6 	call (m) $_MakeStandardResponse_SND;
+84200142:	92 f0 00 ee 	M[r7 + Null] = r0;
+84200146:	91 f0 00 e8 	rMAC = M[r7 + Null];
+8420014a:	03 62       	if NE jump (m) Lc_cvc_send_connect_3;
+
+8420014c <Lc_cvc_send_connect_2>:
+    {
+        return(FALSE);
+8420014c:	02 00       	r0 = Null + Null;
+8420014e:	37 6e       	jump (m) Lc_cvc_send_connect_14;
+
+84200150 <Lc_cvc_send_connect_3>:
+    }
+
+    /* (i)  check if the terminal ID is valid . The number has to be less than the maximum number of sinks or sources .  */
+    /* (ii) check if we are connecting to the right type . It has to be a buffer pointer and not endpoint connection */
+    if( !base_op_is_terminal_valid(op_data, terminal_id) || !pterminal_buf)
+84200150:	3b 00       	r1 = r5 + Null;
+84200152:	42 08       	r0 = r6 + Null;
+84200154:	ff fd 00 f0 	call (m) 0x1de;
+84200158:	2b e4 
+8420015a:	10 04       	Null = r0 - Null;
+8420015c:	04 60       	if EQ jump (m) Lc_cvc_send_connect_5;
+
+8420015e <Lc_cvc_send_connect_4>:
+8420015e:	0f fa 00 c2 	Null = r8 - Null;
+84200162:	07 62       	if NE jump (m) Lc_cvc_send_connect_6;
+
+84200164 <Lc_cvc_send_connect_5>:
+84200164:	01 f0 03 60 	rMAC = Null + 4099;
+84200168:	92 f0 00 e8 	r0 = M[r7 + Null];
+8420016c:	51 8e       	M[r0 + 4] = rMAC;
+8420016e:	26 6e       	jump (m) Lc_cvc_send_connect_13;
+
+84200170 <Lc_cvc_send_connect_6>:
+        base_op_change_response_status(response_data,STATUS_INVALID_CMD_PARAMS);
+        return TRUE;
+    }
+
+    /* Allow Connect while running.  Disable processing until all are connected */
+    op_extra_data->op_all_connected = FALSE;
+84200170:	70 be       	M[r4 + 100] = Null;
+
+    /* check if the terminal is already connected and if not , connect the terminal */
+    /* set the terminal buffer to the Cbuffer pointer */
+    /* set the "connected" field of the terminal to TRUE */
+    /* connect the appropriate stream map */
+    if(terminal_id & TERMINAL_SINK_MASK)
+84200172:	40 f0 71 f0 	rMAC = r5 AND 0x800000;
+84200176:	00 00 
+84200178:	14 60       	if EQ jump (m) Lc_cvc_send_connect_10;
+
+8420017a <Lc_cvc_send_connect_7>:
+    {
+        if (NULL == op_extra_data->input_stream[terminal_id&CVC_SEND_NUM_INPUTS_MASK]->cbuffer)
+8420017a:	3a c1       	r0 = r5 AND 0x7;
+8420017c:	31 00       	rMAC = r4 + Null;
+8420017e:	52 54       	r0 = r0 LSHIFT 2;
+84200180:	51 00       	rMAC = r0 + rMAC;
+84200182:	89 88       	rMAC = M[rMAC + 8];
+84200184:	09 28       	rMAC = rMAC + 16;
+84200186:	0a e8       	r0 = M[rMAC + Null];
+84200188:	04 62       	if NE jump (m) Lc_cvc_send_connect_9;
+
+8420018a <Lc_cvc_send_connect_8>:
+        {
+            op_extra_data->input_stream[terminal_id&CVC_SEND_NUM_INPUTS_MASK]->cbuffer = pterminal_buf;
+8420018a:	1a f0 00 ee 	M[rMAC + Null] = r8;
+8420018e:	0f 6e       	jump (m) Lc_cvc_send_connect_12;
+
+84200190 <Lc_cvc_send_connect_9>:
+        }
+        else
+        {
+            /* Streams should not have reached this point of sending us a
+             * connect for already existing connection */
+            panic_diatribe(PANIC_AUDIO_ALREADY_CONNECTED_OPERATOR_TERMINAL, op_data->id);
+84200190:	83 f0 01 88 	r1 = M[r6 + 4];
+84200194:	22 f0 0e 40 	r0 = Null + 16398;
+84200198:	ff fd 9e f0 	call (m) 0x13f12;
+8420019c:	3b eb 
+8420019e:	0f 6e       	jump (m) Lc_cvc_send_connect_14;
+
+842001a0 <Lc_cvc_send_connect_10>:
+        }
+    }
+    else
+    {
+        if (NULL == op_extra_data->output_stream->cbuffer)
+842001a0:	f1 89       	rMAC = M[r4 + 28];
+842001a2:	09 28       	rMAC = rMAC + 16;
+842001a4:	0a e8       	r0 = M[rMAC + Null];
+842001a6:	f5 63       	if NE jump (m) Lc_cvc_send_connect_9;
+
+842001a8 <Lc_cvc_send_connect_11>:
+        {
+            op_extra_data->output_stream->cbuffer = pterminal_buf;
+842001a8:	1a f0 00 ee 	M[rMAC + Null] = r8;
+
+842001ac <Lc_cvc_send_connect_12>:
+            panic_diatribe(PANIC_AUDIO_ALREADY_CONNECTED_OPERATOR_TERMINAL, op_data->id);
+        }
+    }
+
+    /* Allow Connect while running.  Re-enable processing alter all connections are completed */
+    op_extra_data->op_all_connected = cvc_send_check_all_connected(op_extra_data);
+842001ac:	32 00       	r0 = r4 + Null;
+842001ae:	02 f0 21 e5 	call (m) $_cvc_send_check_all_connected;
+842001b2:	72 be       	M[r4 + 100] = r0;
+842001b4:	91 f0 00 e8 	rMAC = M[r7 + Null];
+842001b8:	48 8e       	M[rMAC + 4] = Null;
+
+842001ba <Lc_cvc_send_connect_13>:
+    /* (i)  check if the terminal ID is valid . The number has to be less than the maximum number of sinks or sources .  */
+    /* (ii) check if we are connecting to the right type . It has to be a buffer pointer and not endpoint connection */
+    if( !base_op_is_terminal_valid(op_data, terminal_id) || !pterminal_buf)
+    {
+        base_op_change_response_status(response_data,STATUS_INVALID_CMD_PARAMS);
+        return TRUE;
+842001ba:	42 20       	r0 = Null + 1;
+
+842001bc <Lc_cvc_send_connect_14>:
+    /* Allow Connect while running.  Re-enable processing alter all connections are completed */
+    op_extra_data->op_all_connected = cvc_send_check_all_connected(op_extra_data);
+
+    base_op_change_response_status(response_data,STATUS_OK);
+    return TRUE;
+}
+842001bc:	f5 48       	popm <FP, r4, r5, r6, r7, r8, rLink>;
+842001be:	d8 4c       	rts;
+
+842001c0 <$_cvc_send_disconnect>:
+
+
+
+bool cvc_send_disconnect(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+842001c0:	f4 1c       	pushm <FP(=SP), r4, r5, r6, r7, rLink>;
+842001c2:	11 09       	r7 = r0 + Null;
+842001c4:	2e 00       	r4 = r3 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842001c6:	98 f0 0c 88 	r6 = M[r7 + 48];
+    unsigned terminal_id = *((unsigned*)message_data);
+842001ca:	1f e8       	r5 = M[r1 + Null];
+
+    /* Setup Response to Disconnection Request.   Assume Failure*/
+    *response_id = OPCMD_DISCONNECT;
+842001cc:	81 21       	rMAC = Null + 6;
+842001ce:	21 ee       	M[r2 + Null] = rMAC;
+    if((*response_data = MakeStandardResponse_SND(op_data->id))==NULL)
+842001d0:	92 f0 01 88 	r0 = M[r7 + 4];
+842001d4:	02 f0 2b e1 	call (m) $_MakeStandardResponse_SND;
+842001d8:	32 ee       	M[r4 + Null] = r0;
+842001da:	31 e8       	rMAC = M[r4 + Null];
+842001dc:	03 62       	if NE jump (m) Lc_cvc_send_disconnect_3;
+
+842001de <Lc_cvc_send_disconnect_2>:
+    {
+        return(FALSE);
+842001de:	02 00       	r0 = Null + Null;
+842001e0:	2e 6e       	jump (m) Lc_cvc_send_disconnect_13;
+
+842001e2 <Lc_cvc_send_disconnect_3>:
+    }
+
+    /* check if the terminal ID is valid . The number has to be less than the maximum number of sinks or sources.  */
+    if(!base_op_is_terminal_valid(op_data, terminal_id))
+842001e2:	3b 00       	r1 = r5 + Null;
+842001e4:	4a 08       	r0 = r7 + Null;
+842001e6:	ef fd ff ff 	call (m) 0x1de;
+842001ea:	39 ef 
+842001ec:	10 04       	Null = r0 - Null;
+842001ee:	06 62       	if NE jump (m) Lc_cvc_send_disconnect_5;
+
+842001f0 <Lc_cvc_send_disconnect_4>:
+842001f0:	01 f0 03 60 	rMAC = Null + 4099;
+842001f4:	32 e8       	r0 = M[r4 + Null];
+842001f6:	51 8e       	M[r0 + 4] = rMAC;
+842001f8:	21 6e       	jump (m) Lc_cvc_send_disconnect_12;
+
+842001fa <Lc_cvc_send_disconnect_5>:
+        base_op_change_response_status(response_data,STATUS_INVALID_CMD_PARAMS);
+        return TRUE;
+    }
+
+    /* Allow Disconnect while running */
+    op_extra_data->op_all_connected = FALSE;
+842001fa:	80 f0 19 8e 	M[r6 + 100] = Null;
+
+    /* check if the terminal is already disconnected and if not , disconnect the terminal */
+    if(terminal_id & TERMINAL_SINK_MASK)
+842001fe:	40 f0 71 f0 	rMAC = r5 AND 0x800000;
+84200202:	00 00 
+84200204:	13 60       	if EQ jump (m) Lc_cvc_send_disconnect_9;
+
+84200206 <Lc_cvc_send_disconnect_6>:
+    {
+        if (NULL != op_extra_data->input_stream[terminal_id&CVC_SEND_NUM_INPUTS_MASK]->cbuffer)
+84200206:	3a c1       	r0 = r5 AND 0x7;
+84200208:	52 54       	r0 = r0 LSHIFT 2;
+8420020a:	10 0d       	r6 = r0 + r6;
+8420020c:	81 f0 02 88 	rMAC = M[r6 + 8];
+84200210:	09 28       	rMAC = rMAC + 16;
+84200212:	0a e8       	r0 = M[rMAC + Null];
+84200214:	03 60       	if EQ jump (m) Lc_cvc_send_disconnect_8;
+
+84200216 <Lc_cvc_send_disconnect_7>:
+        {
+            op_extra_data->input_stream[terminal_id&CVC_SEND_NUM_INPUTS_MASK]->cbuffer = NULL;
+84200216:	08 ee       	M[rMAC + Null] = Null;
+84200218:	0f 6e       	jump (m) Lc_cvc_send_disconnect_11;
+
+8420021a <Lc_cvc_send_disconnect_8>:
+        }
+        else
+        {
+            /* Streams should not have reached this point of sending us a
+             * connect for already existing connection */
+            panic_diatribe(PANIC_AUDIO_ALREADY_CONNECTED_OPERATOR_TERMINAL, op_data->id);
+8420021a:	93 f0 01 88 	r1 = M[r7 + 4];
+8420021e:	22 f0 0e 40 	r0 = Null + 16398;
+84200222:	ff fd 9e f0 	call (m) 0x13f12;
+84200226:	31 e7 
+84200228:	0a 6e       	jump (m) Lc_cvc_send_disconnect_13;
+
+8420022a <Lc_cvc_send_disconnect_9>:
+        }
+    }
+    else
+    {
+        if (NULL != op_extra_data->output_stream->cbuffer)
+8420022a:	81 f0 07 88 	rMAC = M[r6 + 28];
+8420022e:	09 28       	rMAC = rMAC + 16;
+84200230:	0a e8       	r0 = M[rMAC + Null];
+84200232:	f4 61       	if EQ jump (m) Lc_cvc_send_disconnect_8;
+
+84200234 <Lc_cvc_send_disconnect_10>:
+        {
+            op_extra_data->output_stream->cbuffer = NULL;
+84200234:	08 ee       	M[rMAC + Null] = Null;
+
+84200236 <Lc_cvc_send_disconnect_11>:
+84200236:	31 e8       	rMAC = M[r4 + Null];
+84200238:	48 8e       	M[rMAC + 4] = Null;
+
+8420023a <Lc_cvc_send_disconnect_12>:
+
+    /* check if the terminal ID is valid . The number has to be less than the maximum number of sinks or sources.  */
+    if(!base_op_is_terminal_valid(op_data, terminal_id))
+    {
+        base_op_change_response_status(response_data,STATUS_INVALID_CMD_PARAMS);
+        return TRUE;
+8420023a:	42 20       	r0 = Null + 1;
+
+8420023c <Lc_cvc_send_disconnect_13>:
+        }
+    }
+
+    base_op_change_response_status(response_data,STATUS_OK);
+    return TRUE;
+}
+8420023c:	f4 48       	popm <FP, r4, r5, r6, r7, rLink>;
+8420023e:	d8 4c       	rts;
+
+84200240 <$_cvc_send_buffer_details>:
+
+
+bool cvc_send_buffer_details(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+84200240:	f3 1c       	pushm <FP(=SP), r4, r5, r6, rLink>;
+84200242:	18 09       	r6 = r1 + Null;
+84200244:	2f 00       	r5 = r3 + Null;
+    CVC_SEND_OP_DATA   *opx_data;
+    opx_data = (CVC_SEND_OP_DATA*)(op_data->extra_op_data);
+84200246:	16 99       	r4 = M[r0 + 48];
+    if (!base_op_buffer_details(op_data, message_data, response_id, response_data))
+84200248:	ef fd ff ff 	call (m) 0xbe;
+8420024c:	37 e3 
+8420024e:	10 04       	Null = r0 - Null;
+84200250:	03 62       	if NE jump (m) Lc_cvc_send_buffer_details_3;
+
+84200252 <Lc_cvc_send_buffer_details_2>:
+    {
+        return FALSE;
+84200252:	02 00       	r0 = Null + Null;
+84200254:	13 6e       	jump (m) Lc_cvc_send_buffer_details_6;
+
+84200256 <Lc_cvc_send_buffer_details_3>:
+    }
+    /* No inplace support input samples may be dropped */
+    ((OP_BUF_DETAILS_RSP*)*response_data)->b.buffer_size= opx_data->frame_size<<1;
+84200256:	62 f0 2e 88 	r0 = M[r4 + 184];
+8420025a:	39 e8       	rMAC = M[r5 + Null];
+8420025c:	12 54       	r0 = r0 LSHIFT 1;
+8420025e:	0a 8f       	M[rMAC + 16] = r0;
+    
+    if((((unsigned*)message_data)[0])==TERMINAL_SINK_MASK)
+84200260:	81 f0 00 e8 	rMAC = M[r6 + Null];
+84200264:	00 f2 10 f0 	Null = rMAC - 8388608;
+84200268:	00 24 
+8420026a:	07 62       	if NE jump (m) Lc_cvc_send_buffer_details_5;
+
+8420026c <Lc_cvc_send_buffer_details_4>:
+    {
+       /* Reference buffer needs more space */
+       ((OP_BUF_DETAILS_RSP*)*response_data)->b.buffer_size += (opx_data->frame_size>>1);
+8420026c:	63 f0 2e 88 	r1 = M[r4 + 184];
+84200270:	1b 50       	r1 = r1 LSHIFT -1;
+84200272:	99 00       	rMAC = r1 + r0;
+84200274:	3a e8       	r0 = M[r5 + Null];
+84200276:	11 8f       	M[r0 + 16] = rMAC;
+
+84200278 <Lc_cvc_send_buffer_details_5>:
+    }
+
+    return TRUE;
+84200278:	42 20       	r0 = Null + 1;
+
+8420027a <Lc_cvc_send_buffer_details_6>:
+}
+8420027a:	f3 48       	popm <FP, r4, r5, r6, rLink>;
+8420027c:	d8 4c       	rts;
+
+8420027e <$_cvc_send_get_sched_info>:
+
+bool cvc_send_get_sched_info(OPERATOR_DATA *op_data, void *message_data, unsigned *response_id, void **response_data)
+{
+8420027e:	f3 1c       	pushm <FP(=SP), r4, r5, r6, rLink>;
+84200280:	17 00       	r5 = r0 + Null;
+84200282:	2e 00       	r4 = r3 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+84200284:	78 f0 0c 88 	r6 = M[r5 + 48];
+    OP_SCHED_INFO_RSP* resp;
+
+    if (!base_op_get_sched_info(op_data, message_data, response_id, response_data))
+84200288:	ef fd ff ff 	call (m) 0x158;
+8420028c:	31 e6 
+8420028e:	10 04       	Null = r0 - Null;
+84200290:	09 62       	if NE jump (m) Lc_cvc_send_get_sched_info_3;
+
+84200292 <Lc_cvc_send_get_sched_info_2>:
+    {
+        return base_op_build_std_response(STATUS_CMD_FAILED, op_data->id, response_data);
+84200292:	7b 88       	r1 = M[r5 + 4];
+84200294:	02 f0 00 60 	r0 = Null + 4096;
+84200298:	34 00       	r2 = r4 + Null;
+8420029a:	ef fd ff ff 	call (m) 0x204;
+8420029e:	2b eb 
+842002a0:	0c 6e       	jump (m) Lc_cvc_send_get_sched_info_4;
+
+842002a2 <Lc_cvc_send_get_sched_info_3>:
+842002a2:	31 e8       	rMAC = M[r4 + Null];
+842002a4:	48 8e       	M[rMAC + 4] = Null;
+    }
+
+    /* Populate the response*/
+    base_op_change_response_status(response_data, STATUS_OK);
+    resp = *response_data;
+842002a6:	31 e8       	rMAC = M[r4 + Null];
+    resp->op_id = op_data->id;
+842002a8:	7a 88       	r0 = M[r5 + 4];
+842002aa:	0a ee       	M[rMAC + Null] = r0;
+    /* Same buffer size for sink and source.
+     * No additional verification needed.*/
+    
+    resp->block_size = op_extra_data->frame_size;
+842002ac:	82 f0 2e 88 	r0 = M[r6 + 184];
+842002b0:	8a 8e       	M[rMAC + 8] = r0;
+    resp->run_period = 0;
+842002b2:	c8 8e       	M[rMAC + 12] = Null;
+
+    *response_data = resp;
+842002b4:	31 ee       	M[r4 + Null] = rMAC;
+    return TRUE;
+842002b6:	42 20       	r0 = Null + 1;
+
+842002b8 <Lc_cvc_send_get_sched_info_4>:
+}
+842002b8:	f3 48       	popm <FP, r4, r5, r6, rLink>;
+842002ba:	d8 4c       	rts;
+
+842002bc <$_cvc_send_process_data>:
+
+
+/* ************************************* Data processing-related functions and wrappers **********************************/
+
+void cvc_send_process_data(OPERATOR_DATA *op_data, TOUCHED_TERMINALS *touched)
+{
+842002bc:	f5 1c       	pushm <FP(=SP), r4, r5, r6, r7, r8, rLink>;
+842002be:	1a 09       	r8 = r1 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842002c0:	16 99       	r4 = M[r0 + 48];
+    int samples_to_process, stream_amount_data;
+    int mic_index;
+    int frame_size = op_extra_data->frame_size;
+842002c2:	67 f0 2e 88 	r5 = M[r4 + 184];
+
+    patch_fn(cvc_send_process_data_patch);
+
+    /* Bypass processing until all streams are connected */
+    if(!op_extra_data->op_all_connected)
+842002c6:	70 b8       	Null = M[r4 + 100];
+842002c8:	4f 60       	if EQ jump (m) Lc_cvc_send_process_data_17;
+
+842002ca <Lc_cvc_send_process_data_2>:
+    {
+       return;
+    }
+
+    /* number of samples to process at the reference */    
+    samples_to_process = cbuffer_calc_amount_data_in_words(op_extra_data->input_stream[0]->cbuffer);   /* Reference */
+842002ca:	b1 88       	rMAC = M[r4 + 8];
+842002cc:	0a 89       	r0 = M[rMAC + 16];
+842002ce:	ff fd 5f f1 	call (m) 0x2c208;
+842002d2:	3b e9 
+842002d4:	10 09       	r6 = r0 + Null;
+		/* number of samples to process at the mics */  
+    for(mic_index=1; mic_index <= op_extra_data->num_mics; mic_index++)
+842002d6:	09 71       	r7 = Null + 1;
+
+842002d8 <Lc_cvc_send_process_data_3>:
+842002d8:	61 f0 23 88 	rMAC = M[r4 + 140];
+842002dc:	1f f9 00 c2 	Null = r7 - rMAC;
+842002e0:	08 f0 a1 e0 	if HI jump (m) Lc_cvc_send_process_data_7;
+
+842002e4 <Lc_cvc_send_process_data_4>:
+    {
+        stream_amount_data = cbuffer_calc_amount_data_in_words(op_extra_data->input_stream[mic_index]->cbuffer);
+842002e4:	31 22       	rMAC = r4 + 8;
+842002e6:	01 f9 d2 c8 	r0 = r7 LSHIFT 2;
+842002ea:	89 e8       	rMAC = M[rMAC + r0];
+842002ec:	0a 89       	r0 = M[rMAC + 16];
+842002ee:	ff fd 5f f1 	call (m) 0x2c208;
+842002f2:	3b e8 
+        if (stream_amount_data < samples_to_process)
+842002f4:	8f f2 00 c2 	Null = r0 - r6;
+842002f8:	02 66       	if GE jump (m) Lc_cvc_send_process_data_6;
+
+842002fa <Lc_cvc_send_process_data_5>:
+        {
+            samples_to_process = stream_amount_data;
+842002fa:	10 09       	r6 = r0 + Null;
+
+842002fc <Lc_cvc_send_process_data_6>:
+    }
+
+    /* number of samples to process at the reference */    
+    samples_to_process = cbuffer_calc_amount_data_in_words(op_extra_data->input_stream[0]->cbuffer);   /* Reference */
+		/* number of samples to process at the mics */  
+    for(mic_index=1; mic_index <= op_extra_data->num_mics; mic_index++)
+842002fc:	09 75       	r7 = r7 + 1;
+842002fe:	ed 6f       	jump (m) Lc_cvc_send_process_data_3;
+
+84200300 <Lc_cvc_send_process_data_7>:
+            samples_to_process = stream_amount_data;
+        }
+    }
+
+    /* Check for sufficient data and space */
+    if(samples_to_process < frame_size)
+84200300:	7f f8 00 c2 	Null = r6 - r5;
+84200304:	31 68       	if LT jump (m) Lc_cvc_send_process_data_17;
+
+84200306 <Lc_cvc_send_process_data_8>:
+    {
+        return;
+    }
+
+    if (op_extra_data->Ovr_Control & CVC_SEND_CONTROL_MODE_OVERRIDE)
+84200306:	71 b9       	rMAC = M[r4 + 116];
+84200308:	11 f1 00 00 	rMAC = rMAC AND 0x2000;
+8420030c:	05 60       	if EQ jump (m) Lc_cvc_send_process_data_10;
+
+8420030e <Lc_cvc_send_process_data_9>:
+    {
+        op_extra_data->Cur_mode = op_extra_data->Obpm_mode;
+8420030e:	31 b9       	rMAC = M[r4 + 112];
+84200310:	61 f0 20 8e 	M[r4 + 128] = rMAC;
+84200314:	23 6e       	jump (m) Lc_cvc_send_process_data_16;
+
+84200316 <Lc_cvc_send_process_data_10>:
+    }
+    else if (op_extra_data->major_config!=CVC_SEND_CONFIG_HEADSET)
+84200316:	60 f0 22 88 	Null = M[r4 + 136];
+8420031a:	05 60       	if EQ jump (m) Lc_cvc_send_process_data_12;
+
+8420031c <Lc_cvc_send_process_data_11>:
+    {
+        op_extra_data->Cur_mode = op_extra_data->Host_mode;
+8420031c:	f1 b8       	rMAC = M[r4 + 108];
+8420031e:	61 f0 20 8e 	M[r4 + 128] = rMAC;
+84200322:	1c 6e       	jump (m) Lc_cvc_send_process_data_16;
+
+84200324 <Lc_cvc_send_process_data_12>:
+    }
+    else
+    {
+        unsigned temp = op_extra_data->Cur_mode;
+84200324:	61 f0 20 88 	rMAC = M[r4 + 128];
+        if ((temp == CVC_SEND_SYSMODE_FULL) || (temp == CVC_SEND_SYSMODE_LOWVOLUME) )
+84200328:	88 24       	Null = rMAC - 2;
+8420032a:	03 60       	if EQ jump (m) Lc_cvc_send_process_data_14;
+
+8420032c <Lc_cvc_send_process_data_13>:
+8420032c:	c8 24       	Null = rMAC - 3;
+8420032e:	f7 63       	if NE jump (m) Lc_cvc_send_process_data_11;
+
+84200330 <Lc_cvc_send_process_data_14>:
+        {
+           /* TODO - need to redefine OFFSET_LVMODE_THRES to dB/60 */
+           unsigned vol_level = 15 - (((int)op_extra_data->shared_volume_ptr->current_volume_level)/(-360));
+84200330:	b2 a9       	r0 = M[r4 + 88];
+84200332:	f3 f7 98 7a 	r1 = Null + -360;
+84200336:	92 88       	r0 = M[r0 + 8];
+84200338:	9a 4c       	Div = r0 / r1;
+8420033a:	c2 4c       	r0 = DivResult;
+8420033c:	07 f2 52 d6 	r0 = 15 - r0;
+
+           if (vol_level < op_extra_data->params->OFFSET_LVMODE_THRES)
+           {
+               op_extra_data->Cur_mode = CVC_SEND_SYSMODE_LOWVOLUME;
+84200340:	33 99       	r1 = M[r4 + 48];
+84200342:	34 f0 55 88 	r2 = M[r1 + 340];
+84200346:	c3 20       	r1 = Null + 3;
+84200348:	10 05       	Null = r0 - r2;
+8420034a:	a2 f0 43 ce 	if C r1 = Null + 2;
+8420034e:	63 f0 20 8e 	M[r4 + 128] = r1;
+           else
+           {
+               op_extra_data->Cur_mode = CVC_SEND_SYSMODE_FULL;
+           }
+
+           if (temp != op_extra_data->Cur_mode)
+84200352:	c8 04       	Null = rMAC - r1;
+84200354:	03 60       	if EQ jump (m) Lc_cvc_send_process_data_16;
+
+84200356 <Lc_cvc_send_process_data_15>:
+           {
+               op_extra_data->ReInitFlag = 1;
+84200356:	41 20       	rMAC = Null + 1;
+84200358:	b1 bf       	M[r4 + 120] = rMAC;
+
+8420035a <Lc_cvc_send_process_data_16>:
+           op_extra_data->Cur_mode = op_extra_data->Host_mode;
+        }
+    }
+
+    /* call the "process" assembly function */
+    CVC_SEND_CAP_Process(op_extra_data);
+8420035a:	32 00       	r0 = r4 + Null;
+8420035c:	03 f0 21 e4 	call (m) $_CVC_SEND_CAP_Process;
+
+    /* touched output */
+    touched->sources = TOUCHED_SOURCE_0;
+84200360:	41 20       	rMAC = Null + 1;
+84200362:	a1 f0 00 ee 	M[r8 + Null] = rMAC;
+
+84200366 <Lc_cvc_send_process_data_17>:
+}
+84200366:	f5 48       	popm <FP, r4, r5, r6, r7, r8, rLink>;
+84200368:	d8 4c       	rts;
+
+8420036a <$_cvc_send_opmsg_obpm_set_control>:
+/* **************************** Operator message handlers ******************************** */
+
+
+
+bool cvc_send_opmsg_obpm_set_control(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+8420036a:	f6 1d       	pushm <FP(=SP), r4, r5, r6, r7, r8, r9, rLink>, SP = SP + 0x10;
+8420036c:	19 09       	r7 = r1 + Null;
+8420036e:	2b 09       	r9 = r3 + Null;
+84200370:	23 00       	r1 = r2 + Null;
+
+    CVC_SEND_OP_DATA     *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+84200372:	16 99       	r4 = M[r0 + 48];
+    unsigned            i,num_controls,cntrl_value; 
+    CPS_CONTROL_SOURCE  cntrl_src;
+    unsigned result = OPMSG_RESULT_STATES_NORMAL_STATE;
+84200374:	02 09       	r8 = Null + Null;
+
+    patch_fn(cvc_send_opmsg_obpm_set_control_patch);
+    
+    if(!cps_control_setup(message_data, resp_length, resp_data,&num_controls))
+84200376:	05 12       	r3 = FP + 32;
+84200378:	5c 08       	r2 = r9 + Null;
+8420037a:	4a 08       	r0 = r7 + Null;
+8420037c:	ff fd 02 f0 	call (m) 0x7c6;
+84200380:	2b e2 
+84200382:	10 04       	Null = r0 - Null;
+84200384:	03 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_3;
+
+84200386 <Lc_cvc_send_opmsg_obpm_set_control_2>:
+    {
+       return FALSE;
+84200386:	02 00       	r0 = Null + Null;
+84200388:	7e 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_38;
+
+8420038a <Lc_cvc_send_opmsg_obpm_set_control_3>:
+    }
+
+    for(i=0;i<num_controls;i++)
+8420038a:	07 00       	r5 = Null + Null;
+8420038c:	08 71       	r6 = Null + 1;
+8420038e:	09 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_7;
+
+84200390 <Lc_cvc_send_opmsg_obpm_set_control_4>:
+                {
+                    op_extra_data->Ovr_Control &= ~CVC_SEND_CONTROL_MODE_OVERRIDE;
+                }
+                else
+                {
+                    op_extra_data->Ovr_Control |= CVC_SEND_CONTROL_MODE_OVERRIDE;
+84200390:	71 b9       	rMAC = M[r4 + 116];
+84200392:	20 f0 00 f1 	rMAC = rMAC OR 0x2000;
+84200396:	51 d8 
+84200398:	71 bf       	M[r4 + 116] = rMAC;
+
+8420039a <Lc_cvc_send_opmsg_obpm_set_control_5>:
+                }
+            }
+            op_extra_data->ReInitFlag = 1;
+8420039a:	68 f0 1e 8e 	M[r4 + 120] = r6;
+
+8420039e <Lc_cvc_send_opmsg_obpm_set_control_6>:
+    if(!cps_control_setup(message_data, resp_length, resp_data,&num_controls))
+    {
+       return FALSE;
+    }
+
+    for(i=0;i<num_controls;i++)
+8420039e:	7f 20       	r5 = r5 + 1;
+
+842003a0 <Lc_cvc_send_opmsg_obpm_set_control_7>:
+842003a0:	41 d8       	rMAC = M[FP + 32];
+842003a2:	78 04       	Null = r5 - rMAC;
+842003a4:	02 f0 a3 e0 	if C jump (m) Lc_cvc_send_opmsg_obpm_set_control_11;
+
+842003a8 <Lc_cvc_send_opmsg_obpm_set_control_8>:
+    {
+        unsigned  cntrl_id=cps_control_get(message_data,i,&cntrl_value,&cntrl_src);
+842003a8:	85 12       	r3 = FP + 40;
+842003aa:	44 12       	r2 = FP + 36;
+842003ac:	3b 00       	r1 = r5 + Null;
+842003ae:	4a 08       	r0 = r7 + Null;
+842003b0:	ff fd 02 f0 	call (m) 0x812;
+842003b4:	23 e3 
+        /* Only interested in lower 8-bits of value */
+        cntrl_value &= 0xFF;
+842003b6:	49 d8       	rMAC = M[FP + 36];
+842003b8:	89 c3       	rMAC = rMAC AND 0xff;
+842003ba:	49 de       	M[FP + 36] = rMAC;
+        
+        if (cntrl_id == OPMSG_CONTROL_MODE_ID)
+842003bc:	50 24       	Null = r0 - 1;
+842003be:	18 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_16;
+
+842003c0 <Lc_cvc_send_opmsg_obpm_set_control_9>:
+        {
+            /* Control is Mode */
+            if (cntrl_value >= CVC_SEND_SYSMODE_MAX_MODES)
+842003c0:	08 26       	Null = rMAC - 8;
+842003c2:	09 64       	if NC jump (m) Lc_cvc_send_opmsg_obpm_set_control_12;
+
+842003c4 <Lc_cvc_send_opmsg_obpm_set_control_10>:
+            {
+                result = OPMSG_RESULT_STATES_INVALID_CONTROL_VALUE;
+842003c4:	2a 71       	r8 = Null + 5;
+
+842003c6 <Lc_cvc_send_opmsg_obpm_set_control_11>:
+            result = OPMSG_RESULT_STATES_UNSUPPORTED_CONTROL;
+            break;
+        }
+    }
+
+    cps_response_set_result(resp_data,result);
+842003c6:	53 08       	r1 = r8 + Null;
+842003c8:	5a 08       	r0 = r9 + Null;
+842003ca:	ff fd 02 f0 	call (m) 0x854;
+842003ce:	2b e4 
+
+    return TRUE;
+842003d0:	42 08       	r0 = r6 + Null;
+842003d2:	59 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_38;
+
+842003d4 <Lc_cvc_send_opmsg_obpm_set_control_12>:
+            {
+                result = OPMSG_RESULT_STATES_INVALID_CONTROL_VALUE;
+                break;
+            }
+            
+            if(cntrl_src == CPS_SOURCE_HOST)
+842003d4:	42 d1       	r0 = MBS[FP + 40];
+842003d6:	03 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_14;
+
+842003d8 <Lc_cvc_send_opmsg_obpm_set_control_13>:
+            {
+               op_extra_data->Host_mode = cntrl_value;
+842003d8:	f1 be       	M[r4 + 108] = rMAC;
+842003da:	e0 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_5;
+
+842003dc <Lc_cvc_send_opmsg_obpm_set_control_14>:
+            }
+            else
+            {
+                op_extra_data->Obpm_mode = cntrl_value;
+842003dc:	31 bf       	M[r4 + 112] = rMAC;
+
+                /* When the override bit in the control id is high, then we override the
+                 * OBPM's ability to override the control value. In other words we let the control
+                 * value be reset to the host's control value when the OPMSG_CONTROL_OBPM_OVERRIDE
+                 * bit is high in the control id.*/
+                if (cntrl_src == CPS_SOURCE_OBPM_DISABLE)
+842003de:	41 d1       	rMAC = MBS[FP + 40];
+842003e0:	c8 24       	Null = rMAC - 3;
+842003e2:	d7 63       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_4;
+
+842003e4 <Lc_cvc_send_opmsg_obpm_set_control_15>:
+                {
+                    op_extra_data->Ovr_Control &= ~CVC_SEND_CONTROL_MODE_OVERRIDE;
+842003e4:	71 b9       	rMAC = M[r4 + 116];
+842003e6:	11 fe ff 1f 	rMAC = rMAC AND 0xffffdfff;
+842003ea:	71 bf       	M[r4 + 116] = rMAC;
+842003ec:	d7 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_5;
+
+842003ee <Lc_cvc_send_opmsg_obpm_set_control_16>:
+                    op_extra_data->Ovr_Control |= CVC_SEND_CONTROL_MODE_OVERRIDE;
+                }
+            }
+            op_extra_data->ReInitFlag = 1;
+        }
+        else if (cntrl_id == OPMSG_CONTROL_MUTE_ID)
+842003ee:	90 24       	Null = r0 - 2;
+842003f0:	23 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_26;
+
+842003f2 <Lc_cvc_send_opmsg_obpm_set_control_17>:
+        {
+            if (cntrl_value > 1)
+842003f2:	48 24       	Null = rMAC - 1;
+842003f4:	f8 ff d1 ef 	if HI jump (m) Lc_cvc_send_opmsg_obpm_set_control_10;
+
+842003f8 <Lc_cvc_send_opmsg_obpm_set_control_18>:
+            {
+                result = OPMSG_RESULT_STATES_INVALID_CONTROL_VALUE;
+                break;
+            }
+            /* Control is Mute */
+            if(cntrl_src == CPS_SOURCE_HOST)
+842003f8:	42 d1       	r0 = MBS[FP + 40];
+842003fa:	04 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_20;
+
+842003fc <Lc_cvc_send_opmsg_obpm_set_control_19>:
+            {
+               op_extra_data->host_mute = cntrl_value;
+842003fc:	61 f0 29 8e 	M[r4 + 164] = rMAC;
+84200400:	0e 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_23;
+
+84200402 <Lc_cvc_send_opmsg_obpm_set_control_20>:
+            }
+            else
+            {
+                op_extra_data->obpm_mute = cntrl_value;
+84200402:	61 f0 2a 8e 	M[r4 + 168] = rMAC;
+
+                /* When the override bit in the control id is high, then we override the
+                 * OBPM's ability to override the control value. In other words we let the control
+                 * value be reset to the host's control value when the OPMSG_CONTROL_OBPM_OVERRIDE
+                 * bit is high in the control id.*/
+                if(cntrl_src == CPS_SOURCE_OBPM_DISABLE)
+84200406:	41 d1       	rMAC = MBS[FP + 40];
+84200408:	c8 24       	Null = rMAC - 3;
+8420040a:	06 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_22;
+
+8420040c <Lc_cvc_send_opmsg_obpm_set_control_21>:
+                {
+                    op_extra_data->Ovr_Control &= ~CVC_SEND_CONTROL_MUTE_OVERRIDE;
+8420040c:	71 b9       	rMAC = M[r4 + 116];
+8420040e:	11 ff fe 1f 	rMAC = rMAC AND 0xfffffffe;
+84200412:	71 bf       	M[r4 + 116] = rMAC;
+84200414:	04 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_23;
+
+84200416 <Lc_cvc_send_opmsg_obpm_set_control_22>:
+                }
+                else
+                {
+                    op_extra_data->Ovr_Control |= CVC_SEND_CONTROL_MUTE_OVERRIDE;
+84200416:	71 b9       	rMAC = M[r4 + 116];
+84200418:	09 c8       	rMAC = rMAC OR 0x1;
+8420041a:	71 bf       	M[r4 + 116] = rMAC;
+
+8420041c <Lc_cvc_send_opmsg_obpm_set_control_23>:
+                }
+            }
+            op_extra_data->Cur_Mute = ( op_extra_data->Ovr_Control & CVC_SEND_CONTROL_MUTE_OVERRIDE) ? op_extra_data->obpm_mute : op_extra_data->host_mute;
+8420041c:	71 b9       	rMAC = M[r4 + 116];
+8420041e:	09 c0       	rMAC = rMAC AND 0x1;
+84200420:	06 60       	if EQ jump (m) Lc_cvc_send_opmsg_obpm_set_control_25;
+
+84200422 <Lc_cvc_send_opmsg_obpm_set_control_24>:
+84200422:	61 f0 2a 88 	rMAC = M[r4 + 168];
+84200426:	61 f0 2b 8e 	M[r4 + 172] = rMAC;
+8420042a:	ba 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_6;
+
+8420042c <Lc_cvc_send_opmsg_obpm_set_control_25>:
+8420042c:	61 f0 29 88 	rMAC = M[r4 + 164];
+84200430:	61 f0 2b 8e 	M[r4 + 172] = rMAC;
+84200434:	b5 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_6;
+
+84200436 <Lc_cvc_send_opmsg_obpm_set_control_26>:
+        }
+        else if (cntrl_id == OPMSG_CONTROL_OMNI_ID)
+84200436:	d0 24       	Null = r0 - 3;
+84200438:	24 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_37;
+
+8420043a <Lc_cvc_send_opmsg_obpm_set_control_27>:
+        {
+            if(op_extra_data->omni_mode_ptr == NULL)
+8420043a:	62 f0 32 88 	r0 = M[r4 + 200];
+8420043e:	c3 61       	if EQ jump (m) Lc_cvc_send_opmsg_obpm_set_control_10;
+
+84200440 <Lc_cvc_send_opmsg_obpm_set_control_28>:
+            {
+                result = OPMSG_RESULT_STATES_INVALID_CONTROL_VALUE;
+                break;
+            }
+            if (cntrl_value > 1)
+84200440:	48 24       	Null = rMAC - 1;
+84200442:	f8 ff 83 ef 	if HI jump (m) Lc_cvc_send_opmsg_obpm_set_control_10;
+
+84200446 <Lc_cvc_send_opmsg_obpm_set_control_29>:
+            {
+                result = OPMSG_RESULT_STATES_INVALID_CONTROL_VALUE;
+                break;
+            }
+            /* Control is Mute */
+            if(cntrl_src == CPS_SOURCE_HOST)
+84200446:	43 d1       	r1 = MBS[FP + 40];
+84200448:	04 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_31;
+
+8420044a <Lc_cvc_send_opmsg_obpm_set_control_30>:
+            {
+                op_extra_data->host_omni = cntrl_value;
+8420044a:	61 f0 30 8e 	M[r4 + 192] = rMAC;
+8420044e:	0e 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_34;
+
+84200450 <Lc_cvc_send_opmsg_obpm_set_control_31>:
+            }
+            else
+            {
+                op_extra_data->obpm_omni = cntrl_value;
+84200450:	61 f0 31 8e 	M[r4 + 196] = rMAC;
+
+                /* When the override bit in the control id is high, then we override the
+                 * OBPM's ability to override the control value. In other words we let the control
+                 * value be reset to the host's control value when the OPMSG_CONTROL_OBPM_OVERRIDE
+                 * bit is high in the control id.*/
+                if(cntrl_src == CPS_SOURCE_OBPM_DISABLE)
+84200454:	41 d1       	rMAC = MBS[FP + 40];
+84200456:	c8 24       	Null = rMAC - 3;
+84200458:	06 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_set_control_33;
+
+8420045a <Lc_cvc_send_opmsg_obpm_set_control_32>:
+                {
+                    op_extra_data->Ovr_Control &= ~CVC_SEND_CONTROL_OMNI_OVERRIDE;
+8420045a:	71 b9       	rMAC = M[r4 + 116];
+8420045c:	11 ff fd 1f 	rMAC = rMAC AND 0xfffffffd;
+84200460:	71 bf       	M[r4 + 116] = rMAC;
+84200462:	04 6e       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_34;
+
+84200464 <Lc_cvc_send_opmsg_obpm_set_control_33>:
+                }
+                else
+                {
+                    op_extra_data->Ovr_Control |= CVC_SEND_CONTROL_OMNI_OVERRIDE;
+84200464:	71 b9       	rMAC = M[r4 + 116];
+84200466:	49 c8       	rMAC = rMAC OR 0x2;
+84200468:	71 bf       	M[r4 + 116] = rMAC;
+
+8420046a <Lc_cvc_send_opmsg_obpm_set_control_34>:
+                }
+            }
+            *(op_extra_data->omni_mode_ptr) = ( op_extra_data->Ovr_Control & CVC_SEND_CONTROL_OMNI_OVERRIDE) ? op_extra_data->obpm_omni : op_extra_data->host_omni;
+8420046a:	71 b9       	rMAC = M[r4 + 116];
+8420046c:	49 c0       	rMAC = rMAC AND 0x2;
+8420046e:	05 60       	if EQ jump (m) Lc_cvc_send_opmsg_obpm_set_control_36;
+
+84200470 <Lc_cvc_send_opmsg_obpm_set_control_35>:
+84200470:	61 f0 31 88 	rMAC = M[r4 + 196];
+84200474:	11 ee       	M[r0 + Null] = rMAC;
+84200476:	94 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_6;
+
+84200478 <Lc_cvc_send_opmsg_obpm_set_control_36>:
+84200478:	61 f0 30 88 	rMAC = M[r4 + 192];
+8420047c:	11 ee       	M[r0 + Null] = rMAC;
+8420047e:	90 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_6;
+
+84200480 <Lc_cvc_send_opmsg_obpm_set_control_37>:
+        }
+        else
+        {
+            result = OPMSG_RESULT_STATES_UNSUPPORTED_CONTROL;
+84200480:	22 71       	r8 = Null + 4;
+            break;
+84200482:	a2 6f       	jump (m) Lc_cvc_send_opmsg_obpm_set_control_11;
+
+84200484 <Lc_cvc_send_opmsg_obpm_set_control_38>:
+    }
+
+    cps_response_set_result(resp_data,result);
+
+    return TRUE;
+}
+84200484:	f6 49       	SP = SP - 0x10, popm <FP, r4, r5, r6, r7, r8, r9, rLink>;
+84200486:	d8 4c       	rts;
+
+84200488 <$_cvc_send_opmsg_obpm_get_params>:
+
+bool cvc_send_opmsg_obpm_get_params(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+84200488:	c8 1c       	pushm <FP(=SP), rLink>;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+8420048a:	11 99       	rMAC = M[r0 + 48];
+
+    return cpsGetParameterMsgHandler(&op_extra_data->parms_def ,message_data, resp_length,resp_data);
+8420048c:	12 f0 d4 20 	r0 = rMAC + 212;
+84200490:	ef fd ff ff 	call (m) 0x482;
+84200494:	33 ef 
+
+84200496 <Lc_cvc_send_opmsg_obpm_get_params_2>:
+}
+84200496:	c8 48       	popm <FP, rLink>;
+84200498:	d8 4c       	rts;
+
+8420049a <$_cvc_send_opmsg_obpm_get_defaults>:
+
+bool cvc_send_opmsg_obpm_get_defaults(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+8420049a:	c8 1c       	pushm <FP(=SP), rLink>;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+8420049c:	11 99       	rMAC = M[r0 + 48];
+    
+    return cpsGetDefaultsMsgHandler(&op_extra_data->parms_def ,message_data, resp_length,resp_data);
+8420049e:	12 f0 d4 20 	r0 = rMAC + 212;
+842004a2:	ff fd 00 f0 	call (m) 0x532;
+842004a6:	31 e4 
+
+842004a8 <Lc_cvc_send_opmsg_obpm_get_defaults_2>:
+}
+842004a8:	c8 48       	popm <FP, rLink>;
+842004aa:	d8 4c       	rts;
+
+842004ac <$_cvc_send_opmsg_obpm_set_params>:
+
+bool cvc_send_opmsg_obpm_set_params(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+842004ac:	f1 1c       	pushm <FP(=SP), r4, rLink>;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842004ae:	16 99       	r4 = M[r0 + 48];
+    bool retval;
+
+    patch_fn(cvc_send_opmsg_obpm_set_params_patch);
+
+    retval = cpsSetParameterMsgHandler(&op_extra_data->parms_def ,message_data, resp_length,resp_data);
+842004b0:	62 f0 d4 20 	r0 = r4 + 212;
+842004b4:	ff fd 00 f0 	call (m) 0x612;
+842004b8:	3f ea 
+
+    /* Set the Reinit flag after setting the paramters */
+    op_extra_data->ReInitFlag = 1;
+842004ba:	41 20       	rMAC = Null + 1;
+842004bc:	b1 bf       	M[r4 + 120] = rMAC;
+
+842004be <Lc_cvc_send_opmsg_obpm_set_params_2>:
+
+    return retval;
+842004be:	f1 48       	popm <FP, r4, rLink>;
+842004c0:	d8 4c       	rts;
+
+842004c2 <$_cvc_send_opmsg_obpm_get_status>:
+}
+
+bool cvc_send_opmsg_obpm_get_status(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+842004c2:	f2 1d       	pushm <FP(=SP), r4, r5, rLink>, SP = SP + 0x10;
+842004c4:	11 00       	rMAC = r0 + Null;
+842004c6:	1a 00       	r0 = r1 + Null;
+842004c8:	23 00       	r1 = r2 + Null;
+842004ca:	2c 00       	r2 = r3 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842004cc:	0f 99       	r5 = M[rMAC + 48];
+    unsigned  *resp;
+    unsigned **stats = (unsigned**)op_extra_data->status_table;
+842004ce:	fe 98       	r4 = M[r5 + 44];
+
+    patch_fn(cvc_send_opmsg_obpm_get_status_patch);
+
+    if(!common_obpm_status_helper(message_data,resp_length,resp_data,sizeof(CVC_SEND_STATISTICS),&resp))
+842004d0:	01 11       	rMAC = FP + 16;
+842004d2:	09 1c       	pushm <rMAC>;
+842004d4:	05 f0 54 40 	r3 = Null + 84;
+842004d8:	ff fd 01 f0 	call (m) 0x868;
+842004dc:	31 ec 
+842004de:	7f 4c       	SP = SP + -4;
+842004e0:	10 04       	Null = r0 - Null;
+842004e2:	03 62       	if NE jump (m) Lc_cvc_send_opmsg_obpm_get_status_3;
+
+842004e4 <Lc_cvc_send_opmsg_obpm_get_status_2>:
+    {
+         return FALSE;
+842004e4:	02 00       	r0 = Null + Null;
+842004e6:	5e 6e       	jump (m) Lc_cvc_send_opmsg_obpm_get_status_6;
+
+842004e8 <Lc_cvc_send_opmsg_obpm_get_status_3>:
+    }
+
+    if(resp)
+842004e8:	24 d8       	r2 = M[FP + 16];
+842004ea:	5b 60       	if EQ jump (m) Lc_cvc_send_opmsg_obpm_get_status_5;
+
+842004ec <Lc_cvc_send_opmsg_obpm_get_status_4>:
+    {
+        resp = cpsPackWords(&op_extra_data->Cur_mode,&op_extra_data->Ovr_Control ,resp);
+842004ec:	73 f0 74 20 	r1 = r5 + 116;
+842004f0:	72 f0 80 20 	r0 = r5 + 128;
+842004f4:	ff fd 5d f1 	call (m) 0x2c056;
+842004f8:	23 eb 
+842004fa:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[0], stats[1], resp);
+842004fc:	24 d8       	r2 = M[FP + 16];
+842004fe:	73 88       	r1 = M[r4 + 4];
+84200500:	32 e8       	r0 = M[r4 + Null];
+84200502:	ff fd 5d f1 	call (m) 0x2c056;
+84200506:	35 ea 
+84200508:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[2], stats[3], resp);
+8420050a:	24 d8       	r2 = M[FP + 16];
+8420050c:	f3 88       	r1 = M[r4 + 12];
+8420050e:	b2 88       	r0 = M[r4 + 8];
+84200510:	ff fd 5d f1 	call (m) 0x2c056;
+84200514:	27 ea 
+84200516:	22 de       	M[FP + 16] = r0;
+        /* Reset IN/OUT Peak Detectors*/
+        *(stats[1])=0;
+84200518:	71 88       	rMAC = M[r4 + 4];
+8420051a:	08 ee       	M[rMAC + Null] = Null;
+        *(stats[2])=0;
+8420051c:	b1 88       	rMAC = M[r4 + 8];
+8420051e:	08 ee       	M[rMAC + Null] = Null;
+        *(stats[3])=0;
+84200520:	f1 88       	rMAC = M[r4 + 12];
+84200522:	08 ee       	M[rMAC + Null] = Null;
+        resp = cpsPackWords(stats[4],stats[5] , resp);
+84200524:	24 d8       	r2 = M[FP + 16];
+84200526:	73 89       	r1 = M[r4 + 20];
+84200528:	32 89       	r0 = M[r4 + 16];
+8420052a:	ff fd 5d f1 	call (m) 0x2c056;
+8420052e:	2d e9 
+84200530:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[6],stats[7] , resp);
+84200532:	24 d8       	r2 = M[FP + 16];
+84200534:	f3 89       	r1 = M[r4 + 28];
+84200536:	b2 89       	r0 = M[r4 + 24];
+84200538:	ff fd 5d f1 	call (m) 0x2c056;
+8420053c:	3f e8 
+8420053e:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[8],stats[9] , resp);
+84200540:	24 d8       	r2 = M[FP + 16];
+84200542:	73 98       	r1 = M[r4 + 36];
+84200544:	32 98       	r0 = M[r4 + 32];
+84200546:	ff fd 5d f1 	call (m) 0x2c056;
+8420054a:	31 e8 
+8420054c:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[10],stats[11] , resp);
+8420054e:	24 d8       	r2 = M[FP + 16];
+84200550:	f3 98       	r1 = M[r4 + 44];
+84200552:	b2 98       	r0 = M[r4 + 40];
+84200554:	ff fd 5d f1 	call (m) 0x2c056;
+84200558:	23 e8 
+8420055a:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(op_extra_data->mute_control_ptr,stats[13], resp);
+8420055c:	24 d8       	r2 = M[FP + 16];
+8420055e:	73 99       	r1 = M[r4 + 52];
+84200560:	72 f0 28 88 	r0 = M[r5 + 160];
+84200564:	ff fd 5d f1 	call (m) 0x2c056;
+84200568:	33 e7 
+8420056a:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[14],stats[15] , resp);
+8420056c:	24 d8       	r2 = M[FP + 16];
+8420056e:	f3 99       	r1 = M[r4 + 60];
+84200570:	b2 99       	r0 = M[r4 + 56];
+84200572:	ff fd 5d f1 	call (m) 0x2c056;
+84200576:	25 e7 
+84200578:	22 de       	M[FP + 16] = r0;
+        resp = cpsPackWords(stats[16],stats[17] , resp);
+8420057a:	24 d8       	r2 = M[FP + 16];
+8420057c:	73 a8       	r1 = M[r4 + 68];
+8420057e:	32 a8       	r0 = M[r4 + 64];
+84200580:	ff fd 5d f1 	call (m) 0x2c056;
+84200584:	37 e6 
+84200586:	22 de       	M[FP + 16] = r0;
+        cpsPackWords(stats[18],NULL , resp);
+84200588:	24 d8       	r2 = M[FP + 16];
+8420058a:	b2 a8       	r0 = M[r4 + 72];
+8420058c:	03 00       	r1 = Null + Null;
+8420058e:	ff fd 5d f1 	call (m) 0x2c056;
+84200592:	29 e6 
+        /* Reset Peak Detectors AEC_REF/MIC3/MIC4 */
+        *(stats[14])=0;
+84200594:	b1 99       	rMAC = M[r4 + 56];
+84200596:	08 ee       	M[rMAC + Null] = Null;
+        *(stats[15])=0;
+84200598:	f1 99       	rMAC = M[r4 + 60];
+8420059a:	08 ee       	M[rMAC + Null] = Null;
+        *(stats[16])=0;
+8420059c:	31 a8       	rMAC = M[r4 + 64];
+8420059e:	08 ee       	M[rMAC + Null] = Null;
+
+842005a0 <Lc_cvc_send_opmsg_obpm_get_status_5>:
+    }
+
+    return TRUE;
+842005a0:	42 20       	r0 = Null + 1;
+
+842005a2 <Lc_cvc_send_opmsg_obpm_get_status_6>:
+}
+842005a2:	f2 49       	SP = SP - 0x10, popm <FP, r4, r5, rLink>;
+842005a4:	d8 4c       	rts;
+
+842005a6 <$_cvc_send_opmsg_set_ucid>:
+
+    return(TRUE);
+}
+
+bool cvc_send_opmsg_set_ucid(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+842005a6:	f3 1c       	pushm <FP(=SP), r4, r5, r6, rLink>;
+842005a8:	10 09       	r6 = r0 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842005aa:	86 f0 0c 88 	r4 = M[r6 + 48];
+    PS_KEY_TYPE key;
+    bool retval;
+
+    retval = cpsSetUcidMsgHandler(&op_extra_data->parms_def,message_data,resp_length,resp_data);
+842005ae:	62 f0 d4 20 	r0 = r4 + 212;
+842005b2:	ff fd 00 f0 	call (m) 0x6b2;
+842005b6:	21 e8 
+842005b8:	17 00       	r5 = r0 + Null;
+
+    key = MAP_CAPID_UCID_SBID_TO_PSKEYID(op_extra_data->cap_id,op_extra_data->parms_def.ucid,OPMSG_P_STORE_PARAMETER_SUB_ID);
+842005ba:	61 f0 39 88 	rMAC = M[r4 + 228];
+842005be:	8a c2       	r0 = rMAC AND 0x3f;
+842005c0:	12 54       	r0 = r0 LSHIFT 1;
+842005c2:	b1 b8       	rMAC = M[r4 + 104];
+842005c4:	8b c6       	r1 = rMAC AND 0xffff;
+842005c6:	9b 55       	r1 = r1 LSHIFT 7;
+842005c8:	9b 12       	r1 = r1 OR r0;
+    ps_entry_read((void*)op_data,key,PERSIST_ANY,ups_params_snd);
+842005ca:	42 f0 05 f0 	r3 = Null + 69207693;
+842005ce:	8d 4a 
+842005d0:	04 00       	r2 = Null + Null;
+842005d2:	42 08       	r0 = r6 + Null;
+842005d4:	ff fd 26 f1 	call (m) 0x25204;
+842005d8:	31 e1 
+
+    return retval;
+842005da:	3a 00       	r0 = r5 + Null;
+
+842005dc <Lc_cvc_send_opmsg_set_ucid_2>:
+}
+842005dc:	f3 48       	popm <FP, r4, r5, r6, rLink>;
+842005de:	d8 4c       	rts;
+
+842005e0 <$_cvc_send_opmsg_get_ps_id>:
+
+bool cvc_send_opmsg_get_ps_id(OPERATOR_DATA *op_data, void *message_data, unsigned *resp_length, OP_OPMSG_RSP_PAYLOAD **resp_data)
+{
+842005e0:	c8 1c       	pushm <FP(=SP), rLink>;
+842005e2:	19 00       	rMAC = r1 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)op_data->extra_op_data;
+842005e4:	12 99       	r0 = M[r0 + 48];
+    
+    return cpsGetUcidMsgHandler(&op_extra_data->parms_def,op_extra_data->cap_id,message_data,resp_length,resp_data);
+842005e6:	29 1c       	pushm <r3>;
+842005e8:	93 b8       	r1 = M[r0 + 104];
+842005ea:	25 00       	r3 = r2 + Null;
+842005ec:	02 f0 d4 44 	r0 = r0 + 212;
+842005f0:	0c 00       	r2 = rMAC + Null;
+842005f2:	ff fd 00 f0 	call (m) 0x6d2;
+842005f6:	21 e7 
+842005f8:	7f 4c       	SP = SP + -4;
+
+842005fa <Lc_cvc_send_opmsg_get_ps_id_2>:
+}
+842005fa:	c8 48       	popm <FP, rLink>;
+842005fc:	d8 4c       	rts;
+
+842005fe <$_MakeStandardResponse_SND>:
+/****************************************************************************
+Public Function Declarations
+*/
+
+void* MakeStandardResponse_SND(unsigned id)
+{
+842005fe:	f1 1c       	pushm <FP(=SP), r4, rLink>;
+84200600:	16 00       	r4 = r0 + Null;
+    OP_STD_RSP  *std_resp = xpnew(OP_STD_RSP);
+84200602:	c3 20       	r1 = Null + 3;
+84200604:	02 23       	r0 = Null + 12;
+84200606:	ff fd 24 f0 	call (m) 0x4e2e;
+8420060a:	29 e1 
+
+    if(!std_resp)
+8420060c:	10 04       	Null = r0 - Null;
+8420060e:	03 62       	if NE jump (m) Lc_MakeStandardResponse_SND_3;
+
+84200610 <Lc_MakeStandardResponse_SND_2>:
+    {
+        return(NULL);
+84200610:	02 00       	r0 = Null + Null;
+84200612:	06 6e       	jump (m) Lc_MakeStandardResponse_SND_4;
+
+84200614 <Lc_MakeStandardResponse_SND_3>:
+    }
+    std_resp->op_id = id;
+84200614:	16 ee       	M[r0 + Null] = r4;
+    std_resp->resp_data.err_code = 0;
+84200616:	90 8e       	M[r0 + 8] = Null;
+    std_resp->status = STATUS_CMD_FAILED;
+84200618:	01 f0 00 60 	rMAC = Null + 4096;
+8420061c:	51 8e       	M[r0 + 4] = rMAC;
+
+8420061e <Lc_MakeStandardResponse_SND_4>:
+    return((void*)std_resp);
+8420061e:	f1 48       	popm <FP, r4, rLink>;
+84200620:	d8 4c       	rts;
+
+84200622 <$_cvc_send_ups_set_state>:
+    return TRUE;
+}
+
+bool cvc_send_ups_set_state(void* instance_data, PS_KEY_TYPE key, PERSISTENCE_RANK rank, STATUS_KYMERA status,
+                                     uint16 extra_status_info)
+{
+84200622:	48 1c       	pushm <FP(=SP)>;
+    return TRUE;
+84200624:	42 20       	r0 = Null + 1;
+
+84200626 <Lc_cvc_send_ups_set_state_2>:
+}
+84200626:	48 48       	popm <FP>;
+84200628:	d8 4c       	rts;
+
+8420062a <$_ups_state_snd>:
+
+/* ********************************** API functions ************************************* */
+
+bool ups_state_snd(void* instance_data,PS_KEY_TYPE key,PERSISTENCE_RANK rank,
+                 uint16 length, unsigned* data, STATUS_KYMERA status,uint16 extra_status_info)
+{
+8420062a:	48 1c       	pushm <FP(=SP)>;
+8420062c:	f9 d9       	rMAC = M[FP + -4];
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)((OPERATOR_DATA*)instance_data)->extra_op_data;
+8420062e:	12 99       	r0 = M[r0 + 48];
+
+    if((length==2)&&(status==STATUS_OK))
+84200630:	a8 24       	Null = r3 - 2;
+84200632:	0b 62       	if NE jump (m) Lc_ups_state_snd_4;
+
+84200634 <Lc_ups_state_snd_2>:
+84200634:	e3 d5       	r1 = MHS[FP + -8];
+84200636:	09 62       	if NE jump (m) Lc_ups_state_snd_4;
+
+84200638 <Lc_ups_state_snd_3>:
+    {
+        op_extra_data->mdgc_gain = ((data[0]<<16)&0xFFFF) | (data[1]&0xFFFF);
+84200638:	0b e8       	r1 = M[rMAC + Null];
+8420063a:	9b 56       	r1 = r1 LSHIFT 16;
+8420063c:	49 88       	rMAC = M[rMAC + 4];
+8420063e:	c9 12       	rMAC = rMAC OR r1;
+84200640:	89 c6       	rMAC = rMAC AND 0xffff;
+84200642:	d1 af       	M[r0 + 92] = rMAC;
+        /* Set the Reinit flag after setting the paramters */
+        op_extra_data->ReInitFlag = 1;
+84200644:	41 20       	rMAC = Null + 1;
+84200646:	91 bf       	M[r0 + 120] = rMAC;
+
+84200648 <Lc_ups_state_snd_4>:
+    }
+
+    return(TRUE);
+84200648:	42 20       	r0 = Null + 1;
+
+8420064a <Lc_ups_state_snd_5>:
+}
+8420064a:	48 48       	popm <FP>;
+8420064c:	d8 4c       	rts;
+
+8420064e <$_cvc_send_check_all_connected>:
+
+
+
+bool cvc_send_check_all_connected(CVC_SEND_OP_DATA *op_data)
+{
+    if(op_data->output_stream->cbuffer == NULL)
+8420064e:	d1 89       	rMAC = M[r0 + 28];
+84200650:	09 89       	rMAC = M[rMAC + 16];
+84200652:	03 62       	if NE jump (m) Lc_cvc_send_check_all_connected_3;
+
+84200654 <Lc_cvc_send_check_all_connected_2>:
+    {
+        return(FALSE);
+84200654:	02 00       	r0 = Null + Null;
+84200656:	1a 6e       	jump (m) Lc_cvc_send_check_all_connected_12;
+
+84200658 <Lc_cvc_send_check_all_connected_3>:
+    }
+
+    /* AEC Reference*/
+    if(op_data->input_stream[0]->cbuffer == NULL)
+84200658:	91 88       	rMAC = M[r0 + 8];
+8420065a:	09 89       	rMAC = M[rMAC + 16];
+8420065c:	fc 61       	if EQ jump (m) Lc_cvc_send_check_all_connected_2;
+
+8420065e <Lc_cvc_send_check_all_connected_4>:
+    {
+        return(FALSE);
+    }
+    /* Input Chan 1 */
+    if(op_data->input_stream[1]->cbuffer == NULL)
+8420065e:	d1 88       	rMAC = M[r0 + 12];
+84200660:	09 89       	rMAC = M[rMAC + 16];
+84200662:	f9 61       	if EQ jump (m) Lc_cvc_send_check_all_connected_2;
+
+84200664 <Lc_cvc_send_check_all_connected_5>:
+    {
+        return(FALSE);
+    }
+    /* Input Chan 2 which only gets used whith more than 1 mic. */
+    if((op_data->num_mics != 1) && (op_data->input_stream[2]->cbuffer == NULL))
+84200664:	21 f0 23 88 	rMAC = M[r0 + 140];
+84200668:	48 24       	Null = rMAC - 1;
+8420066a:	0f 60       	if EQ jump (m) Lc_cvc_send_check_all_connected_11;
+
+8420066c <Lc_cvc_send_check_all_connected_6>:
+8420066c:	13 89       	r1 = M[r0 + 16];
+8420066e:	1b 89       	r1 = M[r1 + 16];
+84200670:	f2 61       	if EQ jump (m) Lc_cvc_send_check_all_connected_2;
+
+84200672 <Lc_cvc_send_check_all_connected_7>:
+    {
+        return(FALSE);
+    }
+    if((op_data->num_mics > 2) && (op_data->input_stream[3]->cbuffer == NULL))
+84200672:	88 24       	Null = rMAC - 2;
+84200674:	09 f0 95 e0 	if LS jump (m) Lc_cvc_send_check_all_connected_11;
+
+84200678 <Lc_cvc_send_check_all_connected_8>:
+84200678:	53 89       	r1 = M[r0 + 20];
+8420067a:	1b 89       	r1 = M[r1 + 16];
+8420067c:	ec 61       	if EQ jump (m) Lc_cvc_send_check_all_connected_2;
+
+8420067e <Lc_cvc_send_check_all_connected_9>:
+    {
+        return(FALSE);
+    }
+    if((op_data->num_mics == 4) && (op_data->input_stream[4]->cbuffer == NULL))
+8420067e:	08 25       	Null = rMAC - 4;
+84200680:	04 62       	if NE jump (m) Lc_cvc_send_check_all_connected_11;
+
+84200682 <Lc_cvc_send_check_all_connected_10>:
+84200682:	91 89       	rMAC = M[r0 + 24];
+84200684:	09 89       	rMAC = M[rMAC + 16];
+84200686:	e7 61       	if EQ jump (m) Lc_cvc_send_check_all_connected_2;
+
+84200688 <Lc_cvc_send_check_all_connected_11>:
+    {
+        return(FALSE);
+    }
+    return(TRUE);
+84200688:	42 20       	r0 = Null + 1;
+
+8420068a <Lc_cvc_send_check_all_connected_12>:
+8420068a:	d8 4c       	rts;
+
+8420068c <$_ups_params_snd>:
+    return TRUE;
+}
+
+bool ups_params_snd(void* instance_data,PS_KEY_TYPE key,PERSISTENCE_RANK rank,
+                 uint16 length, unsigned* data, STATUS_KYMERA status,uint16 extra_status_info)
+{
+8420068c:	f1 1c       	pushm <FP(=SP), r4, rLink>;
+8420068e:	2b 00       	r1 = r3 + Null;
+    CVC_SEND_OP_DATA   *op_extra_data = (CVC_SEND_OP_DATA*)((OPERATOR_DATA*)instance_data)->extra_op_data;
+84200690:	16 99       	r4 = M[r0 + 48];
+
+    cpsSetParameterFromPsStore(&op_extra_data->parms_def,length,data,status);
+84200692:	e5 d5       	r3 = MHS[FP + -8];
+84200694:	fc d9       	r2 = M[FP + -4];
+84200696:	62 f0 d4 20 	r0 = r4 + 212;
+8420069a:	ff fd 00 f0 	call (m) 0x712;
+8420069e:	39 e3 
+
+    /* Set the Reinit flag after setting the paramters */
+    op_extra_data->ReInitFlag = 1;
+842006a0:	41 20       	rMAC = Null + 1;
+842006a2:	b1 bf       	M[r4 + 120] = rMAC;
+
+    return(TRUE);
+842006a4:	0a 00       	r0 = rMAC + Null;
+
+842006a6 <Lc_ups_params_snd_2>:
+}
+842006a6:	f1 48       	popm <FP, r4, rLink>;
+842006a8:	d8 4c       	rts;
+
+842006aa <$_cvc_send_release_constants>:
+842006aa:	d8 4c       	rts;
+
+842006ac <Lc_cvc_send_config_1>:
+ *          op_extra_data->sample_rate
+ *
+ *       and initialize other internal fields
+ */
+static bool cvc_send_config(CVC_SEND_OP_DATA *op_extra_data)
+{
+842006ac:	f1 1c       	pushm <FP(=SP), r4, rLink>;
+842006ae:	16 00       	r4 = r0 + Null;
+    cvc_send_config_data *caps;
+    unsigned cap_id = op_extra_data->cap_id;
+842006b0:	b2 b8       	r0 = M[r4 + 104];
+    unsigned variant = 0;
+
+    for (caps = cvc_send_caps; caps->config_func != NULL; caps++)
+842006b2:	07 f0 01 f0 	rMAC = Null + 7340552;
+842006b6:	08 42 
+842006b8:	07 6e       	jump (m) Lc_cvc_send_config_4;
+
+842006ba <Lc_cvc_send_config_2>:
+    {
+        for (variant = DATA_VARIANT_NB; variant <= DATA_VARIANT_FB; variant++)
+842006ba:	5b 20       	r1 = r1 + 1;
+842006bc:	24 21       	r2 = r2 + 4;
+842006be:	18 25       	Null = r1 - 4;
+842006c0:	09 f0 8f e0 	if LS jump (m) Lc_cvc_send_config_6;
+
+842006c4 <Lc_cvc_send_config_3>:
+{
+    cvc_send_config_data *caps;
+    unsigned cap_id = op_extra_data->cap_id;
+    unsigned variant = 0;
+
+    for (caps = cvc_send_caps; caps->config_func != NULL; caps++)
+842006c4:	09 2a       	rMAC = rMAC + 24;
+
+842006c6 <Lc_cvc_send_config_4>:
+842006c6:	0d e8       	r3 = M[rMAC + Null];
+842006c8:	4c 60       	if EQ jump (m) Lc_cvc_send_config_17;
+
+842006ca <Lc_cvc_send_config_5>:
+    {
+        for (variant = DATA_VARIANT_NB; variant <= DATA_VARIANT_FB; variant++)
+842006ca:	03 00       	r1 = Null + Null;
+842006cc:	0c 21       	r2 = rMAC + 4;
+
+842006ce <Lc_cvc_send_config_6>:
+        {
+            if (caps->cap_ids[variant] == cap_id) 
+842006ce:	2f f4 00 c3 	Null = M[r2] - r0;
+842006d2:	f4 63       	if NE jump (m) Lc_cvc_send_config_2;
+
+842006d4 <Lc_cvc_send_config_7>:
+            {
+                caps->config_func(op_extra_data, variant);
+842006d4:	32 00       	r0 = r4 + Null;
+842006d6:	d5 4c       	call r3;
+
+                switch(op_extra_data->data_variant)
+842006d8:	61 f0 21 88 	rMAC = M[r4 + 132];
+842006dc:	48 24       	Null = rMAC - 1;
+842006de:	10 60       	if EQ jump (m) Lc_cvc_send_config_12;
+
+842006e0 <Lc_cvc_send_config_8>:
+842006e0:	88 24       	Null = rMAC - 2;
+842006e2:	17 60       	if EQ jump (m) Lc_cvc_send_config_13;
+
+842006e4 <Lc_cvc_send_config_9>:
+842006e4:	c8 24       	Null = rMAC - 3;
+842006e6:	1e 60       	if EQ jump (m) Lc_cvc_send_config_14;
+
+842006e8 <Lc_cvc_send_config_10>:
+842006e8:	08 25       	Null = rMAC - 4;
+842006ea:	25 62       	if NE jump (m) Lc_cvc_send_config_15;
+
+842006ec <Lc_cvc_send_config_11>:
+                case DATA_VARIANT_SWB: // 32 kHz
+                    op_extra_data->frame_size = 240;
+                    op_extra_data->sample_rate = 32000;
+                    break;
+                case DATA_VARIANT_FB:  // 48 kHz
+                    op_extra_data->frame_size = 240;
+842006ec:	01 f0 f0 40 	rMAC = Null + 240;
+842006f0:	61 f0 2e 8e 	M[r4 + 184] = rMAC;
+                    op_extra_data->sample_rate = 48000;
+842006f4:	51 f0 80 73 	rMAC = Null + 48000;
+842006f8:	61 f0 2f 8e 	M[r4 + 188] = rMAC;
+                    break;
+842006fc:	23 6e       	jump (m) Lc_cvc_send_config_16;
+
+842006fe <Lc_cvc_send_config_12>:
+                caps->config_func(op_extra_data, variant);
+
+                switch(op_extra_data->data_variant)
+                {
+                case DATA_VARIANT_WB:  // 16 kHz
+                    op_extra_data->frame_size = 120;
+842006fe:	01 f0 78 40 	rMAC = Null + 120;
+84200702:	61 f0 2e 8e 	M[r4 + 184] = rMAC;
+                    op_extra_data->sample_rate = 16000;
+84200706:	11 f0 80 7a 	rMAC = Null + 16000;
+8420070a:	61 f0 2f 8e 	M[r4 + 188] = rMAC;
+                    break;
+8420070e:	1a 6e       	jump (m) Lc_cvc_send_config_16;
+
+84200710 <Lc_cvc_send_config_13>:
+                case DATA_VARIANT_UWB: // 24 kHz
+                    op_extra_data->frame_size = 120;
+84200710:	01 f0 78 40 	rMAC = Null + 120;
+84200714:	61 f0 2e 8e 	M[r4 + 184] = rMAC;
+                    op_extra_data->sample_rate = 24000;
+84200718:	21 f0 c0 79 	rMAC = Null + 24000;
+8420071c:	61 f0 2f 8e 	M[r4 + 188] = rMAC;
+                    break;
+84200720:	11 6e       	jump (m) Lc_cvc_send_config_16;
+
+84200722 <Lc_cvc_send_config_14>:
+                case DATA_VARIANT_SWB: // 32 kHz
+                    op_extra_data->frame_size = 240;
+84200722:	01 f0 f0 40 	rMAC = Null + 240;
+84200726:	61 f0 2e 8e 	M[r4 + 184] = rMAC;
+                    op_extra_data->sample_rate = 32000;
+8420072a:	31 f0 00 79 	rMAC = Null + 32000;
+8420072e:	61 f0 2f 8e 	M[r4 + 188] = rMAC;
+                    break;
+84200732:	08 6e       	jump (m) Lc_cvc_send_config_16;
+
+84200734 <Lc_cvc_send_config_15>:
+                    op_extra_data->frame_size = 240;
+                    op_extra_data->sample_rate = 48000;
+                    break;
+                case DATA_VARIANT_NB:  // 8 kHz
+                default:
+                    op_extra_data->frame_size = 60;
+84200734:	01 3b       	rMAC = Null + 60;
+84200736:	61 f0 2e 8e 	M[r4 + 184] = rMAC;
+                    op_extra_data->sample_rate = 8000;
+8420073a:	01 f0 40 7b 	rMAC = Null + 8000;
+8420073e:	61 f0 2f 8e 	M[r4 + 188] = rMAC;
+
+84200742 <Lc_cvc_send_config_16>:
+                    break;          
+                }
+                op_extra_data->ReInitFlag = 1;
+84200742:	41 20       	rMAC = Null + 1;
+84200744:	b1 bf       	M[r4 + 120] = rMAC;
+                op_extra_data->Host_mode = CVC_SEND_SYSMODE_FULL;
+84200746:	82 20       	r0 = Null + 2;
+84200748:	f2 be       	M[r4 + 108] = r0;
+                op_extra_data->Cur_mode = CVC_SEND_SYSMODE_STANDBY;
+8420074a:	61 f0 20 8e 	M[r4 + 128] = rMAC;
+                op_extra_data->cur_mode_ptr     = &op_extra_data->Cur_mode;
+8420074e:	61 f0 80 20 	rMAC = r4 + 128;
+84200752:	71 af       	M[r4 + 84] = rMAC;
+                op_extra_data->mute_control_ptr = &op_extra_data->Cur_Mute;
+84200754:	61 f0 ac 20 	rMAC = r4 + 172;
+84200758:	61 f0 28 8e 	M[r4 + 160] = rMAC;
+
+                return TRUE;
+8420075c:	42 20       	r0 = Null + 1;
+8420075e:	02 6e       	jump (m) Lc_cvc_send_config_18;
+
+84200760 <Lc_cvc_send_config_17>:
+            }
+        }
+    }
+
+   return FALSE;
+84200760:	02 00       	r0 = Null + Null;
+
+84200762 <Lc_cvc_send_config_18>:
+}
+84200762:	f1 48       	popm <FP, r4, rLink>;
+84200764:	d8 4c       	rts;
+
+84200766 <$kdc_start>:
+.MODULE $M.kdc_start;
+.CODESEGMENT PM;
+.DATASEGMENT DM;
+
+$kdc_start:
+r0 = $_cvc_send_1mic_nb_hs_cap_data;
+84200766:	07 f0 02 f0 	r0 = Null + 7340032;
+8420076a:	00 40 
+r0 = $_cvc_send_1mic_wb_hs_cap_data;
+8420076c:	07 f0 02 f0 	r0 = Null + 7340072;
+84200770:	28 40 
+r0 = $_cvc_send_2mic_hs_mono_nb_cap_data;
+84200772:	07 f0 02 f0 	r0 = Null + 7340112;
+84200776:	50 40 
+r0 = $_cvc_send_2mic_hs_mono_wb_cap_data;
+84200778:	07 f0 02 f0 	r0 = Null + 7340152;
+8420077c:	78 40 
+r0 = $_cvc_send_2mic_hs_binaural_nb_cap_data;
+8420077e:	07 f0 02 f0 	r0 = Null + 7340192;
+84200782:	a0 40 
+r0 = $_cvc_send_2mic_hs_binaural_wb_cap_data;
+84200784:	07 f0 02 f0 	r0 = Null + 7340232;
+84200788:	c8 40 
+r0 = $_cvc_send_1mic_speaker_wb_cap_data;
+8420078a:	07 f0 02 f0 	r0 = Null + 7340312;
+8420078e:	18 41 
+r0 = $_cvc_send_1mic_speaker_nb_cap_data;
+84200790:	07 f0 02 f0 	r0 = Null + 7340272;
+84200794:	f0 40 
+r0 = $_cvc_send_2mic_speaker_nb_cap_data;
+84200796:	07 f0 02 f0 	r0 = Null + 7340352;
+8420079a:	40 41 
+r0 = $_cvc_send_2mic_speaker_wb_cap_data;
+8420079c:	07 f0 02 f0 	r0 = Null + 7340392;
+842007a0:	68 41 
+    /* Force this symbol to be exported in ELF */
+    Null = $___kymera_debug_map_addr;
+842007a2:	20 f0 b0 41 	Null = Null + 16816;
+
+842007a6 <$_CVC_SEND_CAP_Config_headset_1mic>:
+842007a6:	04 00       	r2 = Null + Null;
+.MODULE $M.CVC_SEND_CAP.config.headset_1mic;
+   .CODESEGMENT PM;
+
+$_CVC_SEND_CAP_Config_headset_1mic:
+   r2 = $cvc_send.mic_config.ONE_MIC;
+   r3 = $cvc_send.HEADSET;
+842007a8:	05 00       	r3 = Null + Null;
+   I3 = $M.CVC_SEND_CAP.headset_data_1mic.DynTable_Main;
+842007aa:	f8 ff 03 f8 	I3 = Null + -8388604;
+842007ae:	04 40 
+   I7 = $M.CVC_SEND_CAP.headset_data_1mic.DynTable_Linker;
+842007b0:	f8 ff 17 f8 	I7 = Null + -8376924;
+842007b4:	a4 59 
+   r10 = 1;
+842007b6:	0c 71       	r10 = Null + 1;
+   jump $cvc_send.dyn_config;
+842007b8:	21 6e       	jump (m) $cvc_send.dyn_config;
+
+842007ba <$_CVC_SEND_CAP_Config_headset_2mic_binaural>:
+
+.MODULE $M.CVC_SEND_CAP.config.headset_2mic;
+   .CODESEGMENT PM;
+
+$_CVC_SEND_CAP_Config_headset_2mic_binaural:
+   r2 = $cvc_send.mic_config.HEADSET_BINAURAL;
+842007ba:	84 20       	r2 = Null + 2;
+   jump Config_headset_2mic;
+842007bc:	02 6e       	jump (m) $M.CVC_SEND_CAP.config.headset_2mic.Config_headset_2mic;
+
+842007be <$_CVC_SEND_CAP_Config_headset_2mic_mono>:
+
+$_CVC_SEND_CAP_Config_headset_2mic_mono:
+   r2 = $cvc_send.mic_config.HEADSET_MONO;
+842007be:	44 20       	r2 = Null + 1;
+
+842007c0 <$M.CVC_SEND_CAP.config.headset_2mic.Config_headset_2mic>:
+
+Config_headset_2mic:
+   r3 = $cvc_send.HEADSET;
+842007c0:	05 00       	r3 = Null + Null;
+   I3 = $M.CVC_SEND_CAP.headset_data_2mic.DynTable_Main;
+842007c2:	f8 ff 03 f8 	I3 = Null + -8386440;
+842007c6:	78 50 
+   I7 = $M.CVC_SEND_CAP.headset_data_2mic.DynTable_Linker;
+842007c8:	f8 ff 17 f8 	I7 = Null + -8376348;
+842007cc:	e4 5b 
+   r10 = 2;
+842007ce:	14 71       	r10 = Null + 2;
+   jump $cvc_send.dyn_config;
+842007d0:	15 6e       	jump (m) $cvc_send.dyn_config;
+
+842007d2 <$_CVC_SEND_CAP_Config_speaker_1mic>:
+
+.MODULE $M.CVC_SEND_CAP.config.speaker_1mic;
+   .CODESEGMENT PM;
+
+$_CVC_SEND_CAP_Config_speaker_1mic:
+   r2 = $cvc_send.mic_config.ONE_MIC;
+842007d2:	04 00       	r2 = Null + Null;
+   r3 = $cvc_send.SPEAKER;
+842007d4:	45 20       	r3 = Null + 1;
+   I3 = $M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Main;
+842007d6:	f8 ff 03 f8 	I3 = Null + -8382936;
+842007da:	28 6a 
+   I7 = $M.CVC_SEND_CAP.speaker_data_1mic.DynTable_Linker;
+842007dc:	f8 ff 17 f8 	I7 = Null + -8375500;
+842007e0:	34 63 
+   r10 = 1;
+842007e2:	0c 71       	r10 = Null + 1;
+   jump $cvc_send.dyn_config;
+842007e4:	0b 6e       	jump (m) $cvc_send.dyn_config;
+
+842007e6 <$_CVC_SEND_CAP_Config_speaker_2mic>:
+
+.MODULE $M.CVC_SEND_CAP.config.speaker_2mic;
+   .CODESEGMENT PM;
+
+$_CVC_SEND_CAP_Config_speaker_2mic:
+   r2 = $cvc_send.mic_config.SPEAKER_2MIC;
+842007e6:	c4 20       	r2 = Null + 3;
+   r3 = $cvc_send.SPEAKER;
+842007e8:	45 20       	r3 = Null + 1;
+   I3 = $M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Main;
+842007ea:	f8 ff 03 f8 	I3 = Null + -8380538;
+842007ee:	86 7b 
+   I7 = $M.CVC_SEND_CAP.speaker_data_2mic.DynTable_Linker;
+842007f0:	f8 ff 17 f8 	I7 = Null + -8374876;
+842007f4:	a4 69 
+   r10 = 2;
+842007f6:	14 71       	r10 = Null + 2;
+   jump $cvc_send.dyn_config;
+842007f8:	01 6e       	jump (m) $cvc_send.dyn_config;
+
+842007fa <$cvc_send.dyn_config>:
+// *****************************************************************************
+.MODULE $M.CVC_SEND_CAP.dyn_config;
+   .CODESEGMENT PM;
+
+$cvc_send.dyn_config:
+   M[r0 + $CVC_SEND_CAP.ROOT.NUM_MICS] = r10;
+842007fa:	2c f0 23 8e 	M[r0 + 140] = r10;
+   M[r0 + $CVC_SEND_CAP.ROOT.DATA_VARIANT] = r1;
+842007fe:	23 f0 21 8e 	M[r0 + 132] = r1;
+   M[r0 + $CVC_SEND_CAP.ROOT.MIC_CONFIG] = r2;
+84200802:	24 f0 24 8e 	M[r0 + 144] = r2;
+   M[r0 + $CVC_SEND_CAP.ROOT.MAJOR_CONFIG] = r3;
+84200806:	25 f0 22 8e 	M[r0 + 136] = r3;
+   r2 = I3;
+8420080a:	9c 08       	r2 = I3 + Null;
+   r3 = I7;
+8420080c:	bd 08       	r3 = I7 + Null;
+   M[r0 + $CVC_SEND_CAP.ROOT.DYN_MAIN]   = r2;
+8420080e:	24 f0 26 8e 	M[r0 + 152] = r2;
+   M[r0 + $CVC_SEND_CAP.ROOT.DYN_LINKER] = r3;
+84200812:	25 f0 27 8e 	M[r0 + 156] = r3;
+   rts;
+84200816:	d8 4c       	rts;
+
+84200818 <$_CVC_SEND_CAP_Create>:
+.MODULE $M.CVC_SEND_CAP.Create;
+   .CODESEGMENT PM;
+   .DATASEGMENT DM;
+
+$_CVC_SEND_CAP_Create:
+   push rLink;
+84200818:	00 f0 3d cf 	push rLink;
+   pushm <r8,r9>;
+8420081c:	c0 f0 40 e0 	pushm <r8, r9>;
+
+   r8 = r0; // Extended Data
+84200820:	12 09       	r8 = r0 + Null;
+#endif   
+
+   //
+   //  Reserve Scratch Data
+   //
+   r0 = r8;
+84200822:	52 08       	r0 = r8 + Null;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.DYN_MAIN];
+84200824:	a3 f0 26 88 	r1 = M[r8 + 152];
+   r2 = M[r8 + $CVC_SEND_CAP.ROOT.DATA_VARIANT];
+84200828:	a4 f0 21 88 	r2 = M[r8 + 132];
+   call $_DynLoaderScratchReserve;
+8420082c:	ff fd 07 f0 	call (m) 0x175a;
+84200830:	2f e9 
+   NULL = r0;
+84200832:	10 00       	Null = r0 + Null;
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+84200834:	79 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+   //
+   //  Allocate Shared Variables
+   //
+
+   // CVCLIB table
+   r0 = r8  + $CVC_SEND_CAP.ROOT.CVCLIB_TABLE;
+84200836:	a2 f0 34 20 	r0 = r8 + 52;
+   call $_cvclib_table_alloc;
+8420083a:	ff fd 5e f3 	call 0x6c480;
+8420083e:	26 e2 
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.CVCLIB_TABLE];
+84200840:	a2 f0 0d 88 	r0 = M[r8 + 52];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+84200844:	71 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   // filter_bank split table
+   r0 = r8  + $CVC_SEND_CAP.ROOT.FFTSPLIT_TABLE;
+84200846:	a2 f0 38 20 	r0 = r8 + 56;
+   call $_dyn_load_filter_bank_split;
+8420084a:	ff fd 8b f3 	call 0x72008;
+8420084e:	3e ed 
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.FFTSPLIT_TABLE];
+84200850:	a2 f0 0e 88 	r0 = M[r8 + 56];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+84200854:	69 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   // filter_bank configuration table
+   //    headset      - Hanning window
+   //    auto/speaker - Custom window
+   r2 = M[r8  + $CVC_SEND_CAP.ROOT.MAJOR_CONFIG];
+84200856:	a4 f0 22 88 	r2 = M[r8 + 136];
+   r2 = r2 - $cvc_send.HEADSET;
+8420085a:	24 24       	r2 = r2 - 0;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND];
+8420085c:	a3 f0 1f 88 	r1 = M[r8 + 124];
+   r0 = r8 + $CVC_SEND_CAP.ROOT.FILTERBANK_CONFIG;
+84200860:	a2 f0 50 20 	r0 = r8 + 80;
+   call $_dyn_load_filter_bank_config;
+84200864:	ff fd 8c f3 	call 0x7207c;
+84200868:	38 e0 
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.FILTERBANK_CONFIG];
+8420086a:	a2 f0 14 88 	r0 = M[r8 + 80];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+8420086e:	5c 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   // OMS_IN
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND]; //WB flag
+84200870:	a3 f0 1f 88 	r1 = M[r8 + 124];
+   r0 = r8  + $CVC_SEND_CAP.ROOT.OMS_CONST;
+84200874:	a2 f0 3c 20 	r0 = r8 + 60;
+   call $_oms270_AllocMem;
+84200878:	ff fd 87 f3 	call 0x71850;
+8420087c:	38 ee 
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.OMS_CONST];
+8420087e:	a2 f0 0f 88 	r0 = M[r8 + 60];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+84200882:	52 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   // SEND NS
+   // speaker 2mic: linear, others: PBP
+   // r2 -> PBP(0)/Linear(1) flag
+   r2 = 1;
+84200884:	44 20       	r2 = Null + 1;
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.MAJOR_CONFIG];
+84200886:	a2 f0 22 88 	r0 = M[r8 + 136];
+   Null = r0 - $cvc_send.SPEAKER;
+8420088a:	50 24       	Null = r0 - 1;
+   if NZ r2 = 0;
+8420088c:	01 f0 04 c0 	if NE r2 = Null + Null;
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.NUM_MICS];
+84200890:	a2 f0 23 88 	r0 = M[r8 + 140];
+   NULL = r0 - 1;
+84200894:	50 24       	Null = r0 - 1;
+   if Z r2 = 0;
+84200896:	00 f0 04 c0 	if EQ r2 = Null + Null;
+   r0 = r8  + $CVC_SEND_CAP.ROOT.DMS100_MODE;
+8420089a:	a2 f0 40 20 	r0 = r8 + 64;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND];
+8420089e:	a3 f0 1f 88 	r1 = M[r8 + 124];
+   call $_dms100_AllocMem;
+842008a2:	ff fd 87 f3 	call 0x71884;
+842008a6:	22 ef 
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.DMS100_MODE];
+842008a8:	a2 f0 10 88 	r0 = M[r8 + 64];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+842008ac:	3d 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   // ASF
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.NUM_MICS];
+842008ae:	a2 f0 23 88 	r0 = M[r8 + 140];
+   NULL = r0 - 1;
+842008b2:	50 24       	Null = r0 - 1;
+   if Z jump jp_no_asf_share;
+842008b4:	0b 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.jp_no_asf_share;
+      r0 = r8 + $CVC_SEND_CAP.ROOT.ASF_MODE_TABLE;
+842008b6:	a2 f0 44 20 	r0 = r8 + 68;
+      r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND];
+842008ba:	a3 f0 1f 88 	r1 = M[r8 + 124];
+      call $_asf100_AllocMem;
+842008be:	ff fd 9c f3 	call 0x74288;
+842008c2:	2a ee 
+      r0 = M[r8 + $CVC_SEND_CAP.ROOT.ASF_MODE_TABLE];
+842008c4:	a2 f0 11 88 	r0 = M[r8 + 68];
+      if Z CALL_PANIC_OR_JUMP(create_failed);
+842008c8:	2f 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+842008ca <$M.CVC_SEND_CAP.Create.jp_no_asf_share>:
+   jp_no_asf_share:
+
+   // DCBLOCK or REF_VAD
+   r0 = r8 + $CVC_SEND_CAP.ROOT.VAD_DC_COEFFS;
+842008ca:	a2 f0 48 20 	r0 = r8 + 72;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND];
+842008ce:	a3 f0 1f 88 	r1 = M[r8 + 124];
+   call $_vad400_AllocMem;
+842008d2:	ff fd 70 f3 	call 0x6ea94;
+842008d6:	22 ee 
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.VAD_DC_COEFFS];
+842008d8:	a2 f0 12 88 	r0 = M[r8 + 72];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+842008dc:	25 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+	// AEC
+   r0 = r8 + $CVC_SEND_CAP.ROOT.AEC_MODE;
+842008de:	a2 f0 4c 20 	r0 = r8 + 76;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.IS_WIDEBAND];
+842008e2:	a3 f0 1f 88 	r1 = M[r8 + 124];
+   call $_aec510_AllocMem;
+842008e6:	ff fd 9e f3 	call 0x74528;
+842008ea:	22 e2 
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.AEC_MODE];
+842008ec:	a2 f0 13 88 	r0 = M[r8 + 76];
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+842008f0:	1b 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+      if Z CALL_PANIC_OR_JUMP(create_failed);
+jp_resample_done:
+#endif
+
+   // Set the default mode and current mode pointer field
+   r0 = r8 + $CVC_SEND_CAP.ROOT.CUR_MODE;
+842008f2:	a2 f0 80 20 	r0 = r8 + 128;
+   M[r8 + $CVC_SEND_CAP.ROOT.CUR_MODE_PTR_FIELD] = r0;
+842008f6:	a2 f0 15 8e 	M[r8 + 84] = r0;
+
+   // Set MGDC persistent state pointer
+   r0 = r8 + $CVC_SEND_CAP.ROOT.MGDC_STATE_FIELD;
+842008fa:	a2 f0 5c 20 	r0 = r8 + 92;
+   M[r8 + $CVC_SEND_CAP.ROOT.MGDC_STATE_PTR_FIELD] = r0;
+842008fe:	a2 f0 18 8e 	M[r8 + 96] = r0;
+
+   //
+   //  Allocate Persistent Data
+   //
+   r0 = r8;
+84200902:	52 08       	r0 = r8 + Null;
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.DYN_MAIN];
+84200904:	a3 f0 26 88 	r1 = M[r8 + 152];
+   r2 = M[r8 + $CVC_SEND_CAP.ROOT.DYN_LINKER];
+84200908:	a4 f0 27 88 	r2 = M[r8 + 156];
+   r3 = M[r8 + $CVC_SEND_CAP.ROOT.DATA_VARIANT];
+8420090c:	a5 f0 21 88 	r3 = M[r8 + 132];
+   call $_DynLoaderProcessDynamicAllocations;
+84200910:	ff fd 08 f0 	call (m) 0x19ee;
+84200914:	3f e6 
+   NULL = r0;
+84200916:	10 00       	Null = r0 + Null;
+   if Z CALL_PANIC_OR_JUMP(create_failed);
+84200918:	07 60       	if EQ jump (m) $M.CVC_SEND_CAP.Create.create_failed;
+
+   r0 = 0;                                                         // create succeeded
+8420091a:	02 00       	r0 = Null + Null;
+
+8420091c <$M.CVC_SEND_CAP.Create.create_done>:
+create_done:
+   popm <r8,r9>;
+8420091c:	c0 f0 60 e0 	popm <r8, r9>;
+   pop rLink;
+84200920:	00 f4 3d cf 	pop rLink;
+   rts;
+84200924:	d8 4c       	rts;
+
+84200926 <$M.CVC_SEND_CAP.Create.create_failed>:
+create_failed:
+   r0 = 1;                                                         // create failed
+84200926:	42 20       	r0 = Null + 1;
+   jump create_done;
+84200928:	fa 6f       	jump (m) $M.CVC_SEND_CAP.Create.create_done;
+
+8420092a <$_CVC_SEND_CAP_Destroy>:
+.MODULE $M.CVC_SEND_CAP.Destroy;
+   .CODESEGMENT PM;
+   .DATASEGMENT DM;
+
+$_CVC_SEND_CAP_Destroy:
+   push rLink;
+8420092a:	00 f0 3d cf 	push rLink;
+   push r8;
+8420092e:	00 f0 3a cf 	push r8;
+
+   r8 = r0;  // extended data
+84200932:	12 09       	r8 = r0 + Null;
+
+   // unregister component
+   call $Security.UnregisterComponent;
+84200934:	ff fd b7 f3 	call 0x7776c;
+84200938:	38 e1 
+
+   // Release Scratch Data
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.SCRATCH_ALLOC_PTR_FIELD];
+8420093a:	a2 f0 01 88 	r0 = M[r8 + 4];
+   if NZ call $_DynLoaderDeregisterScratch;
+8420093e:	f1 fd 08 f0 	if NE call (m) 0x19ba;
+84200942:	3d e3 
+   M[r8 + $CVC_SEND_CAP.ROOT.SCRATCH_ALLOC_PTR_FIELD]=NULL;
+84200944:	a0 f0 01 8e 	M[r8 + 4] = Null;
+
+   // Release Shared Variables
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.CVCLIB_TABLE];
+84200948:	a2 f0 0d 88 	r0 = M[r8 + 52];
+   if NZ call $_cvclib_table_release;
+8420094c:	f1 fd 5d f3 	if NE call 0x6c498;
+84200950:	2c ea 
+   M[r8  + $CVC_SEND_CAP.ROOT.CVCLIB_TABLE] = NULL;
+84200952:	a0 f0 0d 8e 	M[r8 + 52] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.ASF_MODE_TABLE];
+84200956:	a2 f0 11 88 	r0 = M[r8 + 68];
+   if NZ call $_asf100_ReleaseMem;
+8420095a:	f1 fd 9c f3 	if NE call 0x742b0;
+8420095e:	36 ea 
+   M[r8 + $CVC_SEND_CAP.ROOT.ASF_MODE_TABLE] = NULL;
+84200960:	a0 f0 11 8e 	M[r8 + 68] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.DMS100_MODE];
+84200964:	a2 f0 10 88 	r0 = M[r8 + 64];
+   if NZ call $_dms100_ReleaseMem;
+84200968:	f1 fd 87 f3 	if NE call 0x718cc;
+8420096c:	24 eb 
+   M[r8 + $CVC_SEND_CAP.ROOT.DMS100_MODE]= NULL;
+8420096e:	a0 f0 10 8e 	M[r8 + 64] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.OMS_CONST];
+84200972:	a2 f0 0f 88 	r0 = M[r8 + 60];
+   if NZ call $_dms100_ReleaseMem;
+84200976:	f1 fd 87 f3 	if NE call 0x718cc;
+8420097a:	36 ea 
+   M[r8 + $CVC_SEND_CAP.ROOT.OMS_CONST]=NULL;
+8420097c:	a0 f0 0f 8e 	M[r8 + 60] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.VAD_DC_COEFFS];
+84200980:	a2 f0 12 88 	r0 = M[r8 + 72];
+   if NZ call $_vad400_ReleaseMem;
+84200984:	f1 fd 70 f3 	if NE call 0x6ea8c;
+84200988:	28 e8 
+   M[r8 + $CVC_SEND_CAP.ROOT.VAD_DC_COEFFS]=NULL;
+8420098a:	a0 f0 12 8e 	M[r8 + 72] = Null;
+
+   r0 = M[r8  + $CVC_SEND_CAP.ROOT.FFTSPLIT_TABLE];
+8420098e:	a2 f0 0e 88 	r0 = M[r8 + 56];
+   if NZ call $_dyn_free_filter_bank_split;
+84200992:	f1 fd 8b f3 	if NE call 0x72000;
+84200996:	2e e3 
+   M[r8  + $CVC_SEND_CAP.ROOT.FFTSPLIT_TABLE]=NULL;
+84200998:	a0 f0 0e 8e 	M[r8 + 56] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.FILTERBANK_CONFIG];
+8420099c:	a2 f0 14 88 	r0 = M[r8 + 80];
+   if NZ call $_dyn_free_filter_bank_config;
+842009a0:	f1 fd 8b f3 	if NE call 0x72020;
+842009a4:	20 e4 
+   M[r8 + $CVC_SEND_CAP.ROOT.FILTERBANK_CONFIG]=NULL;
+842009a6:	a0 f0 14 8e 	M[r8 + 80] = Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.AEC_MODE];
+842009aa:	a2 f0 13 88 	r0 = M[r8 + 76];
+   if NZ call $_aec510_ReleaseMem;
+842009ae:	f1 fd 9d f3 	if NE call 0x744ec;
+842009b2:	3e e9 
+   M[r8 + $CVC_SEND_CAP.ROOT.AEC_MODE] = NULL;
+842009b4:	a0 f0 13 8e 	M[r8 + 76] = Null;
+   if NZ call $_iir_resamplerv2_release_config;
+   M[r8 + $CVC_SEND_CAP.ROOT.UPSAMPLE_CONFIG_FIELD]=NULL;
+#endif
+
+   //  deallocate Persistent Data
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.INST_ALLOC_PTR_FIELD];
+842009b8:	a2 f0 00 88 	r0 = M[r8 + 0];
+   if NZ call $_DynLoaderReleaseDynamicAllocations;
+842009bc:	f1 fd 09 f0 	if NE call (m) 0x1ca4;
+842009c0:	29 e7 
+   M[r8 + $CVC_SEND_CAP.ROOT.INST_ALLOC_PTR_FIELD]=NULL;
+842009c2:	a0 f0 00 8e 	M[r8 + 0] = Null;
+
+   pop r8;
+842009c6:	00 f4 3a cf 	pop r8;
+   pop rLink;
+842009ca:	00 f4 3d cf 	pop rLink;
+   rts;
+842009ce:	d8 4c       	rts;
+
+842009d0 <$_CVC_SEND_CAP_Initialize>:
+.MODULE $M.CVC_SEND_CAP.Initialize;
+   .CODESEGMENT PM;
+   .DATASEGMENT DM;
+
+$_CVC_SEND_CAP_Initialize:
+   M[r0 + $CVC_SEND_CAP.ROOT.ALGREINIT]  = Null;
+842009d0:	90 bf       	M[r0 + 120] = Null;
+   r1 = M[r0 + $CVC_SEND_CAP.ROOT.CVC_DATA_ROOT_FIELD];
+842009d2:	93 98       	r1 = M[r0 + 40];
+   r0 = M[r0 + $CVC_SEND_CAP.ROOT.INIT_TABLE_PTR_FIELD];
+842009d4:	52 98       	r0 = M[r0 + 36];
+   jump $_run_frame_proc_function_table;
+842009d6:	7c ff 1f f6 	jump (m) 0x315c6;
+842009da:	f1 e7 
+
+842009dc <$_CVC_SEND_CAP_Process>:
+.MODULE $M.CVC_SEND_CAP.Process;
+   .CODESEGMENT PM;
+   .DATASEGMENT DM;
+
+$_CVC_SEND_CAP_Process:
+   push rLink;
+842009dc:	00 f0 3d cf 	push rLink;
+   push r8;
+842009e0:	00 f0 3a cf 	push r8;
+
+   r8 = r0;  // extended data
+842009e4:	12 09       	r8 = r0 + Null;
+
+   r0 = M[r8 + $CVC_SEND_CAP.ROOT.INST_ALLOC_PTR_FIELD];
+842009e6:	a2 f0 00 88 	r0 = M[r8 + 0];
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.SCRATCH_ALLOC_PTR_FIELD];
+842009ea:	a3 f0 01 88 	r1 = M[r8 + 4];
+   if NZ call $_DynLoaderScratchCommit;
+842009ee:	f1 fd 07 f0 	if NE call (m) 0x191c;
+842009f2:	2f e9 
+
+   r0 = r8;  // extended data
+842009f4:	52 08       	r0 = r8 + Null;
+   NULL = M[r8 + $CVC_SEND_CAP.ROOT.ALGREINIT];
+842009f6:	a0 f0 1e 88 	Null = M[r8 + 120];
+   if NZ call $_CVC_SEND_CAP_Initialize;    // preserves FP
+842009fa:	f1 ff ff ff 	if NE call (m) $_CVC_SEND_CAP_Initialize;
+842009fe:	37 ee 
+
+   // Pass in Current Mode & Overide Control
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.CUR_MODE];
+84200a00:	a3 f0 20 88 	r1 = M[r8 + 128];
+   r2 = M[r8 + $CVC_SEND_CAP.ROOT.OVR_CONTROL];
+84200a04:	a4 f0 1d 88 	r2 = M[r8 + 116];
+   call $cvc_send.process_data;
+84200a08:	ff fd af f3 	call 0x76830;
+84200a0c:	28 e1 
+   
+   // r2 -> Status Table
+   r2 = M[r8 + $CVC_SEND_CAP.ROOT.STATUS_TABLE_PTR_FIELD];
+84200a0e:	a4 f0 0b 88 	r2 = M[r8 + 44];
+   r2 = r2 - $M.CVC_SEND.STATUS.COMPILED_CONFIG;
+84200a12:	24 26       	r2 = r2 - 8;
+
+   // Update NDVC shared
+   // r2 -> Status Table
+   r1 = M[r8 + $CVC_SEND_CAP.ROOT.NDVC_SHARE_PTR_FIELD];
+84200a14:	a3 f0 16 88 	r1 = M[r8 + 88];
+
+   // Update NDVC shared variable with NDVC current volume level
+   r3 = M[r2 + $M.CVC_SEND.STATUS.NDVC_VOL_ADJ_OFFSET];
+84200a18:	e5 89       	r3 = M[r2 + 28];
+   r3 = M[r3];
+84200a1a:	2d e8       	r3 = M[r3 + Null];
+   M[r1+$shared_volume_control._shared_volume_struct.NDVC_NOISE_LEVEL_FIELD] = r3;
+84200a1c:	1d 8e       	M[r1 + 0] = r3;
+   r3 = M[r2 + $M.CVC_SEND.STATUS.NDVC_NOISE_EST_OFFSET];
+84200a1e:	a5 89       	r3 = M[r2 + 24];
+   r3 = M[r3];
+84200a20:	2d e8       	r3 = M[r3 + Null];
+   M[r1+$shared_volume_control._shared_volume_struct.NDVC_FILTER_SUM_LPDNZ_FIELD] = r3;
+84200a22:	5d 8e       	M[r1 + 4] = r3;
+
+   // Release committed scratch
+   NULL =  M[r8 + $CVC_SEND_CAP.ROOT.SCRATCH_ALLOC_PTR_FIELD];
+84200a24:	a0 f0 01 88 	Null = M[r8 + 4];
+   if NZ call $_scratch_free;
+84200a28:	f1 fd 03 f0 	if NE call (m) 0x1096;
+84200a2c:	2f e3 
+
+   pop r8;     // remove local variables
+84200a2e:	00 f4 3a cf 	pop r8;
+   pop rLink;
+84200a32:	00 f4 3d cf 	pop rLink;
+   rts;
+84200a36:	d8 4c       	rts;
+
+84200a38 <$_cvc_send_opmsg_get_voice_quality>:
+   pushm <r0,r1,r2,r3>;
+   LIBS_SLOW_SW_ROM_PATCH_POINT($CVC_Send_Set_Voice_Quality.PATCH_ID, r1)
+   popm <r0,r1,r2,r3>;
+#endif
+
+   r0 = 1;
+84200a38:	42 20       	r0 = Null + 1;
+   rts;
+84200a3a:	d8 4c       	rts;
+
+84200a3c <$cvc.init.root>:
+84200a3c:	90 f0 01 24 	Null = r7 - 1;
+
+$cvc.init.root:
+   // microphone mode:  1 - 1mic
+   //                   0 - multimic
+   Null = r7 - 1;
+   if NZ r7 = 0;
+84200a40:	01 f0 09 c0 	if NE r7 = Null + Null;
+   M[r9 + $cvc_send.data.mic_mode] = r7;
+84200a44:	b9 f0 08 8e 	M[r9 + 32] = r7;
+
+   // CVC use case:     HEADSET/SPEAKER/AUTO
+   M[r9 + $cvc_send.data.use] = r8;
+84200a48:	ba f0 07 8e 	M[r9 + 28] = r8;
+
+   // param
+   r6 = M[r9 + $cvc_send.data.param];
+84200a4c:	b8 f0 02 88 	r6 = M[r9 + 8];
+#if defined(PATCH_LIBS)
+   LIBS_SLOW_SW_ROM_PATCH_POINT($cvc.init.root.PATCH_ID_0, r1)
+#endif
+
+   // HFK/DMSS CONFIG
+   r0 = M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_HFK_CONFIG];
+84200a50:	82 f0 00 88 	r0 = M[r6 + 0];
+   r1 = M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_DMSS_CONFIG];
+84200a54:	83 f0 01 88 	r1 = M[r6 + 4];
+   M[r9 + $cvc_send.data.hfk_config] = r0;
+84200a58:	b2 f0 0a 8e 	M[r9 + 40] = r0;
+   M[r9 + $cvc_send.data.dmss_config] = r1;
+84200a5c:	b3 f0 0b 8e 	M[r9 + 44] = r1;
+
+   // PARAM CE
+   Null = r8 - $cvc_send.AUTO;
+84200a60:	a0 f0 02 24 	Null = r8 - 2;
+   if Z jump end_CE_fixed_param;
+84200a64:	0e 60       	if EQ jump (m) $M.CVC_SEND.module_init.root.end_CE_fixed_param;
+      // DMP_MODE = 0
+      M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_DMP_MODE] = 0;
+84200a66:	80 f0 7f 8e 	M[r6 + 508] = Null;
+      // DOA1 = DOA0
+      r0 = M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_DOA0];
+84200a6a:	82 f0 42 88 	r0 = M[r6 + 264];
+      M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_DOA1] = r0;
+84200a6e:	82 f0 43 8e 	M[r6 + 268] = r0;
+      // end_fire flag
+      r1 = 1;
+84200a72:	43 20       	r1 = Null + 1;
+      Null = r0 - 90;
+84200a74:	20 f0 5a 24 	Null = r0 - 90;
+      if NZ r1 = 0;
+84200a78:	01 f0 03 c0 	if NE r1 = Null + Null;
+      M[r9 + $cvc_send.data.end_fire] = r1;
+84200a7c:	b3 f0 09 8e 	M[r9 + 36] = r1;
+
+84200a80 <$M.CVC_SEND.module_init.root.end_CE_fixed_param>:
+   end_CE_fixed_param:
+
+   // power adjust: used in ASF/DMS
+   r0 = M[r6 + $M.CVC_SEND.PARAMETERS.OFFSET_DMSS_LPN_MIC];
+84200a80:	82 f0 3f 88 	r0 = M[r6 + 252];
+   r1 = M[r9 + $cvc_send.data.fftwin_power];
+84200a84:	b3 f0 11 88 	r1 = M[r9 + 68];
+   r0 = r0 + r1;
+84200a88:	9a 00       	r0 = r1 + r0;
+   M[r9 + $cvc_send.data.power_adjust] = r0;
+84200a8a:	b2 f0 12 8e 	M[r9 + 72] = r0;
+
+   // reset wind_flag
+   M[r9 + $cvc_send.data.wind_flag] = 0;
+84200a8e:	b0 f0 0c 8e 	M[r9 + 48] = Null;
+
+   // reset echo_flag
+   M[r9 + $cvc_send.data.echo_flag] = 0;
+84200a92:	b0 f0 0d 8e 	M[r9 + 52] = Null;
+
+   // reset vad_flag
+   M[r9 + $cvc_send.data.vad_flag] = 0;
+84200a96:	b0 f0 0e 8e 	M[r9 + 56] = Null;
+
+   rts;
+84200a9a:	d8 4c       	rts;
+
+84200a9c <$cvc.init.harm>:
+.MODULE $M.CVC_SEND.module_init.harmonicity;
+
+   .CODESEGMENT PM;
+
+$cvc.init.harm:
+   r0 = 1;
+84200a9c:	42 20       	r0 = Null + 1;
+   M[r8 + $harmonicity.FLAG_BYPASS_FIELD] = r0;
+84200a9e:	a2 f0 03 8e 	M[r8 + 12] = r0;
+   rts;
+84200aa2:	d8 4c       	rts;
+
+84200aa4 <$cvc.init.harm_export>:
+
+   .CODESEGMENT PM;
+
+$cvc.init.harm_export:
+   // Export harm value
+   r1 = M[r9 + $cvc_send.data.harm_obj];
+84200aa4:	b3 f0 03 88 	r1 = M[r9 + 12];
+   r0 = r1 + $harmonicity.HARM_VALUE_FIELD;
+84200aa8:	1a 28       	r0 = r1 + 16;
+   M[r8 + $M.oms270.PTR_HARM_VALUE_FIELD] = r0;
+84200aaa:	a2 f0 33 8e 	M[r8 + 204] = r0;
+
+   // Harmonicity is active
+   M[r1 + $harmonicity.FLAG_BYPASS_FIELD] = 0;
+84200aae:	d8 8e       	M[r1 + 12] = Null;
+   rts;
+84200ab0:	d8 4c       	rts;
+
+84200ab2 <$cvc.init.oms_in>:
+
+   .CODESEGMENT PM;
+
+$cvc.init.oms_in:
+   // HandsFree_on?
+   r1 = M[r9 + $cvc_send.data.use];
+84200ab2:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.HEADSET;
+84200ab6:	18 24       	Null = r1 - 0;
+   if NZ jump $cvc.init.harm_export;
+84200ab8:	f6 63       	if NE jump (m) $cvc.init.harm_export;
+
+   // Now HandsFree_on is 0, harmonicity is not used
+   M[r8 + $M.oms270.PTR_HARM_VALUE_FIELD] = 0;
+84200aba:	a0 f0 33 8e 	M[r8 + 204] = Null;
+   rts;
+84200abe:	d8 4c       	rts;
+
+84200ac0 <$cvc.mc.oms_in>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.oms_in:
+   // MGDC_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200ac0:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_MGDC;
+84200ac4:	5a c0       	r0 = r1 AND 0x2;
+   if Z rts;
+84200ac6:	00 fd c0 cd 	if EQ rts;
+
+   // NDVC_on?
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200aca:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_NDVC;
+84200ace:	5a c5       	r0 = r1 AND 0x800;
+   if Z rts;
+84200ad0:	00 fd c0 cd 	if EQ rts;
+
+   // AEC_on?
+   r0 = M[r9 + $cvc_send.data.aec_inactive];
+84200ad4:	b2 f0 10 88 	r0 = M[r9 + 64];
+   rts;
+84200ad8:	d8 4c       	rts;
+
+84200ada <$cvc.mc.dmss_rnr>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.dmss_rnr:
+   // clear RNR_G_FLAG
+   M[r8 + $dmss.rnr.G_FLAG_FIELD] = 0;
+84200ada:	a0 f0 24 8e 	M[r8 + 144] = Null;
+
+   // RNR_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200ade:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_RNR;
+84200ae2:	5a c2       	r0 = r1 AND 0x20;
+   if NZ rts;
+84200ae4:	01 fd c0 cd 	if NE rts;
+
+   // Wind_Flag?
+   r0 = M[r9 + $cvc_send.data.wind_flag];
+84200ae8:	b2 f0 0c 88 	r0 = M[r9 + 48];
+   if NZ rts;
+84200aec:	01 fd c0 cd 	if NE rts;
+
+   // Mic_mode?
+   r0 = M[r9 + $cvc_send.data.mic_mode];
+84200af0:	b2 f0 08 88 	r0 = M[r9 + 32];
+   if NZ rts;
+84200af4:	01 fd c0 cd 	if NE rts;
+
+   // rnr ON, (r0 = 0), don't corrupt r0 before return
+
+   // RNR_G_FLAG decision
+   r1 = 2;
+84200af8:	83 20       	r1 = Null + 2;
+   Null = M[r9 + $cvc_send.data.aec_inactive];
+84200afa:	b0 f0 10 88 	Null = M[r9 + 64];
+   if Z r1 = 1;
+84200afe:	20 f0 43 ce 	if EQ r1 = Null + 1;
+
+   r2 = M[r9 + $cvc_send.data.dms100_obj];
+84200b02:	b4 f0 04 88 	r2 = M[r9 + 16];
+   r2 = M[r2 + $dms100.SNR_MN_FIELD];
+84200b06:	44 f0 2f 88 	r2 = M[r2 + 188];
+
+   // CE : AUTO ?
+   r3 = M[r9 + $cvc_send.data.use];
+84200b0a:	b5 f0 07 88 	r3 = M[r9 + 28];
+   Null = r3 - $cvc_send.AUTO;
+84200b0e:	a8 24       	Null = r3 - 2;
+   if Z jump rnr_auto;
+84200b10:	0f 60       	if EQ jump (m) $M.CVC_SEND.module_control.dmss.residule_noise_reduction.rnr_auto;
+
+   // DMSout_b.SNR_mn < 2 ?
+   Null = r2 - Qfmt_(2.0, 8);
+84200b12:	00 f0 00 f8 	Null = r2 - 33554432;
+84200b16:	40 f0 00 24 
+   if GE rts;
+84200b1a:	0a fd c0 cd 	if GE rts;
+
+   // TP_mode < 3 ?
+   r2 = M[r9 + $cvc_send.data.TP_mode];
+84200b1e:	b4 f0 0f 88 	r2 = M[r9 + 60];
+   Null = r2 - 3;
+84200b22:	e0 24       	Null = r2 - 3;
+   if GE rts;
+84200b24:	0a fd c0 cd 	if GE rts;
+
+   M[r8 + $dmss.rnr.G_FLAG_FIELD] = r1;
+84200b28:	a3 f0 24 8e 	M[r8 + 144] = r1;
+
+   // r0 = 0
+   rts;
+84200b2c:	d8 4c       	rts;
+
+84200b2e <$M.CVC_SEND.module_control.dmss.residule_noise_reduction.rnr_auto>:
+
+rnr_auto:
+   // DMSout_b.SNR_mn < 1.5 ?
+   // r1 = RNR_G_FLAG (target flag - 1 or 2)
+   // r2 = SNR_mn
+   Null = r2 - Qfmt_(1.5, 8);
+84200b2e:	00 f6 40 f0 	Null = r2 - 25165824;
+84200b32:	00 24 
+   if GE rts;
+84200b34:	0a fd c0 cd 	if GE rts;
+
+   M[r8 + $dmss.rnr.G_FLAG_FIELD] = r1;
+84200b38:	a3 f0 24 8e 	M[r8 + 144] = r1;
+
+   // r0 = 0
+   rts;
+84200b3c:	d8 4c       	rts;
+
+84200b3e <$cvc.mc.dmss_tp>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.dmss_tp:
+   // TP_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200b3e:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_TP;
+84200b42:	da c1       	r0 = r1 AND 0x10;
+   if NZ rts;
+84200b44:	01 fd c0 cd 	if NE rts;
+
+   // Mic_mode?
+   r0 = M[r9 + $cvc_send.data.mic_mode];
+84200b48:	b2 f0 08 88 	r0 = M[r9 + 32];
+   if NZ rts;
+84200b4c:	01 fd c0 cd 	if NE rts;
+
+   // DOA0 == 90 ?
+   r1 = M[r9 + $cvc_send.data.param];
+84200b50:	b3 f0 02 88 	r1 = M[r9 + 8];
+   r0 = M[r1 + $M.CVC_SEND.PARAMETERS.OFFSET_DOA0];
+84200b54:	32 f0 42 88 	r0 = M[r1 + 264];
+   r0 = r0 - 90;
+84200b58:	22 f0 5a 24 	r0 = r0 - 90;
+   if NZ rts;
+84200b5c:	01 fd c0 cd 	if NE rts;
+   // Now, r0 = 0 (TP_ON), don't corrupt r0 before return
+
+   // MSC_ADPAT flag decision
+
+   // DMSout_b.VAD_voiced?
+   r1 = M[r9 + $cvc_send.data.dms100_obj];
+84200b60:	b3 f0 04 88 	r1 = M[r9 + 16];
+   r1 = M[r1 + $dms100.VAD_VOICED_FIELD];
+84200b64:	33 f0 2a 88 	r1 = M[r1 + 168];
+
+   // Wind_Flag ?
+   Null = M[r9 + $cvc_send.data.wind_flag];
+84200b68:	b0 f0 0c 88 	Null = M[r9 + 48];
+   if NZ r1 = 0;
+84200b6c:	01 f0 03 c0 	if NE r1 = Null + Null;
+
+   // Echo_Flag ?
+   Null = M[r9 + $cvc_send.data.echo_flag];
+84200b70:	b0 f0 0d 88 	Null = M[r9 + 52];
+   if NZ r1 = 0;
+84200b74:	01 f0 03 c0 	if NE r1 = Null + Null;
+
+   // set MSC_ADPAT flag
+   M[r8 + $dmss.tp.MSC_ADAPT_FLAG_FIELD] = r1;
+84200b78:	a3 f0 2f 8e 	M[r8 + 188] = r1;
+
+   // r0 = 0 (return TP_ON flag)
+   rts;
+84200b7c:	d8 4c       	rts;
+
+84200b7e <$cvc.init.aec510>:
+#if defined(PATCH_LIBS)
+   LIBS_SLOW_SW_ROM_PATCH_POINT($cvc.init.aec510.PATCH_ID_0, r3)
+#endif
+
+   // OMS/DMS AGGR needed for CNG offset
+   r3 = M[r9 + $cvc_send.data.param];
+84200b7e:	b5 f0 02 88 	r3 = M[r9 + 8];
+   r2 = M[r3 + $M.CVC_SEND.PARAMETERS.OFFSET_DMS_AGGR];
+84200b82:	54 f0 4c 88 	r2 = M[r3 + 304];
+   M[r8 + $aec510.OFFSET_OMS_AGGRESSIVENESS] = r2;
+84200b86:	a4 f0 4d 8e 	M[r8 + 308] = r2;
+
+   // HFK_CONFIG word: AEC sub-module on/off flags
+   r0 = M[r9 + $cvc_send.data.hfk_config];
+84200b8a:	b2 f0 0a 88 	r0 = M[r9 + 40];
+
+   // CNG on/off
+   r2 = r0 AND $M.CVC_SEND.CONFIG.HFK.BYP_CNG;
+84200b8e:	d4 c0       	r2 = r0 AND 0x4;
+   M[r8 + $aec510.FLAG_BYPASS_CNG_FIELD] = r2;
+84200b90:	a4 f0 61 8e 	M[r8 + 388] = r2;
+
+   // RER on/off
+   r2 = r0 AND $M.CVC_SEND.CONFIG.HFK.BYP_RER;
+84200b94:	54 c0       	r2 = r0 AND 0x2;
+   M[r8 + $aec510.FLAG_BYPASS_RER_FIELD] = r2;
+84200b96:	a4 f0 62 8e 	M[r8 + 392] = r2;
+
+   // FBC on/off
+   r2 = r0 AND ($M.CVC_SEND.CONFIG.HFK.BYP_FBC);
+84200b9a:	d4 c5       	r2 = r0 AND 0x1000;
+   M[r8 + $aec510.FLAG_BYPASS_FBC_FIELD] = r2;
+84200b9c:	a4 f0 64 8e 	M[r8 + 400] = r2;
+
+   rts;
+84200ba0:	d8 4c       	rts;
+
+84200ba2 <$cvc.init.vsm_fdnlp>:
+
+$cvc.init.vsm_fdnlp:
+   // HD on/off flags
+   r2 = M[r9 + $cvc_send.data.hfk_config];
+84200ba2:	b4 f0 0a 88 	r2 = M[r9 + 40];
+   r0 = r2 AND $M.CVC_SEND.CONFIG.HFK.BYP_HD;
+84200ba6:	62 c1       	r0 = r2 AND 0x8;
+   M[r8 + $aec510.nlp.FLAG_BYPASS_HD_FIELD] = r0;
+84200ba8:	a2 f0 1e 8e 	M[r8 + 120] = r0;
+   rts;
+84200bac:	d8 4c       	rts;
+
+84200bae <$cvc.init.aec510.lrm>:
+
+$cvc.init.aec510.lrm:
+   // AEC_ON ?
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200bae:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_AEC;
+84200bb2:	1a c0       	r0 = r1 AND 0x1;
+   if NZ rts;
+84200bb4:	01 fd c0 cd 	if NE rts;
+
+   //Set FBC_LRM
+   r6 = M[r9 + $cvc_send.data.param];
+84200bb8:	b8 f0 02 88 	r6 = M[r9 + 8];
+   r1 = 1;
+84200bbc:	43 20       	r1 = Null + 1;
+   M[r8 + $aec510.FLAG_FBC_LRM_FIELD] = r1;
+84200bbe:	a3 f0 5f 8e 	M[r8 + 380] = r1;
+
+   //Set AEC_LRM flag
+   r1 = 1;
+84200bc2:	43 20       	r1 = Null + 1;
+   M[r8 + $aec510.FLAG_AEC_LRM_FIELD] = r1;
+84200bc4:	a3 f0 60 8e 	M[r8 + 384] = r1;
+   rts;
+84200bc8:	d8 4c       	rts;
+
+84200bca <$cvc.mc.aec510>:
+#if defined(PATCH_LIBS)
+   LIBS_SLOW_SW_ROM_PATCH_POINT($cvc.mc.aec510.aec510.PATCH_ID_0, r1)
+#endif
+
+   // AEC_ON ?
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200bca:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_AEC;
+84200bce:	1a c0       	r0 = r1 AND 0x1;
+   M[r9 + $cvc_send.data.aec_inactive] = r0;
+84200bd0:	b2 f0 10 8e 	M[r9 + 64] = r0;
+   if NZ rts;
+84200bd4:	01 fd c0 cd 	if NE rts;
+
+   // Disable AEC if Low Volume Mode - headset only
+   r1 = M[r9 + $cvc_send.data.use];
+84200bd8:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.HEADSET;
+84200bdc:	18 24       	Null = r1 - 0;
+   if NZ rts;
+84200bde:	01 fd c0 cd 	if NE rts;
+
+   r1 = M[r9 + $cvc_send.data.cur_mode_ptr];
+84200be2:	b3 f0 01 88 	r1 = M[r9 + 4];
+   r1 = M[r1];
+84200be6:	1b e8       	r1 = M[r1 + Null];
+   r1 = r1 - $M.CVC_SEND.SYSMODE.LOWVOLUME;
+84200be8:	db 24       	r1 = r1 - 3;
+   if Z r0 = 1;
+84200bea:	20 f0 42 ce 	if EQ r0 = Null + 1;
+
+   M[r9 + $cvc_send.data.aec_inactive] = r0;
+84200bee:	b2 f0 10 8e 	M[r9 + 64] = r0;
+   rts;
+84200bf2:	d8 4c       	rts;
+
+84200bf4 <$cvc.mc.aec510_cng>:
+
+$cvc.mc.aec510_nlp:
+$cvc.mc.aec510_cng:
+   r0 = M[r9 + $cvc_send.data.aec_inactive];
+84200bf4:	b2 f0 10 88 	r0 = M[r9 + 64];
+   rts;
+84200bf8:	d8 4c       	rts;
+
+84200bfa <$cvc.aec510_lrm.gain_mapping>:
+.MODULE $M.CVC_SEND.module_control.aec510_lrm;
+
+   .CODESEGMENT PM;
+
+$cvc.aec510_lrm.gain_mapping:
+   Null = M[r9 + $cvc_send.data.aec_inactive];
+84200bfa:	b0 f0 10 88 	Null = M[r9 + 64];
+   if NZ rts;
+84200bfe:	01 fd c0 cd 	if NE rts;
+   jump $aec510.lrm.gain_mapping;
+84200c02:	7c ff af fe 	jump 0x763b4;
+84200c06:	b2 ef 
+
+84200c08 <$cvc.mc.ref_delay>:
+.MODULE $M.CVC_SEND.module_control.aec_ref_delay;
+
+   .CODESEGMENT PM;
+
+$cvc.mc.ref_delay:
+   r2 = M[r9 + $cvc_send.data.hfk_config];
+84200c08:	b4 f0 0a 88 	r2 = M[r9 + 40];
+   r0 = r2 AND $M.CVC_SEND.CONFIG.HFK.BYP_FBC;
+84200c0c:	e2 c5       	r0 = r2 AND 0x1000;
+   Null = M[r9 + $cvc_send.data.aec_inactive];
+84200c0e:	b0 f0 10 88 	Null = M[r9 + 64];
+   if Z r0 = 0;
+84200c12:	00 f0 02 c0 	if EQ r0 = Null + Null;
+   rts;
+84200c16:	d8 4c       	rts;
+
+84200c18 <$cvc.aec_ref.filter_bank.analysis>:
+
+   .CODESEGMENT PM;
+
+$cvc.aec_ref.filter_bank.analysis:
+   // r0 -> ~(AEC_on || FBC_on)
+   r2 = M[r9 + $cvc_send.data.hfk_config];
+84200c18:	b4 f0 0a 88 	r2 = M[r9 + 40];
+   r0 = r2 AND ($M.CVC_SEND.CONFIG.HFK.BYP_FBC);
+84200c1c:	e2 c5       	r0 = r2 AND 0x1000;
+   Null = r2 AND $M.CVC_SEND.CONFIG.HFK.BYP_AEC;
+84200c1e:	20 c0       	Null = r2 AND 0x1;
+   if Z r0 = 0;
+84200c20:	00 f0 02 c0 	if EQ r0 = Null + Null;
+   // Low-volume logic (insert)
+
+   // Do nothing if both FBC and AEC is off
+   Null = r0;
+84200c24:	10 00       	Null = r0 + Null;
+   if NZ rts;
+84200c26:	01 fd c0 cd 	if NE rts;
+
+   // Run raeference filter_bank analysis
+   // r7 = fft_obj, r8 = fba_ref
+   jump $filter_bank.analysis.process;
+84200c2a:	7c ff 2f fe 	jump 0x71ec8;
+84200c2e:	9e e5 
+
+84200c30 <$cvc.event.echo_flag>:
+
+   .CODESEGMENT PM;
+
+$cvc.event.echo_flag:
+   // VAD_AEC
+   r0 = M[r8 + $M.vad400.FLAG_FIELD];
+84200c30:	a2 f0 07 88 	r0 = M[r8 + 28];
+   Null = M[r7 + $aec510.nlp.FLAG_HD_MODE_FIELD];
+84200c34:	90 f0 20 88 	Null = M[r7 + 128];
+   if NZ r0 = 1;
+84200c38:	21 f0 42 ce 	if NE r0 = Null + 1;
+   M[r9 + $cvc_send.data.echo_flag] = r0;
+84200c3c:	b2 f0 0d 8e 	M[r9 + 52] = r0;
+   rts;
+84200c40:	d8 4c       	rts;
+
+84200c42 <$cvc.init.aed100>:
+.MODULE $M.CVC_SEND.module_init.aed100;
+
+   .CODESEGMENT PM;
+
+$cvc.init.aed100:
+   r2 = 90;
+84200c42:	04 f0 5a 40 	r2 = Null + 90;
+   r1 = M[r9 + $cvc_send.data.param];
+84200c46:	b3 f0 02 88 	r1 = M[r9 + 8];
+   r0 = M[r1 + $M.CVC_SEND.PARAMETERS.OFFSET_DOA0];
+84200c4a:	32 f0 42 88 	r0 = M[r1 + 264];
+   Null = M[r9 + $cvc_send.data.mic_mode];
+84200c4e:	b0 f0 08 88 	Null = M[r9 + 32];
+   if NZ r0 = r2;
+84200c52:	01 f4 02 c0 	if NE r0 = r2 + Null;
+   M[r8 + $aed100.DOA_FIELD] = r0;
+84200c56:	a2 f0 01 8e 	M[r8 + 4] = r0;
+   rts;
+84200c5a:	d8 4c       	rts;
+
+84200c5c <$cvc.mc.aed100>:
+.MODULE $M.CVC_SEND.module_control.aed100;
+
+   .CODESEGMENT PM;
+
+$cvc.mc.aed100:
+   r3 = M[r9 + $cvc_send.data.dmss_obj];
+84200c5c:	b5 f0 13 88 	r3 = M[r9 + 76];
+   r2 = M[r9 + $cvc_send.data.dms100_obj];
+84200c60:	b4 f0 04 88 	r2 = M[r9 + 16];
+
+   // AED.voiced = DMSout_b.VAD_voiced && ~Echo_Flag && ~Wind_Flag;
+   r0 = M[r2 + $dms100.VAD_VOICED_FIELD];
+84200c64:	42 f0 2a 88 	r0 = M[r2 + 168];
+   Null = M[r9 + $cvc_send.data.wind_flag];
+84200c68:	b0 f0 0c 88 	Null = M[r9 + 48];
+   if NZ r0 = 0;
+84200c6c:	01 f0 02 c0 	if NE r0 = Null + Null;
+   Null = M[r9 + $cvc_send.data.echo_flag];
+84200c70:	b0 f0 0d 88 	Null = M[r9 + 52];
+   if NZ r0 = 0;
+84200c74:	01 f0 02 c0 	if NE r0 = Null + Null;
+   M[r8 + $aed100.VOICED_FIELD] = r0;
+84200c78:	a2 f0 02 8e 	M[r8 + 8] = r0;
+   // if Mode == 0
+   //    AED.VAD_G = DMSS_TR0
+   // else
+   //    AED.VAD_G = DMSout_b.G_G_interpolated
+   // end
+   r0 = M[r3 + $dmss.BEAM0_TR_FIELD];
+84200c7c:	6a a8       	r0 = M[r3 + 68];
+   r1 = M[r2 + $dms100.PTR_G_FIELD];
+84200c7e:	e3 89       	r1 = M[r2 + 28];
+   Null = M[r9 + $cvc_send.data.mic_mode];
+84200c80:	b0 f0 08 88 	Null = M[r9 + 32];
+   if NZ r0 = r1;
+84200c84:	01 f3 02 c0 	if NE r0 = r1 + Null;
+   M[r8 + $aed100.G_IN_FIELD] = r0;
+84200c88:	a2 f0 03 8e 	M[r8 + 12] = r0;
+
+   // ~AED_ON
+   r0 = 0;
+84200c8c:	02 00       	r0 = Null + Null;
+   rts;
+84200c8e:	d8 4c       	rts;
+
+84200c90 <$cvc.init.agc400>:
+.MODULE $M.CVC_SEND.module_init.agc400;
+
+   .CODESEGMENT PM;
+
+$cvc.init.agc400:
+   r1 = M[r8 + $M.agc400.OFFSET_PTR_VAD_VALUE_FIELD];
+84200c90:	a3 f0 03 88 	r1 = M[r8 + 12];
+   // VAD_AGC        = 0;
+   M[r1 + 0*ADDR_PER_WORD] = 0;
+84200c94:	18 8e       	M[r1 + 0] = Null;
+   // AGC_Echo_hold  = 0;
+   M[r1 + 1*ADDR_PER_WORD] = 0;
+84200c96:	58 8e       	M[r1 + 4] = Null;
+   // AGC_Noise_hold = 0;
+   M[r1 + 2*ADDR_PER_WORD] = 0;
+84200c98:	98 8e       	M[r1 + 8] = Null;
+   rts;
+84200c9a:	d8 4c       	rts;
+
+84200c9c <$cvc.mc.agc400>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.agc400:
+   // vad_agc_obj -> r4
+   r4 = M[r8 + $M.agc400.OFFSET_PTR_VAD_VALUE_FIELD];
+84200c9c:	a6 f0 03 88 	r4 = M[r8 + 12];
+   // param -> r5
+   r5 = M[r9 + $cvc_send.data.param];
+84200ca0:	b7 f0 02 88 	r5 = M[r9 + 8];
+   // if Echo_Flag
+   //     AGC_Echo_hold = -AGC_Th_hang_Echo;
+   // else
+   //     AGC_Echo_hold = min(AGC_Echo_hold + 1, 0);
+   // end
+   r2 = M[r4 + 1*ADDR_PER_WORD];
+84200ca4:	74 88       	r2 = M[r4 + 4];
+   if NEG r2 = r2 + 1;
+84200ca6:	24 f4 44 ce 	if NEG r2 = r2 + 1;
+   r1 = M[r5 + $M.CVC_SEND.PARAMETERS.OFFSET_SND_AGC_ECHO_HOLD];
+84200caa:	73 f0 3d 88 	r1 = M[r5 + 244];
+   Null = M[r9 + $cvc_send.data.echo_flag];
+84200cae:	b0 f0 0d 88 	Null = M[r9 + 52];
+   if NZ r2 = -r1;
+84200cb2:	31 f0 04 c2 	if NE r2 = Null - r1;
+   M[r4 + 1*ADDR_PER_WORD] = r2;
+84200cb6:	74 8e       	M[r4 + 4] = r2;
+   // if ~VAD_Flag
+   //     AGC_Noise_hold = -AGC_Th_hang_Noise;
+   // else
+   //     AGC_Noise_hold = min(AGC_Noise_hold + 1, 0);
+   // end
+   r3 = M[r4 + 2*ADDR_PER_WORD];
+84200cb8:	b5 88       	r3 = M[r4 + 8];
+   if NEG r3 = r3 + 1;
+84200cba:	24 f5 45 ce 	if NEG r3 = r3 + 1;
+   r1 = M[r5 + $M.CVC_SEND.PARAMETERS.OFFSET_SND_AGC_NOISE_HOLD];
+84200cbe:	73 f0 3e 88 	r1 = M[r5 + 248];
+   Null = M[r9 + $cvc_send.data.vad_flag];
+84200cc2:	b0 f0 0e 88 	Null = M[r9 + 56];
+   if Z r3 = -r1;
+84200cc6:	30 f0 05 c2 	if EQ r3 = Null - r1;
+   M[r4 + 2*ADDR_PER_WORD] = r3;
+84200cca:	b5 8e       	M[r4 + 8] = r3;
+
+   // VAD_AGC = (AGC_Echo_hold >= 0)  && (AGC_Noise_hold >= 0);
+   r1 = 0;
+84200ccc:	03 00       	r1 = Null + Null;
+   Null = r2 OR r3;
+84200cce:	60 13       	Null = r2 OR r3;
+   if Z r1 = 1;
+84200cd0:	20 f0 43 ce 	if EQ r1 = Null + 1;
+   M[r4 + 0*ADDR_PER_WORD] = r1;
+84200cd4:	33 8e       	M[r4 + 0] = r1;
+
+   // r0 = ~AGC_ON
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200cd6:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_AGC;
+84200cda:	da c4       	r0 = r1 AND 0x400;
+   rts;
+84200cdc:	d8 4c       	rts;
+
+84200cde <$cvc.mgdc_persist.init>:
+
+   .CODESEGMENT PM;
+
+$cvc.mgdc_persist.init:
+   // MGDC_persist_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200cde:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   Null = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_MGDCPERSIST;
+84200ce2:	d8 c4       	Null = r1 AND 0x400;
+   if NZ rts;
+84200ce4:	01 fd c0 cd 	if NE rts;
+   // set MGDC state
+   r0 = M[r7];
+84200ce8:	92 f0 00 e8 	r0 = M[r7 + Null];
+   M[r8 + $mgdc100.L2FBPXD_FIELD] = r0;
+84200cec:	a2 f0 08 8e 	M[r8 + 32] = r0;
+   rts;
+84200cf0:	d8 4c       	rts;
+
+84200cf2 <$cvc.mgdc_persist.state_upload>:
+.MODULE $M.CVC_SEND.event.mgdc_persist;
+
+   .CODESEGMENT PM;
+
+$cvc.mgdc_persist.state_upload:
+   r0 = M[r8 + $mgdc100.L2FBPXD_FIELD];
+84200cf2:	a2 f0 08 88 	r0 = M[r8 + 32];
+   M[r7] = r0;
+84200cf6:	02 f0 09 ee 	M[Null + r7] = r0;
+   rts;
+84200cfa:	d8 4c       	rts;
+
+84200cfc <$cvc.mc.mgdc100>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.mgdc100:
+   // Mode~=1?
+   r0 = M[r9 + $cvc_send.data.mic_mode];
+84200cfc:	b2 f0 08 88 	r0 = M[r9 + 32];
+   Null = r0 - 1;
+84200d00:	50 24       	Null = r0 - 1;
+   if Z rts;
+84200d02:	00 fd c0 cd 	if EQ rts;
+
+   // OMSin_b.voiced?
+   r1 = 2;
+84200d06:	83 20       	r1 = Null + 2;
+   r2 = M[r8 + $mgdc100.PTR_OMS_VAD_FIELD];
+84200d08:	a4 f0 06 88 	r2 = M[r8 + 24];
+   Null = M[r2];
+84200d0c:	20 e8       	Null = M[r2 + Null];
+   if NZ r1 = 1;
+84200d0e:	21 f0 43 ce 	if NE r1 = Null + 1;
+   // Echo_Flag?
+   Null = M[r9 + $cvc_send.data.echo_flag];
+84200d12:	b0 f0 0d 88 	Null = M[r9 + 52];
+   if NZ r1 = 0;
+84200d16:	01 f0 03 c0 	if NE r1 = Null + Null;
+   // Wind_Flag?
+   Null = M[r9 + $cvc_send.data.wind_flag];
+84200d1a:	b0 f0 0c 88 	Null = M[r9 + 48];
+   if NZ r1 = 0;
+84200d1e:	01 f0 03 c0 	if NE r1 = Null + Null;
+   // MGDC_update
+   M[r8 + $mgdc100.MGDC_UPDATE_FIELD] = r1;
+84200d22:	a3 f0 15 8e 	M[r8 + 84] = r1;
+
+   // MGDC always ON if omni_mode.
+   r0 = 0;
+84200d26:	02 00       	r0 = Null + Null;
+   Null = M[r8 + $mgdc100.OMNI_MODE_FIELD];
+84200d28:	a0 f0 09 88 	Null = M[r8 + 36];
+   if NZ rts;
+84200d2c:	01 fd c0 cd 	if NE rts;
+
+   // MGDC_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200d30:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_MGDC;
+84200d34:	5a c0       	r0 = r1 AND 0x2;
+   rts;
+84200d36:	d8 4c       	rts;
+
+84200d38 <$cvc.mgdc.harm_dynamic>:
+
+   .CODESEGMENT PM;
+
+$cvc.mgdc.harm_dynamic:
+   // Mode ~= 1 ?
+   r2 = M[r9 + $cvc_send.data.mic_mode];
+84200d38:	b4 f0 08 88 	r2 = M[r9 + 32];
+   Null = r2 - 1;
+84200d3c:	60 24       	Null = r2 - 1;
+   if Z rts;
+84200d3e:	00 fd c0 cd 	if EQ rts;
+
+   // inp_d0
+   r0 = M[r7 + 0*ADDR_PER_WORD];
+84200d42:	92 f0 00 88 	r0 = M[r7 + 0];
+   // inp_d1
+   r1 = M[r7 + 1*ADDR_PER_WORD];
+84200d46:	93 f0 01 88 	r1 = M[r7 + 4];
+   // mic_mode == 3 ?
+   Null = r2 - 3;
+84200d4a:	e0 24       	Null = r2 - 3;
+   if Z r0 = r1;
+84200d4c:	00 f3 02 c0 	if EQ r0 = r1 + Null;
+   // set harm.inp_x
+   r0 = M[r0 + $M.filter_bank.Parameters.OFFSET_PTR_FRAME];
+84200d50:	52 88       	r0 = M[r0 + 4];
+   M[r8 + $harmonicity.INP_X_FIELD] = r0;
+84200d52:	a2 f0 00 8e 	M[r8 + 0] = r0;
+   rts;
+84200d56:	d8 4c       	rts;
+
+84200d58 <$cvc.init.ndvc100>:
+.MODULE $M.CVC_SEND.module_init.ndvc100;
+
+   .CODESEGMENT PM;
+
+$cvc.init.ndvc100:
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200d58:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_NDVC;
+84200d5c:	5a c5       	r0 = r1 AND 0x800;
+   M[r8 + $ndvc100.OFFSET_BYPASS_FLAG] = r0;
+84200d5e:	a2 f0 00 8e 	M[r8 + 0] = r0;
+   rts;
+84200d62:	d8 4c       	rts;
+
+84200d64 <$cvc.init.asf100>:
+
+   .CODESEGMENT PM;
+
+$cvc.init.asf100:
+   // 2mic WNR
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200d64:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_WNR;
+84200d68:	da c2       	r0 = r1 AND 0x40;
+   r1 = M[r9 + $cvc_send.data.use];
+84200d6a:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.HEADSET;
+84200d6e:	18 24       	Null = r1 - 0;
+   if NZ r0 = 1;
+84200d70:	21 f0 42 ce 	if NE r0 = Null + 1;
+   Null = M[r9 + $cvc_send.data.end_fire];
+84200d74:	b0 f0 09 88 	Null = M[r9 + 36];
+   if Z r0 = 1;
+84200d78:	20 f0 42 ce 	if EQ r0 = Null + 1;
+   M[r8 + $asf100.BYPASS_FLAG_WNR_FIELD] = r0;
+84200d7c:	a2 f0 3d 8e 	M[r8 + 244] = r0;
+
+   // SPP
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200d80:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_SPP;
+84200d84:	da c3       	r0 = r1 AND 0x100;
+   M[r8 + $asf100.BYPASS_FLAG_COH_FIELD] = r0;
+84200d86:	a2 f0 3e 8e 	M[r8 + 248] = r0;
+   rts;
+84200d8a:	d8 4c       	rts;
+
+84200d8c <$cvc.mc.asf100>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.asf100:
+   // AUTO?
+   r1 = M[r9 + $cvc_send.data.use];
+84200d8c:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.AUTO;
+84200d90:	98 24       	Null = r1 - 2;
+   if Z jump end_beam0_switch;
+84200d92:	09 60       	if EQ jump (m) $M.CVC_SEND.module_control.asf100.end_beam0_switch;
+      // ASF.Beam0_Switchable = TP_mode < 1
+      r0 = 0;
+84200d94:	02 00       	r0 = Null + Null;
+      r1 = M[r9 + $cvc_send.data.TP_mode];
+84200d96:	b3 f0 0f 88 	r1 = M[r9 + 60];
+      r1 = r1 - 1;
+84200d9a:	5b 24       	r1 = r1 - 1;
+      if LT r0 = 1;
+84200d9c:	2b f0 42 ce 	if LT r0 = Null + 1;
+      M[r8 + $asf100.bf.BEAM0_SWITCHABLE_FLAG_FIELD] = r0;
+84200da0:	a2 f0 06 8e 	M[r8 + 24] = r0;
+
+84200da4 <$M.CVC_SEND.module_control.asf100.end_beam0_switch>:
+   end_beam0_switch:
+
+   // Mode == 0?
+   r0 = M[r9 + $cvc_send.data.mic_mode];
+84200da4:	b2 f0 08 88 	r0 = M[r9 + 32];
+   if NZ rts;
+84200da8:	01 fd c0 cd 	if NE rts;
+
+   // ASF_on?
+   r1 = M[r9 + $cvc_send.data.dmss_config];
+84200dac:	b3 f0 0b 88 	r1 = M[r9 + 44];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.DMSS.BYP_ASF;
+84200db0:	1a c0       	r0 = r1 AND 0x1;
+   rts;
+84200db2:	d8 4c       	rts;
+
+84200db4 <$cvc.user.dms100.wnr.initialize>:
+
+   .CODESEGMENT PM;
+
+$cvc.user.dms100.wnr.initialize:
+   // OMS_WBM_on?
+   r0 = M[r9 + $cvc_send.data.hfk_config];
+84200db4:	b2 f0 0a 88 	r0 = M[r9 + 40];
+   Null = r0 AND $M.CVC_SEND.CONFIG.HFK.BYP_WNR;
+84200db8:	d0 c2       	Null = r0 AND 0x40;
+   if NZ rts;
+84200dba:	01 fd c0 cd 	if NE rts;
+
+   // OMS WNR initialize
+   // r7 -> wnr_obj
+   // r8 -> dms100_obj
+   jump $dms100.wnr.initialize;
+84200dbe:	7c ff df fd 	jump 0x6f8d4;
+84200dc2:	96 e6 
+
+84200dc4 <$cvc.init.dms100>:
+#if defined(PATCH_LIBS)
+   LIBS_SLOW_SW_ROM_PATCH_POINT($cvc.init.dms100.PATCH_ID_0, r2)
+#endif
+
+   // DMSout.Mode: DMP_MODE is always 0 in CE
+   r2 = M[r9 + $cvc_send.data.param];
+84200dc4:	b4 f0 02 88 	r2 = M[r9 + 8];
+   r0 = M[r2 + $M.CVC_SEND.PARAMETERS.OFFSET_DMP_MODE];
+84200dc8:	42 f0 7f 88 	r0 = M[r2 + 508];
+   M[r8 + $dms100.MASTER_DMS_MODE_FIELD] = r0;
+84200dcc:	a2 f0 1a 8e 	M[r8 + 104] = r0;
+
+   // Auto_Th_on = HS ? (DOA==90) : 0
+   r0 = 0;
+84200dd0:	02 00       	r0 = Null + Null;
+   r1 = M[r9 + $cvc_send.data.use];
+84200dd2:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.HEADSET;
+84200dd6:	18 24       	Null = r1 - 0;
+   if NZ r0 = 1;
+84200dd8:	21 f0 42 ce 	if NE r0 = Null + 1;
+   Null = M[r9 + $cvc_send.data.end_fire];
+84200ddc:	b0 f0 09 88 	Null = M[r9 + 36];
+   if Z r0 = 1;
+84200de0:	20 f0 42 ce 	if EQ r0 = Null + 1;
+   M[r8 + $dms100.BYPASS_AUTO_TH_FIELD] = r0;
+84200de4:	a2 f0 20 8e 	M[r8 + 128] = r0;
+
+   // SPP_on
+   r2 = M[r9 + $cvc_send.data.dmss_config];
+84200de8:	b4 f0 0b 88 	r2 = M[r9 + 44];
+   r0 = r2 AND $M.CVC_SEND.CONFIG.DMSS.BYP_SPP;
+84200dec:	e2 c3       	r0 = r2 AND 0x100;
+   M[r8 + $dms100.BYPASS_SPP_FIELD] = r0;
+84200dee:	a2 f0 1c 8e 	M[r8 + 112] = r0;
+
+   // VAD_S_on
+   r0 = r2 AND $M.CVC_SEND.CONFIG.DMSS.BYP_VAD_S;
+84200df2:	62 c4       	r0 = r2 AND 0x200;
+   M[r8 + $dms100.BYPASS_VAD_S_FIELD] = r0;
+84200df4:	a2 f0 1b 8e 	M[r8 + 108] = r0;
+
+   // NFlorr_on
+   r1 = M[r9 + $cvc_send.data.hfk_config];
+84200df8:	b3 f0 0a 88 	r1 = M[r9 + 40];
+   r0 = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_NFLOOR;
+84200dfc:	5a c3       	r0 = r1 AND 0x80;
+   M[r8 + $dms100.BYPASS_NFLOOR_FIELD] = r0;
+84200dfe:	a2 f0 1e 8e 	M[r8 + 120] = r0;
+
+   // DMSout_Harm_on?
+   Null = r1 AND $M.CVC_SEND.CONFIG.HFK.BYP_HARM;
+84200e02:	58 c2       	Null = r1 AND 0x20;
+   if Z jump $cvc.init.harm_export;
+84200e04:	f0 ff a1 e9 	if EQ jump (m) $cvc.init.harm_export;
+
+   // Now DMSout_Harm_on is 0, harmonicity is not used
+   M[r8 + $M.oms270.PTR_HARM_VALUE_FIELD] = 0;
+84200e08:	a0 f0 33 8e 	M[r8 + 204] = Null;
+   rts;
+84200e0c:	d8 4c       	rts;
+
+84200e0e <$cvc.mc.dms100>:
+
+   .CODESEGMENT PM;
+
+$cvc.mc.dms100:
+   // DMS_ON - always on
+   r0 = 0;
+84200e0e:	02 00       	r0 = Null + Null;
+
+   // CE : AUTO ?
+   r1 = M[r9 + $cvc_send.data.use];
+84200e10:	b3 f0 07 88 	r1 = M[r9 + 28];
+   Null = r1 - $cvc_send.AUTO;
+84200e14:	98 24       	Null = r1 - 2;
+   if Z rts;
+84200e16:	00 fd c0 cd 	if EQ rts;
+
+   // 1mic?
+   Null = M[r9 + $cvc_send.data.mic_mode];
+84200e1a:	b0 f0 08 88 	Null = M[r9 + 32];
+   if NZ rts;
+84200e1e:	01 fd c0 cd 	if NE rts;
+
+   // NSN_Aggrt = NSN_Aggr * (TP_mode < 4);
+   r2 = M[r8 + $M.oms270.PARAM_FIELD];
+84200e22:	a4 f0 04 88 	r2 = M[r8 + 16];
+   r2 = M[r2 + $dms100.param.NSN_AGGR_FIELD];
+84200e26:	a4 88       	r2 = M[r2 + 8];
+   r1 = M[r9 + $cvc_send.data.TP_mode];
+84200e28:	b3 f0 0f 88 	r1 = M[r9 + 60];
+   Null = r1 - 4;
+84200e2c:	18 25       	Null = r1 - 4;
+   if GE r2 = 0;
+84200e2e:	0a f0 04 c0 	if GE r2 = Null + Null;
+   M[r8 + $dms100.NSN_AGGRT_FIELD] = r2;
+84200e32:	a4 f0 30 8e 	M[r8 + 192] = r2;
+   rts;
+84200e36:	d8 4c       	rts;
+
+84200e38 <$cvc.mc.dms_out>:
+.MODULE $M.CVC_SEND.module_control.dms_out;
+
+   .CODESEGMENT PM;
+
+$cvc.mc.dms_out:
+   r0 = M[r9 + $cvc_send.data.hfk_config];
+84200e38:	b2 f0 0a 88 	r0 = M[r9 + 40];
+   r0 = r0 AND $M.CVC_SEND.CONFIG.HFK.BYP_DMS;
+84200e3c:	d2 c1       	r0 = r0 AND 0x10;
+   rts;
+84200e3e:	d8 4c       	rts;
+
+84200e40 <$hpf.process>:
+.MODULE $M.hpf.process;
+
+   .CODESEGMENT CVCLIB_PM;
+
+$hpf.process:
+   r0 = M[r9 + $cvc_send.data.hfk_config];
+84200e40:	b2 f0 0a 88 	r0 = M[r9 + 40];
+   r0 = r0 AND $M.CVC_SEND.CONFIG.HFK.BYP_HPF;
+84200e44:	22 f1 00 00 	r0 = r0 AND 0x2000;
+   if NZ rts;
+84200e48:	01 fd c0 cd 	if NE rts;
+
+   r10 = 7;                          // filter length
+84200e4c:	3c 71       	r10 = Null + 7;
+   I0 = r8;                          // coeffs
+84200e4e:	50 0a       	I0 = r8 + Null;
+
+   r0 = M[r7 + 0*MK1];               // pointer to real
+84200e50:	92 f0 00 88 	r0 = M[r7 + 0];
+   I1 = r0;
+84200e54:	11 0a       	I1 = r0 + Null;
+   r0 = M[r7 + 1*MK1];               // pointer to imag
+84200e56:	92 f0 01 88 	r0 = M[r7 + 4];
+   I5 = r0;
+84200e5a:	15 0a       	I5 = r0 + Null;
+   r0 = M[I1,MK1] , r1 = M[I5,MK1];  // dummy read to point to second bin (real/imag)
+84200e5c:	35 f5 32 d0 	Null = Null + Null, r0 = M[I1,4], r1 = M[I5,4];
+
+   r2 = M[I0,MK1];                   // load coeff1
+84200e60:	41 f0 30 c0 	Null = Null + Null, r2 = M[I0,4];
+   do hpf_loop;
+84200e64:	09 4c       	do (m) $M.hpf.process.hpf_loop;
+      r0 = M[I1,0], r1 = M[I5,0];            // load input_real , input_imag
+84200e66:	34 f4 32 d0 	Null = Null + Null, r0 = M[I1,0], r1 = M[I5,0];
+      r0 = r0 * r2 (frac);                   // input_real * coeff
+84200e6a:	00 f4 72 c9 	r0 = r0 * r2 (frac);
+      r1 = r1 * r2 (frac), r2 = M[I0,MK1];   // input_imag * coeff , load next coeff
+84200e6e:	41 f4 73 c9 	r1 = r1 * r2 (frac), r2 = M[I0,4];
+      M[I1,MK1] = r0, M[I5,MK1] = r1;        // write real_op , imag_op
+84200e72:	b5 f5 3a d0 	Null = Null + Null, M[I1,4] = r0, M[I5,4] = r1;
+
+84200e76 <$M.hpf.process.hpf_loop>:
+   hpf_loop:
+
+   rts;
+84200e76:	d8 4c       	rts;
+
+84200e78 <$M.CVC_SEND.Set_PassThroughGains_1MIC>:
+84200e78:	a6 f0 00 e8 	r4 = M[r8 + Null];
+
+// r7 - mode object
+// r8 - mode ptr
+$M.CVC_SEND.Set_PassThroughGains_1MIC:
+   r4 = M[r8];
+   NULL = r4 - $M.CVC_SEND.SYSMODE.STANDBY;
+84200e7c:	70 24       	Null = r4 - 1;
+   if GT jump passthroughgains_1mic;
+84200e7e:	04 6a       	if GT jump (m) $M.CVC_SEND.PASS_THROUGH.passthroughgains_1mic;
+   // If we are in either stand by or static mode then zero the output
+   // Standby - Zero Signal
+   r0 = NULL;
+84200e80:	02 00       	r0 = Null + Null;
+   r1 = 1;
+84200e82:	43 20       	r1 = Null + 1;
+   jump setgains_1mic;
+84200e84:	05 6e       	jump (m) $M.CVC_SEND.PASS_THROUGH.setgains_1mic;
+
+84200e86 <$M.CVC_SEND.PASS_THROUGH.passthroughgains_1mic>:
+passthroughgains_1mic:
+   // PassThrough Gains set from Parameters
+   r2 = M[r7 + $M.SET_MODE_GAIN.PARAM_POINTER];
+84200e86:	94 f0 00 88 	r2 = M[r7 + 0];
+   r0 = M[r2 + 0*ADDR_PER_WORD];
+84200e8a:	22 88       	r0 = M[r2 + 0];
+   r1 = M[r2 + 1*ADDR_PER_WORD];
+84200e8c:	63 88       	r1 = M[r2 + 4];
+
+84200e8e <$M.CVC_SEND.PASS_THROUGH.setgains_1mic>:
+setgains_1mic:
+   M[r7 + $M.SET_MODE_GAIN.MANT_LEFT]    = r0;
+84200e8e:	92 f0 01 8e 	M[r7 + 4] = r0;
+   M[r7 + $M.SET_MODE_GAIN.EXP]  = r1;
+84200e92:	93 f0 03 8e 	M[r7 + 12] = r1;
+   rts;
+84200e96:	d8 4c       	rts;
+
+84200e98 <$M.CVC_SEND.Set_PassThroughGains_2MIC>:
+
+// r7 - mode object
+// r8 - mode ptr
+$M.CVC_SEND.Set_PassThroughGains_2MIC:
+  
+   r2 = M[r7 + $M.SET_MODE_GAIN.PARAM_POINTER];
+84200e98:	94 f0 00 88 	r2 = M[r7 + 0];
+   r5 = M[r2];
+84200e9c:	27 e8       	r5 = M[r2 + Null];
+   r0 = r5;
+84200e9e:	3a 00       	r0 = r5 + Null;
+   
+   r4 = M[r8];
+84200ea0:	a6 f0 00 e8 	r4 = M[r8 + Null];
+   NULL = r4 - $M.CVC_SEND.SYSMODE.PASS_THRU_LEFT;
+84200ea4:	30 25       	Null = r4 - 4;
+   if Z r5 = NULL;
+84200ea6:	00 f0 07 c0 	if EQ r5 = Null + Null;
+   if Z jump passthroughgains;
+84200eaa:	09 60       	if EQ jump (m) $M.CVC_SEND.PASS_THROUGH.passthroughgains;
+   NULL = r4 - $M.CVC_SEND.SYSMODE.PASS_THRU_RIGHT;
+84200eac:	70 25       	Null = r4 - 5;
+   if Z r0 = NULL;
+84200eae:	00 f0 02 c0 	if EQ r0 = Null + Null;
+   if Z jump passthroughgains;
+84200eb2:	05 60       	if EQ jump (m) $M.CVC_SEND.PASS_THROUGH.passthroughgains;
+
+   // Standby - Zero Signal
+   r5 = NULL;
+84200eb4:	07 00       	r5 = Null + Null;
+   r0 = NULL;
+84200eb6:	02 00       	r0 = Null + Null;
+   r1 = 1;
+84200eb8:	43 20       	r1 = Null + 1;
+   jump setgains;
+84200eba:	02 6e       	jump (m) $M.CVC_SEND.PASS_THROUGH.setgains;
+
+84200ebc <$M.CVC_SEND.PASS_THROUGH.passthroughgains>:
+passthroughgains:
+   // PassThrough Gains set from Parameters
+   r1 = M[r2 + 1*ADDR_PER_WORD];
+84200ebc:	63 88       	r1 = M[r2 + 4];
+
+84200ebe <$M.CVC_SEND.PASS_THROUGH.setgains>:
+setgains:
+   M[r7 + $M.SET_MODE_GAIN.MANT_LEFT]    = r0;
+84200ebe:	92 f0 01 8e 	M[r7 + 4] = r0;
+   M[r7 + $M.SET_MODE_GAIN.MANT_RIGHT]   = r5;
+84200ec2:	97 f0 02 8e 	M[r7 + 8] = r5;
+   M[r7 + $M.SET_MODE_GAIN.EXP]  = r1;
+84200ec6:	93 f0 03 8e 	M[r7 + 12] = r1;
+   rts;
+84200eca:	d8 4c       	rts;
+
+84200ecc <$M.CVC_SEND.stream_map_select>:
+//   r8 = &adc_gain_dm1
+//   r9 = $root 
+// -----------------------------------------------------------------------------
+$M.CVC_SEND.stream_map_select:
+   // Get Mode
+   r0 = M[r9 + $cvc_send.data.cur_mode_ptr];
+84200ecc:	b2 f0 01 88 	r0 = M[r9 + 4];
+   r0 = M[r0];
+84200ed0:	12 e8       	r0 = M[r0 + Null];
+
+   r1 = $cvc_send.stream.adc_right;
+84200ed2:	03 23       	r1 = Null + 12;
+   Null = r0 - $M.CVC_SEND.SYSMODE.PASS_THRU_RIGHT;
+84200ed4:	50 25       	Null = r0 - 5;
+   if Z jump set_input_ptr;
+84200ed6:	08 60       	if EQ jump (m) $M.CVC_SEND.PASS_THROUGH.set_input_ptr;
+  
+   r1 = $cvc_send.stream.adc_mic3;
+84200ed8:	03 28       	r1 = Null + 16;
+   Null = r0 - $M.CVC_SEND.SYSMODE.PASS_THRU_MIC3;
+84200eda:	90 25       	Null = r0 - 6;
+   if Z jump set_input_ptr;
+84200edc:	05 60       	if EQ jump (m) $M.CVC_SEND.PASS_THROUGH.set_input_ptr;
+
+   r1 = $cvc_send.stream.adc_mic4;
+84200ede:	03 29       	r1 = Null + 20;
+   Null = r0 - $M.CVC_SEND.SYSMODE.PASS_THRU_MIC4;
+84200ee0:	d0 25       	Null = r0 - 7;
+   if Z jump set_input_ptr;
+84200ee2:	02 60       	if EQ jump (m) $M.CVC_SEND.PASS_THROUGH.set_input_ptr;
+
+   // Default connect to mic1
+   r1 = $cvc_send.stream.adc_left;
+84200ee4:	03 22       	r1 = Null + 8;
+
+84200ee6 <$M.CVC_SEND.PASS_THROUGH.set_input_ptr>:
+
+set_input_ptr:
+
+   r2 = M[r7 + r1];
+84200ee6:	94 f0 03 e8 	r2 = M[r7 + r1];
+   M[r8 + $M.audio_proc.stream_gain.OFFSET_INPUT_PTR] = r2;
+84200eea:	a4 f0 00 8e 	M[r8 + 0] = r2;
+   rts;
+84200eee:	d8 4c       	rts;
